@@ -1,4 +1,7 @@
-{lib, ...}: {
+{lib, ...}:
+
+{
+
     imports = [
     ./web.nix
     ./vm.nix
@@ -8,4 +11,5 @@
     ./tui.nix
     ./media.nix
     ];
+
 }

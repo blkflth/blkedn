@@ -8,18 +8,24 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      inputs.noctalia.nixosModules.default
-      inputs.niri.nixosModules.niri
+      inputs.home-manager.nixosModules.home-manager
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
 
-  #Mount Points for SSDs
+  # Automatic Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 21d";
+  };
+
+  # Mount Points for SSDs
   fileSystems."/run/media/jlc/SSD One" = {
   device = "/dev/disk/by-uuid/0A4A387B4A38661B";
   fsType = "ntfs3";
@@ -49,7 +55,7 @@
     driSupport32Bit = true;
   };
 
-  #video driver enable
+  # video driver enable
   services.xserver.videoDrivers = ["amdgpu"];
 
   networking.hostName = "blkedn"; # Define your hostname.
@@ -59,10 +65,10 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  #enable flakes
+  # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  #Home Manager
+  # Home Manager
   home-manager = {
   # also pass inputs to home-manager modules
   extraSpecialArgs = {inherit inputs;};
@@ -72,7 +78,7 @@
   };
 
   # enable Niri Window Manager - NixOS source in flake
-  programs.niri.enable = true;
+  # programs.niri.enable = true; #unneeded since importing from sodiboo flake
 
   # enable the noctalia systemd service
   services.noctalia-shell.enable = true;
@@ -168,25 +174,25 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     # utils
-    glibc
-    wget
-    curl
-    apt
-    git
-    xdg-utils
-    blueberry
-    gnumake
-    lm_sensors
-    fanctl
-    bottom
+   # glibc
+   # wget
+   # curl
+   # apt
+   # git
+   # xdg-utils
+   # blueberry
+   # gnumake
+   # lm_sensors
+   # fanctl
+   # bottom
     #programs
-    kdePackages.dolphin
-    microfetch
-    fuzzel
-    nomacs
+   # kdePackages.dolphin
+   # microfetch
+   # fuzzel
+   # nomacs
     #style
-    nerd-fonts.atkynson-mono
-    pywalfox-native
+   # nerd-fonts.atkynson-mono
+   # pywalfox-native
 
 
 
@@ -219,12 +225,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  # Automatic Garbage Collection
-nix.gc = {
-                automatic = true;
-                dates = "weekly";
-                options = "--delete-older-than 21d";
-        };
 
 }

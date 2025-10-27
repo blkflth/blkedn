@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
   let
     noctalia = cmd: [
@@ -7,21 +7,17 @@
   in
 
 {
-  home-manager.users.username =
-  { config, lib, ... }:
-  {
+
     # import the home manager module
     imports = [
       inputs.noctalia.homeModules.default
     ];
-    # so we don't rebuild from scratch each time
-    niri-flake.cache.enable = true;
+
     # okay let's try this
     programs.niri = {
-        enable = true;
-        settings = {
-          # Niri-Flake setting for VSCodium
-          environment.NIXOS_OZONE_WL = [ "1" ];
+      settings = {
+        # Niri-Flake setting for electron apps
+        environment.NIXOS_OZONE_WL = [ "1" ];
           binds = with config.lib.niri.actions; {
               #noctalia bindings first
               "Mod+Space".action.spawn = noctalia "launcher toggle";
@@ -46,7 +42,6 @@
               "Mod+K".action = focus-workspace-up;
             # "Mod+L".action = ;
             };
-          };
         };
     };
 

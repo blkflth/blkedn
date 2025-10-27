@@ -22,21 +22,22 @@
     curl
     apt
     git
+    gh
+    nh
     xdg-utils
     xdg-desktop-portal-gtk
-
     gnumake
     kdePackages.dolphin
     protonup
     fuzzel
 
-
+  # probably will move this and other fonts to a dedicated file
     nerd-fonts.atkynson-mono
   ];
 
-  home.file = {
+ # home.file = {
 
-  };
+ # };
 
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =

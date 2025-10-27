@@ -1,12 +1,10 @@
 { pkgs, ... }:
 
 {
-  hardware.opengl.driSupport32Bit = true;
 
 	home.packages = with pkgs; [
     steam
-    heoric
-	gogdl
+    lutris
 	gamemode
 	mangohud
 	blender
@@ -22,18 +20,6 @@
 	};
 
 	programs.gamemode = {
-		enable = true;
-	};
-
-	programs.heoric = {
-		enable = true;
-	};
-	
-	programs.gogdl = {
-		enable = true;
-	};
-
-	programs.blender = {
 		enable = true;
 	};
 

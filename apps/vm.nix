@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+
   # Various packages related to virtualization, compatability and sandboxing
   home.packages = with pkgs; [
     # Virtual Machines and wine
@@ -14,4 +15,9 @@
     # Filesystems
     dosfstools
   ];
+
+  	programs.virt-manager = {
+		enable = true;
+	};
+
 }

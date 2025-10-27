@@ -1,5 +1,6 @@
 {
-  description = "Nixos config flake";
+
+  description = "JLC Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -34,17 +35,21 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
     nixosConfigurations.blkedn = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
-        ./rice/rice.nix
-        inputs.home-manager.nixosModules.default
+      # ./rice/rice.nix
+      # ./apps/apps.nix
+      # ./hw/hw.nix
+        inputs.home-manager.nixosModules.home-manager
+        inputs.stylix.nixosModules.stylix
+        inputs.noctalia.nixosModules.default
+        inputs.niri.nixosModules.niri
        # vicinae.homeManagerModules.default
 
       ];
     };
   };
+
 }
