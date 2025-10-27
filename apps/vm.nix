@@ -16,8 +16,4 @@
     dosfstools
   ];
 
-  	programs.virt-manager = {
-		enable = true;
-	};
-
 }

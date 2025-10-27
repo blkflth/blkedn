@@ -15,8 +15,41 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Home Manager
+  home-manager = {
+  # also pass inputs to home-manager modules
+  extraSpecialArgs = {inherit inputs;};
+  users = {
+    "jlc" = import ./home.nix;
+    };
+  };
+
+
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.jlc = {
+    isNormalUser = true;
+    description = "JLC";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate #useful to have on hand tbh!
+    #  thunderbird
+    ];
+  };
+
+
 
   # Automatic Garbage Collection
   nix.gc = {
@@ -24,6 +57,8 @@
     dates = "weekly";
     options = "--delete-older-than 21d";
   };
+
+
 
   # Mount Points for SSDs
   fileSystems."/run/media/jlc/SSD One" = {
@@ -45,8 +80,6 @@
   };
 
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #enable OpenGL
   hardware.opengl = {
@@ -55,41 +88,28 @@
     driSupport32Bit = true;
   };
 
-  # video driver enable
-  services.xserver.videoDrivers = ["amdgpu"];
 
-  networking.hostName = "blkedn"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Home Manager
-  home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "jlc" = import ./home.nix;
-    };
+  # General services
+  services = {
+    # Video driver
+    xserver.videoDrivers = ["amdgpu"];
+    # Noctalia startup service
+    noctalia-shell.enable = true;
+    # Enable the KDE Plasma Desktop Environment.
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    # Enable the X11 windowing system.
+    # You can disable this if you're only using the Wayland session.
+    xserver.enable = true;
+    # Enable Bluetooth
+    blueman.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+    # Enable automatic login for the user.
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "jlc";
   };
-
-  # enable Niri Window Manager - NixOS source in flake
-  # programs.niri.enable = true; #unneeded since importing from sodiboo flake
-
-  # enable the noctalia systemd service
-  services.noctalia-shell.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-   services.displayManager.sddm.enable = true;
-   services.desktopManager.plasma6.enable = true;
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -97,8 +117,33 @@
     variant = "";
   };
 
+  # Audio services - Pipewire by default
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+
+
   # Enable networking
   networking.networkmanager.enable = true;
+
+  networking.hostName = "blkedn"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -118,86 +163,59 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jlc = {
-    isNormalUser = true;
-    description = "JLC";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
-  };
-
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "jlc";
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Install System Tuning Packages
-  # hardware.fancontrol.enable = true;
-  programs.coolercontrol.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # will break these out to home manager ASAP
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    # utils
-   # glibc
-   # wget
-   # curl
-   # apt
-   # git
-   # xdg-utils
-   # blueberry
-   # gnumake
-   # lm_sensors
-   # fanctl
-   # bottom
-    #programs
-   # kdePackages.dolphin
-   # microfetch
-   # fuzzel
-   # nomacs
-    #style
-   # nerd-fonts.atkynson-mono
-   # pywalfox-native
-
-
-
-
+    bibata-cursors
+    nerd-fonts.atkynson-mono
+    montserrat
   ];
+
+  # Enable programs defined by Home Manager modules.
+
+    programs = {
+      coolercontrol.enable = true;
+      steam.enable = true;
+      steam.gamescopeSession.enable = true;
+      gamemode.enable = true;
+      virt-manager.enable = true;
+      firefox.enable = true;
+      # enable Niri Window Manager - NixOS source in flake
+      # niri.enable = true; #unneeded since importing from sodiboo flake
+    };
+
+    /*
+
+    Remove everything within this comment if the above section functions as intended.
+
+	programs.steam = {
+		enable = true;
+		gamescopeSession.enable = true;
+	};
+
+	programs.gamemode = {
+		enable = true;
+	};
+
+    programs.virt-manager = {
+      enable = true;
+	};
+
+    programs.firefox = {
+      enable = true;
+	};
+
+    programs.zsh = {
+      enable = true;
+	};
+	*/
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

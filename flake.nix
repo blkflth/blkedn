@@ -39,9 +39,9 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
-      # ./rice/rice.nix
-      # ./apps/apps.nix
-      # ./hw/hw.nix
+        ./rice/rice.nix
+        ./apps/apps.nix
+        ./hw/hw.nix
         inputs.home-manager.nixosModules.home-manager
         inputs.stylix.nixosModules.stylix
         inputs.noctalia.nixosModules.default

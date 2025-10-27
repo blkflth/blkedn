@@ -6,8 +6,5 @@
     fanctl
     lm_sensors
   ];
-  services = {
-    hardware.fancontrol.enable = true;
-  };
 
 }

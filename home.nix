@@ -30,9 +30,7 @@
     kdePackages.dolphin
     protonup
     fuzzel
-
-  # probably will move this and other fonts to a dedicated file
-    nerd-fonts.atkynson-mono
+    mangohud
   ];
 
  # home.file = {

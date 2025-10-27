@@ -11,8 +11,4 @@
     vesktop
   ];
 
-	programs.firefox = {
-		enable = true;
-	};
-
 }

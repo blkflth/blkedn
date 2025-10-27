@@ -9,6 +9,7 @@
     vlc
     nyaa
     nomacs
+    portmidi
   ];
 
 }
