@@ -16,8 +16,6 @@
     # okay let's try this
     programs.niri = {
       settings = {
-        # Niri-Flake setting for electron apps
-        environment.NIXOS_OZONE_WL = [ "1" ];
           binds = with config.lib.niri.actions; {
               #noctalia bindings first
               "Mod+Space".action.spawn = noctalia "launcher toggle";

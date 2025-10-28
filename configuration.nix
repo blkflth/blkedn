@@ -96,7 +96,7 @@
     xserver.videoDrivers = ["amdgpu"];
     # Noctalia startup service
     noctalia-shell.enable = true;
-    # Enable the KDE Plasma Desktop Environment.
+    # Enable the KDE Plasma Desktop Environment. Keeping this enabled for testing
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
     # Enable the X11 windowing system.
@@ -116,6 +116,19 @@
     layout = "us";
     variant = "";
   };
+
+  # Niri-Flake setting for electron apps
+  environment = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    };
+
+  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
+   stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
+    };
+
+
 
   # Audio services - Pipewire by default
   services.pulseaudio.enable = false;
@@ -179,9 +192,6 @@
     noto-fonts-emoji-blob-bin
     base16-schemes
   ];
-
-  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
-   stylix.enable = true;
 
   # Enable programs defined by Home Manager modules.
 

@@ -2,7 +2,7 @@
 
 {
     stylix = {
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-medium.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
             # url didn't work for as yet unknown reason so the written out scheme is as follows:
             /* {
                 scheme = "Everforest Dark Medium"; author = "Sainnhe Park (https://github.com/sainnhe)";
