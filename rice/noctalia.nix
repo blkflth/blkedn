@@ -45,7 +45,7 @@
             ];
           };
         };
-        colorSchemes.predefinedScheme = "Monochrome";
+      # colorSchemes.predefinedScheme = "Monochrome";
         general = {
           avatarImage = "/home/jlc/Pictures/Icons/jlc.png";
           radiusRatio = 0.2;

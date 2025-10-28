@@ -1,32 +1,16 @@
-{ pkgs, inputs, config, ... }:
+{ config, ... }:
 
-/*  let
+  let
     noctalia = cmd: [
     "noctalia-shell" "ipc" "call"
     ] ++ (pkgs.lib.splitString " " cmd);
   in
-*/
+
 {
-
-
-    imports = [
-      # import the noctalia manager module
-      inputs.noctalia.homeModules.default
-      # import settings broken out into other files
-      ./niri/startup.nix
-      ./niri/keybinds.nix
-      ./niri/layout.nix
-      ./niri/windowrules.nix
-      ./niri/animations.nix
-      ./niri/overview.nix
-    ];
-
-    /*
     # okay let's try this
-    programs.niri = {
-      settings = {
-          binds = with config.lib.niri.actions; {
-              #noctalia bindings first
+    programs.niri.settings.binds = with config.lib.niri.actions; {
+
+              # noctalia bindings first
               "Mod+Space".action.spawn = noctalia "launcher toggle";
               "Mod+S".action.spawn = noctalia "controlCenter toggle";
               "Mod+Comma".action.spawn = noctalia "settings toggle";
@@ -39,7 +23,7 @@
               "Mod+Prior".action.spawn = noctalia "bar toggle";
               "Mod+Next".action.spawn = noctalia "wallpaper random";
 
-              #And now niri's
+              # and now niri's
 
               "Mod+1".action = focus-workspace 1;
               "Mod+2".action = focus-workspace 2;
@@ -81,8 +65,5 @@
               "Mod+Shift+K".action = move-column-to-workspace-up;
               "Mod+Shift+J".action = move-column-to-workspace-down;
 
-            };
-        };
     };
-    */
 }

@@ -1,6 +1,7 @@
 { pkgs, host, lib, ... }:
 
 {
+
     stylix = {
         base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
             # url didn't work for as yet unknown reason so the written out scheme is as follows:
@@ -49,5 +50,11 @@
                 popups = 12;
                 };
             };
+        cursor = {
+            package = pkgs.catppuccin-cursors;
+            name = "frappeDark";
+            size = 24;
+            };
     };
+
 }

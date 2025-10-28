@@ -25,6 +25,8 @@
     wev
     gh
     nh
+    nix-output-monitor
+    nvd
     xdg-utils
     xdg-desktop-portal-gtk
     gnumake
@@ -42,11 +44,15 @@
     name = "frappeDark";
     size = 24;
   };
-    /* debug this - deleting this file every build is annoying.
+    #force override of files so home-manager doesn't throw a warning
   home-manager.users.username = {
-    xdg.configFile."/home/jlc/.gtkrc-2.0".force = true;
+    gtk.gtk2.force = true;
+    # home.file."".force = true;
+    # home.file."".force = true;
+    # home.file."".force = true;
+    # home.file."".force = true;
     };
-    */
+
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "\${HOME}/.steam/root/compatibilitytools.d";

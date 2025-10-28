@@ -7,6 +7,10 @@
     numbat
     bottom
     microfetch
+    lazygit
+    lazydocker
   ];
+
+    programs.bottom.enable = true;
 
 }

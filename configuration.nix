@@ -81,13 +81,17 @@
 
 
 
-  #enable OpenGL
+  # enable OpenGL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-
+  # Enable System Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   # General services
   services = {
@@ -101,7 +105,7 @@
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
     xserver.enable = true;
-    # Enable Bluetooth
+    # Enable Bluetooth control
     blueman.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -116,9 +120,11 @@
     variant = "";
   };
 
+  environment.sessionVariables = {
   # Niri-Flake setting for electron apps
-  environment = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1";
+  # flake directory for nh
+    FLAKE = "/home/jlc/Nix";
     };
 
   # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
@@ -181,9 +187,10 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # will break these out to home manager ASAP
+
+  # See what of these can be put in home-manager
+
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alejandra
     bibata-cursors
     catppuccin-cursors
@@ -207,7 +214,7 @@
       niri.enable = true;
       niri.package = pkgs.niri-stable;
     };
-   niri-flake.cache.enable = false; #uncomment once cache is built
+      niri-flake.cache.enable = false; #uncomment once cache is built
 
 
 
