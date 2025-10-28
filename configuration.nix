@@ -173,9 +173,15 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     bibata-cursors
+    catpuccin-cursors
     nerd-fonts.atkynson-mono
     montserrat
+    noto-fonts-emoji-blob-bin
+    base16-schemes
   ];
+
+  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
+    stylix.enable = true;
 
   # Enable programs defined by Home Manager modules.
 
