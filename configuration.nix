@@ -181,7 +181,7 @@
   ];
 
   # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
-    stylix.enable = true;
+   stylix.enable = true;
 
   # Enable programs defined by Home Manager modules.
 
