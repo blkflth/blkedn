@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
   let
     noctalia = cmd: [
