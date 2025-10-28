@@ -25,10 +25,10 @@
               "Mod+Escape".action.spawn = noctalia "lockScreen lock";
               "Mod+Insert".action.spawn = noctalia "screenRecorder toggle";
               "Mod+Home".action.spawn = noctalia "notifications toggleDND";
-              "Mod+Del".action.spawn = noctalia "notifications clear";
+              "Mod+Delete".action.spawn = noctalia "notifications clear";
               "Mod+End".action.spawn = noctalia "notifications dismissAll";
-              "Mod+PageUp".action.spawn = noctalia "bar toggle";
-              "Mod+PageDown".action.spawn = noctalia "wallpaper random";
+              "Mod+Prior".action.spawn = noctalia "bar toggle";
+              "Mod+Next".action.spawn = noctalia "wallpaper random";
 
               #And now niri's
 
@@ -54,10 +54,11 @@
               "Mod+F".action = toggle-windowed-fullscreen;
               "Mod+Shift+F".action = fullscreen-window;
 
-              "Mod+Return".action = spawn-sh [ "ghostty" "-e" "fish" ]; #should spawn a terminal ?
-              "Mod+Shift+Return".action = spawn-sh [ "ghostty" "-e" "fish" "cd" "/Nix" ]; #should spawn a terminal in the ~/Nix directory?
+              # debug these later
+              # "Mod+Return".action.spawn-sh = [ "ghostty" "exec" "zsh" ]; #should spawn a terminal ?
+              # "Mod+Shift+Return".action.spawn-sh = [ "ghostty" "exec" "zsh" "cd" "/Nix" ]; #should spawn a terminal in the ~/Nix directory?
 
-              "Mod+Tilde".action = show-hotkey-overlay;
+              "Mod+Grave".action = show-hotkey-overlay;
 
               "Mod+L".action = focus-column-right;
               "Mod+H".action = focus-column-left;

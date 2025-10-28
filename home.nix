@@ -19,6 +19,7 @@
     curl
     apt
     git
+    wev
     gh
     nh
     xdg-utils

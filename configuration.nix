@@ -184,6 +184,7 @@
   # will break these out to home manager ASAP
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    alejandra
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
@@ -201,10 +202,13 @@
       gamemode.enable = true;
       virt-manager.enable = true;
       firefox.enable = true;
-      # enable Niri Window Manager - NixOS source in flake
-      # niri.enable = true; #unneeded since importing from sodiboo flake
+    # enable Niri Window Manager - NixOS source in flake, builds using cachix
+      niri.enable = false;
+      niri.package = pkgs.niri;
     };
 
+
+    # niri-flake.cache.enable = false; #uncomment once cache is built
     /*
 
     Remove everything within this comment if the above section functions as intended.

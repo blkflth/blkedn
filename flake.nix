@@ -66,6 +66,9 @@
             inputs.stylix.nixosModules.stylix
             inputs.noctalia.nixosModules.default
             inputs.niri.nixosModules.niri
+              {
+                nixpkgs.overlays = [ niri.overlays.niri ];
+              }
           # vicinae.homeManagerModules.default
             ];
     };
