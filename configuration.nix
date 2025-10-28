@@ -96,8 +96,8 @@
     # Noctalia startup service
     noctalia-shell.enable = true;
     # Enable the KDE Plasma Desktop Environment. Keeping this enabled for testing
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma6.enable = true;
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
     xserver.enable = true;
@@ -191,6 +191,7 @@
     montserrat
     noto-fonts-emoji-blob-bin
     base16-schemes
+    davinci-resolve
   ];
 
   # Enable programs defined by Home Manager modules.
@@ -203,37 +204,11 @@
       virt-manager.enable = true;
       firefox.enable = true;
     # enable Niri Window Manager - NixOS source in flake, builds using cachix
-      niri.enable = false;
-      niri.package = pkgs.niri;
+      niri.enable = true;
+      niri.package = pkgs.niri-stable;
     };
+   niri-flake.cache.enable = false; #uncomment once cache is built
 
-
-    # niri-flake.cache.enable = false; #uncomment once cache is built
-    /*
-
-    Remove everything within this comment if the above section functions as intended.
-
-	programs.steam = {
-		enable = true;
-		gamescopeSession.enable = true;
-	};
-
-	programs.gamemode = {
-		enable = true;
-	};
-
-    programs.virt-manager = {
-      enable = true;
-	};
-
-    programs.firefox = {
-      enable = true;
-	};
-
-    programs.zsh = {
-      enable = true;
-	};
-	*/
 
 
   # Some programs need SUID wrappers, can be configured further or are

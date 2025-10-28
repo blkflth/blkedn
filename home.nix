@@ -12,6 +12,9 @@
 
   home.stateVersion = "25.05"; # Don't Change This.
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
   # Best these live here
     glibc
@@ -29,6 +32,7 @@
     protonup
     fuzzel
     mangohud
+    unar
   ];
 
   home.pointerCursor = {
@@ -38,7 +42,11 @@
     name = "frappeDark";
     size = 24;
   };
-
+    /* debug this - deleting this file every build is annoying.
+  home-manager.users.username = {
+    xdg.configFile."/home/jlc/.gtkrc-2.0".force = true;
+    };
+    */
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "\${HOME}/.steam/root/compatibilitytools.d";
