@@ -82,10 +82,9 @@
 
 
   #enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
 
@@ -186,7 +185,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     bibata-cursors
-    catpuccin-cursors
+    catppuccin-cursors
     nerd-fonts.atkynson-mono
     montserrat
     noto-fonts-emoji-blob-bin

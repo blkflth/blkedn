@@ -7,7 +7,7 @@
   	oh-my-zsh
     fzf
     fzf-zsh
-    zsh-fzfz-tab
+    zsh-fzf-tab
   ];
 
   programs = {

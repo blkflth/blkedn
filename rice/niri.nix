@@ -54,8 +54,8 @@
               "Mod+F".action = toggle-windowed-fullscreen;
               "Mod+Shift+F".action = fullscreen-window;
 
-              "Mod+Return".spawn = [ "ghostty" "-e" "fish" ]; #should spawn a terminal ?
-              "Mod+Shift+Return".spawn = [ "ghostty" "-e" "fish" "cd" "/Nix" ]; #should spawn a terminal in the ~/Nix directory, for easy rebuilds
+              "Mod+Return".action = spawn-sh [ "ghostty" "-e" "fish" ]; #should spawn a terminal ?
+              "Mod+Shift+Return".action = spawn-sh [ "ghostty" "-e" "fish" "cd" "/Nix" ]; #should spawn a terminal in the ~/Nix directory?
 
               "Mod+Tilde".action = show-hotkey-overlay;
 

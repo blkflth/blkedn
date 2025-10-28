@@ -33,7 +33,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.catpuccin-cursors;
+    package = pkgs.catppuccin-cursors;
     name = "frappeDark";
     size = 24;
   };
