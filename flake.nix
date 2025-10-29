@@ -1,45 +1,50 @@
+
 {
 
   description = "JLC Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-     home-manager = {
-       url = "github:nix-community/home-manager";
-       inputs.nixpkgs.follows = "nixpkgs";
-     };
+      home-manager = {
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
 
-     niri = {
+      niri = {
         url = "github:sodiboo/niri-flake";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-     quickshell = {
+      quickshell = {
         url = "github:outfoxxed/quickshell";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-     noctalia = {
+      noctalia = {
         url = "github:noctalia-dev/noctalia-shell";
         inputs.nixpkgs.follows = "nixpkgs";
         inputs.quickshell.follows = "quickshell";  # Use same quickshell version
       };
 
-     stylix = {
+      matugen = {
+        url = "github:/InioX/Matugen";
+      };
+
+      stylix = {
         url = "github:nix-community/stylix";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-     alejandra = {
+      alejandra = {
         url = "github:kamadorueda/alejandra/4.0.0";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-    # vicinae.url = "github:vicinaehq/vicinae";
-     # extra-substituters = [ "https://vicinae.cachix.org" ];
-     # extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
+      vicinae = {
+        url = "github:vicinaehq/vicinae";
+      };
 
 
   };
@@ -51,6 +56,7 @@
     niri,
     stylix,
     alejandra,
+    vicinae,
     ...
       } @ inputs: {
         formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -63,13 +69,13 @@
             # ./apps/apps.nix
             # ./hw/hw.nix
             inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
             inputs.noctalia.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            vicinae.homeManagerModules.default
             inputs.niri.nixosModules.niri
               {
                 nixpkgs.overlays = [ niri.overlays.niri ];
               }
-          # vicinae.homeManagerModules.default
             ];
     };
   };

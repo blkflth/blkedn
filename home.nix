@@ -15,6 +15,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  services.vicinae = {
+        enable = true; # default: false
+        autoStart = true; # default: true
+    };
+
   home.packages = with pkgs; [
   # Best these live here
     glibc
@@ -32,11 +37,12 @@
     gnumake
     kdePackages.dolphin
     protonup
-    fuzzel
+    #fuzzel
     mangohud
     unar
   ];
 
+  /*
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
@@ -44,14 +50,15 @@
     name = "frappeDark";
     size = 24;
   };
+  */
+
     #force override of files so home-manager doesn't throw a warning
-  home-manager.users.username = {
+
     gtk.gtk2.force = true;
-    # home.file."".force = true;
-    # home.file."".force = true;
-    # home.file."".force = true;
-    # home.file."".force = true;
-    };
+   # home.file.".config/gtk-3.0".force = true;
+   # home.file.".config/gtk-3.0/settings.ini".force = true;
+   # home.file.".config/gtk-4.0/".force = true;
+   # home.file.".config/gtk-4.0/settings.ini".force = true;
 
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =

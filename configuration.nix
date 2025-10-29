@@ -1,14 +1,20 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
+# Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
+
+  # let binding to allow matugen to work, may be used for other things later
+  let
+    system = "x86_64-linux";
+  in
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
+      inputs.matugen.nixosModules.default
+
     ];
 
   # Bootloader.
@@ -21,24 +27,8 @@
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
-  # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Home Manager
-  home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "jlc" = import ./home.nix;
-    };
-  };
-
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. set a password with ‘passwd’.
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
@@ -50,14 +40,122 @@
   };
 
 
+  # Define hostname.
+  networking.hostName = "blkedn";
 
-  # Automatic Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 21d";
+  # Enable networking
+  networking.networkmanager.enable = true;
+  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;
+
+  # Enable System Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
   };
 
+  # Set your time zone.
+  time.timeZone = "America/New_York";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+
+  # Audio services - Pipewire by default
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+    };
+
+
+  # enable OpenGL
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
+  environment.sessionVariables = {
+  # Niri-Flake setting for electron apps
+    NIXOS_OZONE_WL = "1";
+  # flake directory for nh
+    FLAKE = "/home/jlc/Nix";
+    };
+
+
+  # General services
+  services = {
+    # Video driver
+    xserver.videoDrivers = ["amdgpu"];
+    # Noctalia startup service
+    noctalia-shell.enable = true;
+    # Enable the KDE Plasma Desktop Environment. Keeping this enabled for testing
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma6.enable = true;
+    # Enable the X11 windowing system.
+    # You can disable this if you're only using the Wayland session.
+    xserver.enable = true;
+    # Enable Bluetooth control
+    blueman.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+    # fetching daemon
+    # hayabusa.enable = true;
+    # Enable automatic login for the user.
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "jlc";
+  };
+
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Enable Home Manager
+  home-manager = {
+  # also pass inputs to home-manager modules
+  extraSpecialArgs = {inherit inputs;};
+  users = {
+    "jlc" = import ./home.nix;
+    };
+  };
+
+
+  # Automatic Garbage Collection
+  nix = {
+    optimise.automatic = true;
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+  };
 
 
   # Mount Points for SSDs
@@ -80,118 +178,25 @@
   };
 
 
+  # cachix sources
+  nix.settings = {
+    substituters = [
+    "https://vicinae.cachix.org"
+    ];
 
-  # enable OpenGL
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  # Enable System Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-  };
-
-  # General services
-  services = {
-    # Video driver
-    xserver.videoDrivers = ["amdgpu"];
-    # Noctalia startup service
-    noctalia-shell.enable = true;
-    # Enable the KDE Plasma Desktop Environment. Keeping this enabled for testing
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma6.enable = true;
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    xserver.enable = true;
-    # Enable Bluetooth control
-    blueman.enable = true;
-    # Enable CUPS to print documents.
-    printing.enable = true;
-    # Enable automatic login for the user.
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "jlc";
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  environment.sessionVariables = {
-  # Niri-Flake setting for electron apps
-    NIXOS_OZONE_WL = "1";
-  # flake directory for nh
-    FLAKE = "/home/jlc/Nix";
-    };
-
-  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
-   stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
-    };
-
-
-
-  # Audio services - Pipewire by default
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    trusted-public-keys = [
+    "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+    ];
   };
 
 
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  networking.hostName = "blkedn"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Set your time zone.
-  time.timeZone = "America/New_York";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
 
   # See what of these can be put in home-manager
-
   environment.systemPackages = with pkgs; [
     alejandra
+    nix-init
+    pywal
+    inputs.matugen.packages.${system}.default
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
@@ -200,6 +205,14 @@
     base16-schemes
     davinci-resolve
   ];
+
+
+  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
+  };
+
 
   # Enable programs defined by Home Manager modules.
 
@@ -225,8 +238,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
