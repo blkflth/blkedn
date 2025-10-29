@@ -33,7 +33,6 @@
     kdePackages.dolphin
     protonup
     #fuzzel
-    inputs.vicinae.packages.x86_64-linux.default
     mangohud
     unar
   ];

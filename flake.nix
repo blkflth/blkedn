@@ -1,4 +1,3 @@
-
 {
 
   description = "JLC Flake";
@@ -49,35 +48,53 @@
 
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    niri,
-    stylix,
-    alejandra,
-    vicinae,
-    ...
-      } @ inputs: {
-        formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-        nixosConfigurations.blkedn = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, niri, stylix, alejandra, vicinae, ... } @ inputs:
+        let
           system = "x86_64-linux";
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
           specialArgs = {inherit inputs;};
+        in
+      {
+        formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+        nixosConfigurations.blkedn = nixpkgs.lib.nixosSystem
+        {
+          system = system;
+          specialArgs = specialArgs;
             modules = [
               ./configuration.nix
-            # ./rice/rice.nix
-            # ./apps/apps.nix
-            # ./hw/hw.nix
+
             inputs.home-manager.nixosModules.home-manager
             inputs.noctalia.nixosModules.default
             inputs.stylix.nixosModules.stylix
-            vicinae.homeManagerModules.default
             inputs.niri.nixosModules.niri
+                {
+                  nixpkgs.overlays = [ niri.overlays.niri ];
+                }
+              ];
+        };
+
+
+        homeConfigurations =
+          let
+            pkgs = nixpkgs.legacyPackages.${system};
+            config = {
+              inherit pkgs;
+              extraSpecialArgs = specialArgs;
+            };
+          in
+            {
+            users = home-manager.lib.homeManagerConfiguration
               {
-                nixpkgs.overlays = [ niri.overlays.niri ];
-              }
-            ];
-    };
-  };
+              modules = [
+                  ./home.nix
+                  vicinae.homeManagerModules.default
+                  # ./rice/rice.nix
+                  # ./apps/apps.nix
+                  # ./hw/hw.nix
+              ];
+              };
+            };
+        };
 
 }
+
