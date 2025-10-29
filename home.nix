@@ -15,11 +15,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  services.vicinae = {
-        enable = true; # default: false
-        autoStart = true; # default: true
-    };
-
   home.packages = with pkgs; [
   # Best these live here
     glibc
@@ -38,9 +33,15 @@
     kdePackages.dolphin
     protonup
     #fuzzel
+    inputs.vicinae.packages.x86_64-linux.default
     mangohud
     unar
   ];
+
+   services.vicinae = {
+        enable = true; # default: false
+        autoStart = true; # default: true
+    };
 
   /*
   home.pointerCursor = {

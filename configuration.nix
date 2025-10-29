@@ -3,11 +3,6 @@
 
 { config, pkgs, inputs, ... }:
 
-  # let binding to allow matugen to work, may be used for other things later
-  let
-    system = "x86_64-linux";
-  in
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -196,7 +191,7 @@
     alejandra
     nix-init
     pywal
-    inputs.matugen.packages.${system}.default
+    inputs.matugen.packages.x86_64-linux.default
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
