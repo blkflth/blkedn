@@ -36,11 +36,6 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      alejandra = {
-        url = "github:kamadorueda/alejandra/4.0.0";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
       vicinae = {
         url = "github:vicinaehq/vicinae";
       };
@@ -48,8 +43,9 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, stylix, alejandra, vicinae, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, niri, stylix, vicinae, ... } @ inputs:
         let
+        # users = "jlc";
           system = "x86_64-linux";
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           specialArgs = {inherit inputs;};
@@ -76,22 +72,22 @@
 
         homeConfigurations =
           let
-            pkgs = nixpkgs.legacyPackages.${system};
+          # pkgs = nixpkgs.legacyPackages.${system};
             config = {
               inherit pkgs;
               extraSpecialArgs = specialArgs;
             };
           in
             {
-            users = home-manager.lib.homeManagerConfiguration
-              {
-              modules = [
-                  ./home.nix
-                  vicinae.homeManagerModules.default
-                  # ./rice/rice.nix
-                  # ./apps/apps.nix
-                  # ./hw/hw.nix
-              ];
+              homeConfigurations = {
+                "jlc" = home-manager.lib.homeManagerConfiguration
+                  {
+                    pkgs = import nixpkgs { system = system; };
+                    modules = [
+                        ./home.nix
+                        vicinae.homeManagerModules.default
+                    ];
+                  };
               };
             };
         };
