@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "jlc";
   home.homeDirectory = "/home/jlc";
 
   imports = [
+  inputs.vicinae.homeManagerModules.default
   ./rice/rice.nix
   ./apps/apps.nix
   ./hw/hw.nix
@@ -35,7 +36,7 @@
     mangohud
     unar
     #fuzzel
-    inputs.vicinae.packages.x86_64-linux.default
+
     ];
 
    services.vicinae = {
