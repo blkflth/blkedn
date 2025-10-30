@@ -4,7 +4,7 @@
 
   programs.niri.settings = {
     layout = {
-      gaps = 4;
+      gaps = 2;
       background-color = "00000000";
       center-focused-column = "on-overflow";
       preset-column-widths = [
@@ -14,8 +14,8 @@
         { proportion = 0.66667; }
       ];
       struts = {
-        bottom = 12;
-        top = 12;
+        bottom = 10;
+        top = 10;
         left = 8;
         right = 8;
       };
@@ -24,15 +24,15 @@
       focus-ring = {
         enable = false;
         width = 2;
-        active.color = "#009000";
+        active.color = "#d7ead7";
         inactive.color = "#101010ff";
         urgent.color = "#dc5a5a";
       };
       border = {
         enable = true;
-        active.color = "#be1c6c";
+        active.color = "#df88b3";
         inactive.color = "#101010ff";
-        width = 2;
+        width = 1;
       };
       shadow = {
         enable = true;

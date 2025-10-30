@@ -104,7 +104,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
-    NH_FLAKE = "/home/jlc/Nix";
+    flake = "NH_FLAKE = /home/jlc/Nix";
     };
 
   # Automatic Nix Store Management - Handling Garbage collection w/ nh's functions above
@@ -201,7 +201,8 @@
     apt
 
     # general use
-    kdePackages.dolphin # GUI file browser
+    nautilus #GNOME file browser
+    kdePackages.dolphin # KDE file browser
     davinci-resolve
 
     /* for hardware control -
@@ -212,6 +213,7 @@
     # display shenangians
     xdg-utils
     xdg-desktop-portal-gtk
+    xwayland-satellite
 
     # styling tools
     pywal
@@ -232,11 +234,16 @@
 
   ];
 
-  # enables GNOME portal for spawning extra windows
+  # enable portals for spawning extra windows
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+    config = {
+      common = {
+        default = [ "gnome" ];
+      };
+    };
+    extraPortals = with pkgs; [ xdg-desktop-portal-gnome  ];
   };
 
   # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
