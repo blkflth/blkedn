@@ -82,7 +82,7 @@
               homeConfigurations = {
                 "jlc" = home-manager.lib.homeManagerConfiguration
                   {
-                    pkgs = import nixpkgs { system = system; };
+                    pkgs = pkgs;
                     modules = [
                         ./home.nix
                         vicinae.homeManagerModules.default
