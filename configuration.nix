@@ -96,10 +96,27 @@
   environment.sessionVariables = {
   # Niri-Flake setting for electron apps
     NIXOS_OZONE_WL = "1";
-  # flake directory for nh
-    FLAKE = "/home/jlc/Nix";
+
     };
 
+    # Nix CLI Helper tool, including flake paths for commands
+    programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    NH_FLAKE = "/home/jlc/Nix";
+    };
+
+  # Automatic Nix Store Management - Handling Garbage collection w/ nh's functions above
+  nix = {
+    optimise.automatic = true;
+    settings.auto-optimise-store = true;
+     /*gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };  */
+  };
 
   # General services
   services = {
@@ -107,12 +124,12 @@
     xserver.videoDrivers = ["amdgpu"];
     # Noctalia startup service
     noctalia-shell.enable = true;
-    # Enable the KDE Plasma Desktop Environment. Keeping this enabled for testing
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma6.enable = true;
+    # SDDM display Manager
+    displayManager.sddm.enable = true;
     # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
     xserver.enable = true;
+    # KDE Plasma - here just in case
+    # desktopManager.plasma6.enable = true;
     # Enable Bluetooth control
     blueman.enable = true;
     # Enable CUPS to print documents.
@@ -141,18 +158,6 @@
   };
 
 
-  # Automatic Garbage Collection
-  nix = {
-    optimise.automatic = true;
-    settings.auto-optimise-store = true;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-  };
-
-
   # Mount Points for SSDs
   fileSystems."/run/media/jlc/SSD One" = {
   device = "/dev/disk/by-uuid/0A4A387B4A38661B";
@@ -173,34 +178,66 @@
   };
 
 
-  # cachix sources
-  nix.settings = {
-    substituters = [
-    "https://vicinae.cachix.org"
-    ];
-
-    trusted-public-keys = [
-    "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
-    ];
-  };
-
-
 
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
-    alejandra
-    nix-init
+    # system tools
+    alejandra #nix language formatting
+    nix-init #tool of building packages
+    unar #unarchive tools
+    glibc #c language library
+    gnumake # 'make' commands
+    wev #forgot what this is tbh
+    nix-output-monitor
+    nvd
+
+    # git
+    git
+    gh #github cli tools
+
+    # package managers
+    wget
+    curl
+    apt
+
+    # general use
+    kdePackages.dolphin # GUI file browser
+    davinci-resolve
+
+    /* for hardware control -
+    thought these weren't necessary but CoolerControl's daemon was having issues. */
+    lm_sensors
+    fanctl
+
+    # display shenangians
+    xdg-utils
+    xdg-desktop-portal-gtk
+
+    # styling tools
     pywal
+    base16-schemes
     inputs.matugen.packages.x86_64-linux.default
+
+    # game/3d tools
+    protonup-ng #installed protol GE
+    protonup-qt #GUI fro managing Proton GE
+    mangohud #process overlay
+
+    # cursors + fonts
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
     montserrat
     noto-fonts-emoji-blob-bin
-    base16-schemes
-    davinci-resolve
+
   ];
 
+  # enables GNOME portal for spawning extra windows
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+  };
 
   # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
   stylix = {
@@ -223,6 +260,19 @@
       niri.package = pkgs.niri-stable;
     };
       niri-flake.cache.enable = false; #uncomment once cache is built
+
+  # cachix sources
+    nix.settings = {
+      substituters = [
+        "https://vicinae.cachix.org"
+      ];
+
+      trusted-public-keys = [
+        "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+      ];
+    };
+
+
 
 
 

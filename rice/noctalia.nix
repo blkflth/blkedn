@@ -27,11 +27,11 @@
               }
               {
                 enabled = true;
-                id = "audio-card";
+                id = "weather-card";
               }
               {
                 enabled = true;
-                id = "weather-card";
+                id = "audio-card";
               }
               {
                 enabled = true;
@@ -43,14 +43,17 @@
           position = "close_to_bar_button";
           shortcuts = {
             left = [
-              {
-                id = "Bluetooth";
-              }
+
               {
                 id = "ScreenRecorder";
               }
               {
                 id = "WallpaperSelector";
+              }
+            ];
+            center = [
+              {
+                id = "Bluetooth";
               }
             ];
             right = [
@@ -225,7 +228,7 @@
           mprisBlacklist = [
           ];
           preferredPlayer = "";
-          visualizerType = "linear";
+          visualizerType = "wave";
           volumeOverdrive = false;
           volumeStep = 5;
         };
@@ -243,14 +246,14 @@
           discord_webcord = false;
           enableUserTemplates = false;
           foot = false;
-          fuzzel = true;
+          fuzzel = false;
           ghostty = true;
           gtk = true;
           kcolorscheme = true;
           kitty = false;
           pywalfox = true;
           qt = true;
-          vicinae = false;
+          vicinae = true;
         };
 
 
@@ -264,7 +267,7 @@
           };
 
         wallpaper = {
-          defaultWallpaper = "";
+          defaultWallpaper = "/home/jlc/Pictures/wallpapers/tokyo_night-04.png";
           directory = "/home/jlc/Pictures/wallpapers";
           enableMultiMonitorDirectories = false;
           enabled = true;
@@ -281,8 +284,8 @@
           randomIntervalSec = 4140;
           setWallpaperOnAllMonitors = true;
           transitionDuration = 1500;
-          transitionEdgeSmoothness = 0.05;
-          transitionType = "stripes";
+          transitionEdgeSmoothness = 0.15;
+          transitionType = "disc";
         };
 
       };

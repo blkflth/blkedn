@@ -89,7 +89,7 @@
               "Mod+Return".action.spawn = [ "ghostty" "-e" "zsh" ];
               "Mod+Return".hotkey-overlay.title = "Open Terminal";
 
-              "Mod+Shift+Return".action.spawn = [ "ghostty" "cd /Nix" ];
+              "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];
               "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
 
               "Mod+E".action.spawn = [ "ghostty" "-e" "superfile" ]; #open TUI file explorer
@@ -98,8 +98,11 @@
               "Mod+Shift+R".action.spawn = [ "ghostty" "-e" "btm" ]; #open system monitor
               "Mod+Shift+R".hotkey-overlay.title = "Open System Monitoring";
 
-              "Mod+Shift+S".action.spawn = [ "ghostty" "microfetch" ];
+              "Mod+Shift+S".action.spawn = [ "ghostty" "-e" "microfetch" ];
               "Mod+Shift+S".hotkey-overlay.title = "Show System Info";
+
+              "Mod+Shift+Space".action.spawn = [ "vicinae" "toggle" ];
+              "Mod+Shift+Space".hotkey-overlay.title = "App Launcher";
 
     };
 

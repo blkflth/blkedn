@@ -1,12 +1,13 @@
-{ config, ... }:
+{ config, inputs, pkgs, ... }:
 # Start the following programs at launch
 {
 
     programs.niri.settings.spawn-at-startup = [
         { argv = [ "vesktop" ]; }
         { argv = [ "firefox" ]; }
-        { command = [ "btm" ]; }
-        { command = [ "microfetch" ]; }
+        { argv = [ "btm" ]; }
+        { argv = [ "microfetch" ]; }
+        { argv = [ "noctalia-shell" ]; }
     ];
 
 }

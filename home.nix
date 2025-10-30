@@ -17,25 +17,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-  # Best these live here
-    glibc
-    wget
-    curl
-    apt
-    git
-    wev
-    gh
-    nh
-    nix-output-monitor
-    nvd
-    xdg-utils
-    xdg-desktop-portal-gtk
-    gnumake
-    kdePackages.dolphin
-    protonup
-    mangohud
-    unar
-    #fuzzel
 
     ];
 
