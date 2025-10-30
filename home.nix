@@ -32,10 +32,11 @@
     gnumake
     kdePackages.dolphin
     protonup
-    #fuzzel
     mangohud
     unar
-  ];
+    #fuzzel
+    inputs.vicinae.packages.x86_64-linux.default
+    ];
 
    services.vicinae = {
         enable = true; # default: false
