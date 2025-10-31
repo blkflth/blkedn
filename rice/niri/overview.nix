@@ -6,8 +6,8 @@
     overview = {
       workspace-shadow = {
         enable = true;
-        spread = 5;
-        softness = 100;
+        spread = 30;
+        softness = 65;
       };
     };
   };

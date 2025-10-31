@@ -104,7 +104,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
-    flake = "NH_FLAKE = /home/jlc/Nix";
+    flake = "NH_FLAKE = /home/jlc/Nix/";
     };
 
   # Automatic Nix Store Management - Handling Garbage collection w/ nh's functions above
@@ -213,6 +213,7 @@
     # display shenangians
     xdg-utils
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-termfilechooser
     xwayland-satellite
 
     # styling tools

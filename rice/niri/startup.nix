@@ -5,9 +5,8 @@
     programs.niri.settings.spawn-at-startup = [
         { argv = [ "vesktop" ]; }
         { argv = [ "firefox" ]; }
-        { argv = [ "btm" ]; }
-        { argv = [ "microfetch" ]; }
-        { argv = [ "noctalia-shell" ]; }
+        { sh = "btm"; }
+        { sh = "microfetch"; }
     ];
 
 }

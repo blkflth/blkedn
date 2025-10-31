@@ -200,10 +200,10 @@
           audioCodec = "opus";
           audioSource = "default_output";
           colorRange = "limited";
-          directory = "";
+          directory = "/home/jlc/Videos/";
           frameRate = 60;
           quality = "very_high";
-          showCursor = true;
+          showCursor = false;
           videoCodec = "h264";
           videoSource = "portal";
         };

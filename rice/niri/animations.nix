@@ -7,13 +7,13 @@
       anim = {
         enable = true;
         kind.easing = {
-          duration-ms = 300;
+          duration-ms = 280;
           curve = "cubic-bezier";
           curve-args = [
-            0
-            1
-            0
-            1
+            0.26
+            0.38
+            0.3
+            1.28
           ];
         };
       };

@@ -13,8 +13,8 @@
               # <name>.hotkey-overlay.title = ""; # Custom Titling
               # noctalia bindings first
 
-              "Mod+Space".action.spawn = noctalia "launcher toggle";
-              "Mod+Space".hotkey-overlay.title = "App Launcher";
+            # "Mod+Space".action.spawn = noctalia "launcher toggle";
+            # "Mod+Space".hotkey-overlay.title = "App Launcher";
 
               "Mod+S".action.spawn = noctalia "controlCenter toggle";
               "Mod+S".hotkey-overlay.title = "Control Center";
@@ -64,6 +64,7 @@
               "Mod+Tab".action = toggle-overview;
               "Mod+Shift+W".action = close-window;
               "Mod+R".action = switch-preset-column-width-back;
+              "Mod+Shift+R".action = switch-preset-window-height-back;
 
               "Mod+C".action = center-column;
               "Mod+Shift+C".action = center-visible-columns;
@@ -86,23 +87,23 @@
               "Mod+BracketRight".action = consume-or-expel-window-right;
 
 
-              "Mod+Return".action.spawn = [ "ghostty" "-e" "zsh" ];
+              "Mod+Return".action.spawn = [ "ghostty" "-e" "zsh" "microfetch" ];
               "Mod+Return".hotkey-overlay.title = "Open Terminal";
 
-              "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];
+              "Mod+Shift+Return".action.spawn = [ "ghostty" "cd" "Nix" ];
               "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
 
               "Mod+E".action.spawn = [ "ghostty" "-e" "superfile" ]; #open TUI file explorer
               "Mod+E".hotkey-overlay.title = "Open File Explorer";
 
-              "Mod+Shift+R".action.spawn = [ "ghostty" "-e" "btm" ]; #open system monitor
-              "Mod+Shift+R".hotkey-overlay.title = "Open System Monitoring";
+              "Mod+Alt+S".action.spawn = [ "ghostty" "-e" "btm" ]; #open system monitor
+              "Mod+Alt+S".hotkey-overlay.title = "Open System Monitoring";
 
               "Mod+Shift+S".action.spawn = [ "ghostty" "-e" "microfetch" ];
               "Mod+Shift+S".hotkey-overlay.title = "Show System Info";
 
-              "Mod+Shift+Space".action.spawn = [ "vicinae" "toggle" ];
-              "Mod+Shift+Space".hotkey-overlay.title = "App Launcher";
+              "Mod+Space".action.spawn = [ "vicinae" "toggle" ];
+              "Mod+Space".hotkey-overlay.title = "App Launcher";
 
     };
 

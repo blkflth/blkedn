@@ -6,7 +6,7 @@
     window-rules = [
       {
         matches = [{is-focused = false;}];
-        opacity = 0.90;
+        opacity = 0.85;
       }
       {
         matches = [{is-urgent = true;}];
@@ -15,10 +15,10 @@
       {
         clip-to-geometry = true;
         geometry-corner-radius = {
-          top-left = 4.5;
-          top-right = 4.5;
-          bottom-left = 4.5;
-          bottom-right = 4.5;
+          top-left = 10.0;
+          top-right = 10.0;
+          bottom-left = 10.0;
+          bottom-right = 10.0;
         };
       }
       {
