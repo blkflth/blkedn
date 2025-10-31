@@ -9,7 +9,8 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.matugen.nixosModules.default
-     ./rice/stylix.nix
+      ./rice/stylix.nix
+      ./hw/virt.nix
     ];
 
   # Bootloader.
@@ -27,13 +28,12 @@
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  kdePackages.kate #useful to have on hand tbh!
     #  thunderbird
     ];
   };
-
 
   # Define hostname.
   networking.hostName = "blkedn";
@@ -234,12 +234,13 @@
     protonup-qt #GUI for managing Proton GE
     mangohud #process overlay
 
-    # cursors + fonts
+    # cursors + fonts + icons
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
     montserrat
     noto-fonts-emoji-blob-bin
+    gnome.adwaita-icon-theme
 
   ];
 
@@ -291,7 +292,7 @@
 
 /*
   programs.vscode = {
-    home.file."/home/jlc/.config/Code/User/settings".json.source = 
+    home.file.".config/Code/User/settings.json".source = 
         lib.mkForce (config.lib.file.mkOutOfStoreSymlink 
         "/home/jlc/Nix/settings/vscode-settings.json"
       );
