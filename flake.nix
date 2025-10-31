@@ -43,7 +43,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, stylix, vicinae, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, niri, vicinae, ... } @ inputs:
         let
         # users = "jlc";
           system = "x86_64-linux";

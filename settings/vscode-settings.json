@@ -1,0 +1,19 @@
+{
+  "chat.editor.fontFamily": "Atkynson Mono",
+  "chat.editor.fontSize": 20.0,
+  "debug.console.fontFamily": "Atkynson Mono",
+  "debug.console.fontSize": 20.0,
+  "editor.fontFamily": "Atkynson Mono",
+  "editor.fontSize": 20.0,
+  "editor.inlayHints.fontFamily": "Atkynson Mono",
+  "editor.inlineSuggest.fontFamily": "Atkynson Mono",
+  "editor.minimap.sectionHeaderFontSize": 12.857142857142858,
+  "markdown.preview.fontFamily": "Montserrat",
+  "markdown.preview.fontSize": 20.0,
+  "scm.inputFontFamily": "Atkynson Mono",
+  "scm.inputFontSize": 18.571428571428573,
+  "screencastMode.fontSize": 80.0,
+  "terminal.integrated.fontSize": 20.0,
+  "workbench.colorTheme": "Stylix",
+  "nix.formatterPath": "nixfmt"
+}

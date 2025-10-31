@@ -19,8 +19,8 @@
               "Mod+S".action.spawn = noctalia "controlCenter toggle";
               "Mod+S".hotkey-overlay.title = "Control Center";
 
-              "Mod+Comma".action.spawn = noctalia "settings toggle";
-              "Mod+Comma".hotkey-overlay.title = "Settings";
+              "Mod+Alt+Comma".action.spawn = noctalia "settings toggle";
+              "Mod+Alt+Comma".hotkey-overlay.title = "Settings";
 
               "Mod+V".action.spawn = noctalia "launcher clipboard";
               "Mod+V".hotkey-overlay.title = "Clipboard";

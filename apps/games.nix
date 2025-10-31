@@ -3,11 +3,13 @@
 {
 
 	home.packages = with pkgs; [
-    steam
-    lutris
-	gamemode
-	mangohud
-	blender
+
   ];
+
+	programs.lutris = {
+		enable = true;
+		steamPackage  = osConfig.programs.steam.package;
+		protonPackages = [ pkgs.proton-ge-bin ];
+	};
 
 }

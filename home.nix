@@ -43,7 +43,9 @@
    # home.file.".config/gtk-4.0/".force = true;
    # home.file.".config/gtk-4.0/settings.ini".force = true;
 
-  home.sessionVariables = {
+
+
+home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "\${HOME}/.steam/root/compatibilitytools.d";
   };

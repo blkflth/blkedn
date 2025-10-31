@@ -5,8 +5,9 @@
     programs.niri.settings.spawn-at-startup = [
         { argv = [ "vesktop" ]; }
         { argv = [ "firefox" ]; }
-        { sh = "btm"; }
-        { sh = "microfetch"; }
+        #{ argv = [ "ghostty" "-e" "btm" ]; }
+        #{ argv = [ "ghostty" "microfetch" ]; }
     ];
 
 }
+ 

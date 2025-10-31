@@ -1,7 +1,7 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
@@ -9,7 +9,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.matugen.nixosModules.default
-
+     ./rice/stylix.nix
     ];
 
   # Bootloader.
@@ -29,7 +29,7 @@
     description = "JLC";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate #useful to have on hand tbh!
+    #  kdePackages.kate #useful to have on hand tbh!
     #  thunderbird
     ];
   };
@@ -46,7 +46,7 @@
   # Enable System Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true;
   };
 
   # Set your time zone.
@@ -96,15 +96,14 @@
   environment.sessionVariables = {
   # Niri-Flake setting for electron apps
     NIXOS_OZONE_WL = "1";
-
     };
 
-    # Nix CLI Helper tool, including flake paths for commands
-    programs.nh = {
+  # Nix CLI Helper tool, including flake paths for commands
+  programs.nh = {
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
-    flake = "NH_FLAKE = /home/jlc/Nix/";
+    # flake = "~/Nix"; find out how tf this string needs to be written
     };
 
   # Automatic Nix Store Management - Handling Garbage collection w/ nh's functions above
@@ -182,6 +181,7 @@
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
+    bluez-headers # bluetooth enabling
     alejandra #nix language formatting
     nix-init #tool of building packages
     unar #unarchive tools
@@ -200,10 +200,17 @@
     curl
     apt
 
-    # general use
+    # general use and media
     nautilus #GNOME file browser
-    kdePackages.dolphin # KDE file browser
+    # kdePackages.dolphin # KDE file browser
     davinci-resolve
+    feishin # Subsonic interface
+    ani-cli #CLI anime streaming
+    nyaa # cli torrent downloader - see if this can be linked to media server
+    nicotine-plus # soulseek client
+
+    # music metadata editors
+    picard
 
     /* for hardware control -
     thought these weren't necessary but CoolerControl's daemon was having issues. */
@@ -222,8 +229,9 @@
     inputs.matugen.packages.x86_64-linux.default
 
     # game/3d tools
-    protonup-ng #installed protol GE
-    protonup-qt #GUI fro managing Proton GE
+    blender
+    protonup-ng #installed proton GE
+    protonup-qt #GUI for managing Proton GE
     mangohud #process overlay
 
     # cursors + fonts
@@ -250,7 +258,6 @@
   # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
   };
 
 
@@ -280,8 +287,16 @@
       ];
     };
 
+  # VSCode Config Source
 
-
+/*
+  programs.vscode = {
+    home.file."/home/jlc/.config/Code/User/settings".json.source = 
+        lib.mkForce (config.lib.file.mkOutOfStoreSymlink 
+        "/home/jlc/Nix/settings/vscode-settings.json"
+      );
+  };
+*/
 
 
   # Some programs need SUID wrappers, can be configured further or are

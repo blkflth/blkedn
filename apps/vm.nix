@@ -10,7 +10,6 @@
     qemu
     uefi-run
     bottles
-    winboat
 
     # Filesystems
     dosfstools

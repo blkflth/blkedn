@@ -4,7 +4,7 @@
 
   programs.niri.settings = {
     layout = {
-      gaps = 5;
+      gaps = 6;
       background-color = "00000000";
       center-focused-column = "on-overflow";
       preset-column-widths = [
@@ -28,7 +28,7 @@
 
       default-column-width.proportion = 0.33333;
       focus-ring = {
-        enable = true;
+        enable = false;
         width = 2;
         active.color = "#000000";
         inactive.color = "#000000";
@@ -36,22 +36,24 @@
       };
       border = {
         enable = true;
+        /* 
         active.gradient.angle = 225;
         active.gradient.relative-to = "workspace-view";
         active.gradient.from = "#1c68e2e6";
         active.gradient.to = "#bb38dff6";
+        */
         inactive.gradient.angle = 225;
         inactive.gradient.relative-to = "workspace-view";
         inactive.gradient.from = "#1c68e2e6";
         inactive.gradient.to = "#bb38dff6";
-        #active.color = "#72e25096";
+        active.color = "#72e25096";
         #inactive.color = "#000000";
         width = 2;
       };
       shadow = {
         enable = true;
-        spread = 20;
-        softness = 15;
+        spread = 16;
+        softness = 10;
         draw-behind-window = true;
       };
     };

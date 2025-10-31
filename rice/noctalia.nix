@@ -51,14 +51,9 @@
                 id = "WallpaperSelector";
               }
             ];
-            center = [
-              {
-                id = "Bluetooth";
-              }
-            ];
             right = [
               {
-                id = "KeepAwake";
+                id = "Bluetooth";
               }
               {
                 id = "NightLight";

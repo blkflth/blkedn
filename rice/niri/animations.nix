@@ -7,7 +7,7 @@
       anim = {
         enable = true;
         kind.easing = {
-          duration-ms = 280;
+          duration-ms = 270;
           curve = "cubic-bezier";
           curve-args = [
             0.26
