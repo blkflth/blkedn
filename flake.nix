@@ -61,7 +61,7 @@
         # users = "jlc";
           system = "x86_64-linux";
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          specialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs system;};
         in
       {
         formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -71,7 +71,19 @@
           specialArgs = specialArgs;
             modules = [
               ./configuration.nix
-
+              (
+            {
+              pkgs,
+              system ? pkgs.system,
+              ...
+            }:
+            {
+              environment.systemPackages = [
+                winapps.packages."${system}".winapps
+                winapps.packages."${system}".winapps-launcher # optional
+              ];
+            }
+          )
             inputs.home-manager.nixosModules.home-manager
             inputs.noctalia.nixosModules.default
             inputs.stylix.nixosModules.stylix
@@ -79,13 +91,7 @@
                 {
                   nixpkgs.overlays = [ niri.overlays.niri ];
                 }
-            # winapps
-            {
-              environment.systemPackages = [
-                winapps.packages."${system}".winapps
-                winapps.packages."${system}".winapps-launcher # optional
-              ];
-            }    
+            # winapps 
               ];
         };
 
