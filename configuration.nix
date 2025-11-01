@@ -28,7 +28,7 @@
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" ];
     packages = with pkgs; [
     #  kdePackages.kate #useful to have on hand tbh!
     #  thunderbird
@@ -191,6 +191,9 @@
     nix-output-monitor
     nvd
 
+    docker
+    docker-compose
+
     # git
     git
     gh #github cli tools
@@ -244,6 +247,12 @@
 
   ];
 
+  # enable docker virtualizsation
+  virtualisation.docker = {
+    enable = true;
+  };
+
+
   # enable portals for spawning extra windows
   xdg.portal = {
     enable = true;
@@ -290,12 +299,15 @@
 
   # VSCode Config Source
 
-/*
+ /*
   programs.vscode = {
-    home.file.".config/Code/User/settings.json".source = 
-        lib.mkForce (config.lib.file.mkOutOfStoreSymlink 
-        "/home/jlc/Nix/settings/vscode-settings.json"
-      );
+    home.file = { 
+        ".config/Code/User/settings.json".source = 
+        lib.mkForce (
+          config.lib.file.mkOutOfStoreSymlink 
+          /home/jlc/Nix/settings/vscode-settings.json
+        );
+    };
   };
 */
 

@@ -72,18 +72,13 @@
             modules = [
               ./configuration.nix
               (
-            {
-              pkgs,
-              system ? pkgs.system,
-              ...
-            }:
-            {
-              environment.systemPackages = [
-                winapps.packages."${system}".winapps
-                winapps.packages."${system}".winapps-launcher # optional
-              ];
-            }
-          )
+                {
+                  environment.systemPackages = [
+                    winapps.packages."${system}".winapps
+                    winapps.packages."${system}".winapps-launcher
+                  ];
+                }
+              )
             inputs.home-manager.nixosModules.home-manager
             inputs.noctalia.nixosModules.default
             inputs.stylix.nixosModules.stylix

@@ -16,6 +16,8 @@
         sumneko.lua
         tomoki1207.pdf
       ];
+
+      
       #/home/jlc/.config/Code/User/settings.json
     };
 
