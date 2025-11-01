@@ -240,7 +240,7 @@
     nerd-fonts.atkynson-mono
     montserrat
     noto-fonts-emoji-blob-bin
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
 
   ];
 

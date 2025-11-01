@@ -40,10 +40,23 @@
         url = "github:vicinaehq/vicinae";
       };
 
+      winapps = {
+        url = "github:winapps-org/winapps";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, vicinae, ... } @ inputs:
+  outputs = { 
+    self, 
+    nixpkgs, 
+    home-manager, 
+    niri, 
+    vicinae, 
+    winapps,
+    ... 
+            } @ inputs:
         let
         # users = "jlc";
           system = "x86_64-linux";
@@ -66,6 +79,13 @@
                 {
                   nixpkgs.overlays = [ niri.overlays.niri ];
                 }
+            # winapps
+            {
+              environment.systemPackages = [
+                winapps.packages."${system}".winapps
+                winapps.packages."${system}".winapps-launcher # optional
+              ];
+            }    
               ];
         };
 
