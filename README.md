@@ -17,7 +17,7 @@
     - *Straightforward and Powerful Environment optimized for niri. Reduced here to a status bar with benefits.*
 
 ##### Launcher
-- [``Vicinae``](https://github.com/vicinaehq/vicinae) Launcher 
+- [``Vicinae``](https://github.com/vicinaehq/vicinae)
     - *Raycast Inspired and Raycast Compatible Launcher. Will be customized further with time.*
 
 --------------------------------------
