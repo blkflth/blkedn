@@ -24,6 +24,10 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 ## If you wish to copy this configuration as a starting point:
 
+ - Create a new directory (I placed mine at ``~/Nix``) and run the following command:
+
+   ```nix flake init -t github:blkflth/blkedn```
+
  - Copy your ``hardware-configuration.nix`` from the default ``/etc/nixos`` location and overwrite the one here (The one here is only tracked in case of a full-or-partial system upgrade locally).
 
  - Edit all hostname, usename, timezone and keyboard layout variables in the files imported to ``host-configuration.nix``, as well as in ``flake.nix`` and ``home.nix``.
