@@ -29,13 +29,13 @@
           }
         ];
         default-column-width = { proportion = 0.33333; };
-        default-window-height = { proportion = 0.33333; };
+        default-window-height = { proportion = 0.5; };
         open-floating = true;
       }
       {
         matches = [
           {
-            app-id = "^Firestorm$";
+            title = "^Firestorm";
           }
         ];
         open-maximized = true;
@@ -48,12 +48,12 @@
           }
         ];
         open-focused = true;
-        default-column-width = { proportion = 0.25; };
+        default-column-width = { proportion = 0.33333; };
       }
       {
         matches = [
           {
-            app-id = "vesktop$";
+            title = "^vesktop";
           }
         ];
         default-column-width = { proportion = 0.33333; };
@@ -62,7 +62,7 @@
       {
         matches = [
           {
-            title = "^btm$";
+            title = "^btm";
           }
         ];
         default-column-width = { proportion = 0.33333; };
