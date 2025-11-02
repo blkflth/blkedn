@@ -9,7 +9,6 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.matugen.nixosModules.default
-      ./rice/stylix.nix
       ./hw/virt.nix
     ];
 
@@ -207,6 +206,8 @@
     nautilus #GNOME file browser
     # kdePackages.dolphin # KDE file browser
     davinci-resolve
+    gimp3-with-plugins
+    inkscape-with-extensions 
     feishin # Subsonic interface
     ani-cli #CLI anime streaming
     nyaa # cli torrent downloader - see if this can be linked to media server
@@ -227,8 +228,7 @@
     xwayland-satellite
 
     # styling tools
-    pywal
-    base16-schemes
+    # base16-schemes
     inputs.matugen.packages.x86_64-linux.default
 
     # game/3d tools
@@ -263,11 +263,6 @@
       };
     };
     extraPortals = with pkgs; [ xdg-desktop-portal-gnome  ];
-  };
-
-  # enable Stylix here, as it's installed as a NixOS Module and not a H-M one
-  stylix = {
-    enable = true;
   };
 
 

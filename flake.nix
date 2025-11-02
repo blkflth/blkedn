@@ -31,11 +31,6 @@
         url = "github:/InioX/Matugen";
       };
 
-      stylix = {
-        url = "github:nix-community/stylix";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
       vicinae = {
         url = "github:vicinaehq/vicinae";
       };
@@ -81,7 +76,6 @@
               )
             inputs.home-manager.nixosModules.home-manager
             inputs.noctalia.nixosModules.default
-            inputs.stylix.nixosModules.stylix
             inputs.niri.nixosModules.niri
                 {
                   nixpkgs.overlays = [ niri.overlays.niri ];

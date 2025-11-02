@@ -6,7 +6,7 @@
     window-rules = [
       {
         matches = [{is-focused = false;}];
-        opacity = 0.95;
+        opacity = 0.93;
       }
       {
         matches = [{is-urgent = true;}];
@@ -15,10 +15,10 @@
       {
         clip-to-geometry = true;
         geometry-corner-radius = {
-          top-left = 10.0;
-          top-right = 10.0;
-          bottom-left = 10.0;
-          bottom-right = 10.0;
+          top-left = 12.0;
+          top-right = 12.0;
+          bottom-left = 12.0;
+          bottom-right = 12.0;
         };
       }
       {
@@ -28,6 +28,8 @@
             title = "^Picture-in-Picture$";
           }
         ];
+        default-column-width = { proportion = 0.33333; };
+        default-window-height = { proportion = 0.33333; };
         open-floating = true;
       }
       {

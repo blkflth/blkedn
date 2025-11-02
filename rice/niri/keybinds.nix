@@ -16,8 +16,8 @@
             # "Mod+Space".action.spawn = noctalia "launcher toggle";
             # "Mod+Space".hotkey-overlay.title = "App Launcher";
 
-              "Mod+S".action.spawn = noctalia "controlCenter toggle";
-              "Mod+S".hotkey-overlay.title = "Control Center";
+              "Mod+Alt+S".action.spawn = noctalia "controlCenter toggle";
+              "Mod+Alt+S".hotkey-overlay.title = "Control Center";
 
               "Mod+Alt+Comma".action.spawn = noctalia "settings toggle";
               "Mod+Alt+Comma".hotkey-overlay.title = "Settings";
@@ -25,8 +25,8 @@
               "Mod+V".action.spawn = noctalia "launcher clipboard";
               "Mod+V".hotkey-overlay.title = "Clipboard";
 
-              "Mod+Escape".action.spawn = noctalia "lockScreen lock";
-              "Mod+Escape".hotkey-overlay.title = "Lock";
+              "Mod+Alt+Escape".action.spawn = noctalia "lockScreen lock";
+              "Mod+Alt+Escape".hotkey-overlay.title = "Lock Screen";
 
               "Mod+Insert".action.spawn = noctalia "screenRecorder toggle";
               "Mod+Insert".hotkey-overlay.title = "Screen Recording";
@@ -61,46 +61,57 @@
               "Mod+9".action = focus-workspace 9;
               "Mod+0".action = focus-workspace 10;
 
+
+              "Mod+Alt+Tab".action = toggle-window-floating;
+              "Mod+Shift+Tab".action = switch-focus-between-floating-and-tiling;
               "Mod+Tab".action = toggle-overview;
-              "Mod+Shift+W".action = close-window;
+              "Mod+Shift+Q".action = close-window;
+
+
               "Mod+R".action = switch-preset-column-width-back;
-              "Mod+Shift+R".action = switch-preset-window-height-back;
+              "Mod+Alt+R".action = switch-preset-window-height-back;
 
-              "Mod+C".action = center-column;
-              "Mod+Shift+C".action = center-visible-columns;
-
+              "Mod+Shift+C".action = center-column;
+              "Mod+Alt+C".action = center-visible-columns;
+              "Mod+Shift+Alt+C".action = toggle-column-tabbed-display;
 
               "Mod+Alt+F".action = maximize-column;
               "Mod+Shift+F".action = fullscreen-window;
 
-              "Mod+L".action = focus-column-right;
-              "Mod+H".action = focus-column-left;
+              "Mod+L".action = focus-column-right-or-first;
+              "Mod+H".action = focus-column-left-or-last;
               "Mod+K".action = focus-window-or-workspace-up;
               "Mod+J".action = focus-window-or-workspace-down;
 
-              "Mod+Shift+L".action = move-column-right;
-              "Mod+Shift+H".action = move-column-left;
-              "Mod+Shift+K".action = move-column-to-workspace-up;
-              "Mod+Shift+J".action = move-column-to-workspace-down;
+              "Mod+Alt+L".action = move-column-right;
+              "Mod+Alt+H".action = move-column-left;
+              "Mod+Shift+L".action = move-column-to-first;
+              "Mod+Shift+H".action = move-column-to-last;
+
+              "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
+              "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
+              "Mod+Alt+K".action = move-column-to-workspace-up;
+              "Mod+Alt+J".action = move-column-to-workspace-down;
+
 
               "Mod+BracketLeft".action = consume-or-expel-window-left;
               "Mod+BracketRight".action = consume-or-expel-window-right;
+              
 
+              "Mod+Shift+Return".action.spawn = [ "ghostty" "-e" "zsh" ];
+              "Mod+Shift+Return".hotkey-overlay.title = "Open Terminal";
 
-              "Mod+Return".action.spawn = [ "ghostty" "-e" "zsh" "microfetch" ];
-              "Mod+Return".hotkey-overlay.title = "Open Terminal";
-
-              "Mod+Shift+Return".action.spawn = [ "ghostty" "cd" "Nix" ];
-              "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
+            #  "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];
+            #  "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
 
               "Mod+E".action.spawn = [ "ghostty" "-e" "superfile" ]; #open TUI file explorer
               "Mod+E".hotkey-overlay.title = "Open File Explorer";
 
-              "Mod+Alt+S".action.spawn = [ "ghostty" "-e" "btm" ]; #open system monitor
-              "Mod+Alt+S".hotkey-overlay.title = "Open System Monitoring";
+              "Mod+Ctrl+S".action.spawn = [ "ghostty" "-e" "btm" ]; #open system monitor
+              "Mod+Ctrl+S".hotkey-overlay.title = "Open System Monitoring";
 
-              "Mod+Shift+S".action.spawn = [ "ghostty" "-e" "microfetch" ];
-              "Mod+Shift+S".hotkey-overlay.title = "Show System Info";
+              # "Mod+Shift+S".action.spawn = [ "ghostty" "microfetch" ];
+              # "Mod+Shift+S".hotkey-overlay.title = "Show System Info";
 
               "Mod+Space".action.spawn = [ "vicinae" "toggle" ];
               "Mod+Space".hotkey-overlay.title = "App Launcher";

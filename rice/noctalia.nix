@@ -246,7 +246,7 @@
           gtk = true;
           kcolorscheme = true;
           kitty = false;
-          pywalfox = true;
+          pywalfox = false;
           qt = true;
           vicinae = true;
         };

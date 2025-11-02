@@ -18,6 +18,7 @@
         { proportion = 0.33333; }
         { proportion = 0.5; }
         { proportion = 0.66667; }
+        { proportion = 1.0; }
       ];
       struts = {
         bottom = 10;
@@ -28,11 +29,11 @@
 
       default-column-width.proportion = 0.33333;
       focus-ring = {
-        enable = false;
-        width = 2;
-        active.color = "#000000";
-        inactive.color = "#000000";
-        urgent.color = "#e3383877";
+        enable = true;
+        width = 1;
+        #active.color = "#000000";
+        #inactive.color = "#000000";
+        urgent.color = "#e44949ed";
       };
       border = {
         enable = true;
@@ -52,8 +53,8 @@
       };
       shadow = {
         enable = true;
-        spread = 16;
-        softness = 10;
+        spread = 18;
+        softness = 16;
         draw-behind-window = true;
       };
     };
