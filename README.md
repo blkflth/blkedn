@@ -74,7 +74,7 @@ The initial build will take quite some time, depending on what programs you're i
 
 There are a number of inefficiencies in the layout and setup of this config borne from the author's unfamiliarity with Nix as a language, programmatic thinking as a practice, and daily Linux use as an experience. Many of these will be streamlined with time, some will not. 
 
-If you wanna rewrite some shit for her, raise an issue. 
+If you wanna rewrite some shit for her, raise an issue or make a pull request.
 
 > *Maybe you'll even get a reward.*
 
