@@ -95,8 +95,3 @@ If you wanna rewrite some shit for her, raise an issue or make a pull request.
 ## License
 
 This repository is licensed under the **[MIT License](LICENSE.md)**.
-
---------------------------------------
-## Stars
-
-[![Stars](https://starchart.cc/blkflth/blkedn.svg?variant=adaptive)](https://starchart.cc/blkflth/blkedn)
