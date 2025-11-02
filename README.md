@@ -53,7 +53,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 The initial build will take quite some time, depending on what programs you're installing.
 
 - If CoolerControl isn't able to see your system fans, run ``lm_sensors`` and follow the on-screen instructions. 
->    Thereafter, writte the indicated kernel module's name  into the ``boot.kernelModules`` field in ``configuration.nix`` and reboot.
+>    *Thereafter, writte the indicated kernel module's name  into the ``boot.kernelModules`` field in ``configuration.nix`` and reboot.*
 
 - Use ``Super+Grave`` (Also known as "*Backtick*" or "*The Character Under Tilde*") to get an overview of basic keybindings. 
 
