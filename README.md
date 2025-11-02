@@ -53,7 +53,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 The initial build will take quite some time, depending on what programs you're installing.
 
 - If CoolerControl isn't able to see your system fans, run ``lm_sensors`` and follow the on-screen instructions. 
->    *Thereafter, writte the indicated kernel module's name  into the ``boot.kernelModules`` field in ``configuration.nix`` and reboot.*
+>    *Thereafter, write the indicated kernel module's name  into the ``boot.kernelModules`` field in ``configuration.nix`` and reboot.*
 
 - Use ``Super+Grave`` (Also known as "*Backtick*" or "*The Character Under Tilde*") to get an overview of basic keybindings. 
 
@@ -62,7 +62,7 @@ The initial build will take quite some time, depending on what programs you're i
 - ``Super+PrtSc`` is a normal screenshot, and requires you to paste the image elsewhere afterwards. 
 - ``Super+Alt+PrtSc`` will screenshot the entire active window and save to the ``~/Pictures/Screenshots`` folder.
 
-- It is possibile to configur niri to block out certain windows/programs when screenshotting and screenrecording.
+- It is possibile to configure niri to block out certain windows/programs when screenshotting and screenrecording.
 
 - By default at time of writing, hitting ``Enter`` on  an alread-open program in ``Vicinae`` after you bring it up with ``Super+Space`` will focus on that program's window.
 
