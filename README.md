@@ -49,13 +49,13 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Change your Icon/Wallpaper/Screen-Recording files and locations in ``noctalia.nix``, as well as your geolocation for weather and your monitor name in that same file. 
 
->    *It's probably best to comment this file out of ``rice.nix``'s imports to start, and, after Noctalia is built, to then follow the instructions on Noctalia's site for getting the ``.json`` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import.*
+>    *It's probably best to comment this file out of ``rice.nix``'s imports to start, and, after Noctalia is built, to then follow the [instructions](https://docs.noctalia.dev/getting-started/nixos/#noctalia-settings) on Noctalia's site for getting the ``.json`` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import.*
 
 - Comment out or delete games and programs as you see fit in ``progams.nix``. 
 
     Heavy-Hitters are for install time (if not file size) are:
 
->    ``blender``, ``davinci-resolve``, `` gimp3-with-plugins``, `` inkscape-with-extensions``, ``xivlauncher``.
+  *``blender``, ``davinci-resolve``, ``gimp3-with-plugins``, ``inkscape-with-extensions``, ``xivlauncher``.*
 
 
 ## Notes:
@@ -72,7 +72,7 @@ The initial build will take quite some time, depending on what programs you're i
 - ``Super+PrtSc`` is a normal screenshot, and requires you to paste the image elsewhere afterwards. 
 - ``Super+Alt+PrtSc`` will screenshot the entire active window and save to the ``~/Pictures/Screenshots`` folder.
 
-- It is possibile to configure niri to block out certain windows/programs when screenshotting and screenrecording.
+- It is possibile to configure niri to [block out certain windows](https://github.com/sodiboo/niri-flake/blob/main/docs.md#programsnirisettingswindow-rulesblock-out-from) when screencasting.
 
 - By default at time of writing, hitting ``Enter`` on  an already-open program in ``Vicinae`` after you bring it up with ``Super+Space`` will focus on that program's window.
 
@@ -83,7 +83,8 @@ The initial build will take quite some time, depending on what programs you're i
 
 > [!WARNING]
 Subject to drastic change without notice.
-There are a number of inefficiencies in the layout and setup of this config borne from the author's unfamiliarity with Nix as a language, programmatic thinking as a practice, and daily Linux use as an experience. Many of these will be streamlined with time, some will not. 
+There are a number of inefficiencies in the layout and setup of this config borne from the author's unfamiliarity with Nix as a language, programmatic thinking as a practice, and daily Linux use as an experience.
+Many of these will be streamlined with time, some will not. 
 
 If you wanna rewrite some shit for her, raise an issue or make a pull request.
 
