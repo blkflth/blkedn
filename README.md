@@ -22,7 +22,7 @@ You won't encounter a ton of custom logic for different hosts, here - It's easy 
 Makes generous use of imports to break up config file lengths. Home-Manager for dotfiles is used sparingly and *mostly* with intention.
 
 
-###### If you wish to copy this configuration as a starting point:
+##### If you wish to copy this configuration as a starting point:
 
  - Copy your ``hardware-configuration.nix`` from the default ``/etc/nixos`` location and overwrite the one here (The one here is only tracked in case of a full-or-partial system upgrade locally).
 
@@ -45,7 +45,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 >>    ``blender``, ``davinci-resolve``, `` gimp3-with-plugins``, `` inkscape-with-extensions``, ``xivlauncher``.
 --------------------------------------
 
-###### Notes:
+##### Notes:
 
 The initial build will take quite some time, depending on what programs you're installing.
 
