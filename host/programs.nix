@@ -62,6 +62,7 @@
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     mangohud #process overlay
+    lutris
     xivlauncher
 
     # cursors + fonts + icons
