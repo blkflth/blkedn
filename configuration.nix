@@ -23,6 +23,7 @@
 
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -37,6 +38,7 @@
     "jlc" = import ./home.nix;
     };
   };
+  
 /*
   # Define a user account. set a password with ‘passwd’.
   users.users.jlc = {
