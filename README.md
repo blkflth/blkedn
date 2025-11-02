@@ -41,7 +41,8 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 >    *It's probably best to comment this file out of ``rice.nix``'s imports to start, and, after Noctalia is built, to then follow the instructions on Noctalia's site for getting the ``.json`` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import.*
 
-- Comment out or delete games and programs as you see fit in ``progams.nix``. Heavy-Hitters are for install time (if not file size) are:
+- Comment out or delete games and programs as you see fit in ``progams.nix``. 
+    Heavy-Hitters are for install time (if not file size) are:
 
 >    ``blender``, ``davinci-resolve``, `` gimp3-with-plugins``, `` inkscape-with-extensions``, ``xivlauncher``.
 --------------------------------------
