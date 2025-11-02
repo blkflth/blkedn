@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".github/assets/nixos-logo-dark.svg" width="100">
+  <img src=".github/assets/nixos-dark-logo.svg" width="100">
   
   <h1>dotfiles</h1>
   
