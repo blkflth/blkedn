@@ -6,7 +6,7 @@
     window-rules = [
       {
         matches = [{is-focused = false;}];
-        opacity = 0.93;
+        opacity = 0.92;
       }
       {
         matches = [{is-urgent = true;}];

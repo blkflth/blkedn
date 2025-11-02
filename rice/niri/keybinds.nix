@@ -50,6 +50,9 @@
 
               "Mod+Grave".action = show-hotkey-overlay;
 
+              "Mod+Print".action.screenshot = { show-pointer = false; };
+              "Mod+Alt+Print".action.screenshot-window = { write-to-disk = true; };
+
               "Mod+1".action = focus-workspace 1;
               "Mod+2".action = focus-workspace 2;
               "Mod+3".action = focus-workspace 3;

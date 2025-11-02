@@ -7,9 +7,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./host/host-configuration.nix 
+      ./hw/virt.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.matugen.nixosModules.default
-      ./hw/virt.nix
+      
     ];
 
   # Bootloader.
@@ -21,8 +23,21 @@
 
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable Home Manager
+  home-manager = {
+  # also pass inputs to home-manager modules
+  extraSpecialArgs = {inherit inputs;};
+  users = {
+    "jlc" = import ./home.nix;
+    };
+  };
+/*
   # Define a user account. set a password with ‘passwd’.
   users.users.jlc = {
     isNormalUser = true;
@@ -68,7 +83,7 @@
 
 
   # Audio services - Pipewire by default
-  services.pulseaudio.enable = false;
+  services.pulseaudio.enable = false; #this is mutually exclusive w/ pipewire
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -84,6 +99,18 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+
+  # enable portals for spawning extra windows
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config = {
+      common = {
+        default = [ "gnome" ];
+      };
+    };
+    extraPortals = with pkgs; [ xdg-desktop-portal-gnome  ];
   };
 
   # Configure keymap in X11
@@ -109,11 +136,6 @@
   nix = {
     optimise.automatic = true;
     settings.auto-optimise-store = true;
-     /*gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };  */
   };
 
   # General services
@@ -132,28 +154,13 @@
     blueman.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
-    # fetching daemon
-    # hayabusa.enable = true;
     # Enable automatic login for the user.
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "jlc";
   };
 
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
-  # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enable Home Manager
-  home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "jlc" = import ./home.nix;
-    };
-  };
 
 
   # Mount Points for SSDs
@@ -186,7 +193,7 @@
     unar #unarchive tools
     glibc #c language library
     gnumake # 'make' commands
-    wev #forgot what this is tbh
+    wev #find keystrokes for wayland compsitor; helpful when altering keybinds
     nix-output-monitor
     nvd
 
@@ -216,8 +223,9 @@
     # music metadata editors
     picard
 
-    /* for hardware control -
-    thought these weren't necessary but CoolerControl's daemon was having issues. */
+     for hardware control -
+    thought these weren't necessary but 
+    CoolerControl's daemon was having issues.
     lm_sensors
     fanctl
 
@@ -236,6 +244,7 @@
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     mangohud #process overlay
+    xivlauncher
 
     # cursors + fonts + icons
     bibata-cursors
@@ -253,17 +262,7 @@
   };
 
 
-  # enable portals for spawning extra windows
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    config = {
-      common = {
-        default = [ "gnome" ];
-      };
-    };
-    extraPortals = with pkgs; [ xdg-desktop-portal-gnome  ];
-  };
+
 
 
   # Enable programs defined by Home Manager modules.
@@ -294,7 +293,7 @@
 
   # VSCode Config Source
 
- /*
+ 
   programs.vscode = {
     home.file = { 
         ".config/Code/User/settings.json".source = 
@@ -304,6 +303,7 @@
         );
     };
   };
+
 */
 
 

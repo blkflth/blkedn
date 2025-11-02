@@ -29,7 +29,7 @@
 
       matugen = {
         url = "github:/InioX/Matugen";
-      };
+      }; #tool to grab color-scheme from wallpapers
 
       vicinae = {
         url = "github:vicinaehq/vicinae";
