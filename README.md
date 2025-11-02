@@ -64,7 +64,7 @@ The initial build will take quite some time, depending on what programs you're i
 
 - It is possibile to configure niri to block out certain windows/programs when screenshotting and screenrecording.
 
-- By default at time of writing, hitting ``Enter`` on  an alread-open program in ``Vicinae`` after you bring it up with ``Super+Space`` will focus on that program's window.
+- By default at time of writing, hitting ``Enter`` on  an already-open program in ``Vicinae`` after you bring it up with ``Super+Space`` will focus on that program's window.
 
 >    *Use ``Shift+Enter`` to open a new instance.*
 
