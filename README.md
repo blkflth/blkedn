@@ -1,4 +1,10 @@
-JLC's NixOS Config.
+<div align="center">
+  <img src=".github/assets/nix.svg" width="100">
+  
+  <h1>dotfiles</h1>
+  
+  <i>JLC's NixOS Dotfiles.</i>
+</div>
 
 ### Highlights:
 
@@ -75,10 +81,22 @@ The initial build will take quite some time, depending on what programs you're i
 - If you're going to change keybinds, it's very useful to open up ``wev`` in a terminal to get the valid names of your keys.
 
 --------------------------------------
+> [!WARNING]
+Subject to drastic change without notice.
+There are a number of inefficiencies in the layout and setup of this config borne from the author's unfamiliarity with Nix as a language, programmatic thinking as a practice, and daily Linux use as an experience.
 
-There are a number of inefficiencies in the layout and setup of this config borne from the author's unfamiliarity with Nix as a language, programmatic thinking as a practice, and daily Linux use as an experience. Many of these will be streamlined with time, some will not. 
+    Many of these will be streamlined with time, some will not. 
 
 If you wanna rewrite some shit for her, raise an issue or make a pull request.
 
 > *Maybe you'll even get a reward.*
 
+--------------------------------------
+## License
+
+This repository is licensed under the **[MIT License](LICENSE.md)**.
+
+--------------------------------------
+## Stars
+
+[![Stars](https://starchart.cc/blkflth/blkedn.svg?variant=adaptive)](https://starchart.cc/blkflth/blkedn)
