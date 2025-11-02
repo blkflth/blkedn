@@ -30,7 +30,8 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Remove or change the SSD bindings in ``drives.nix``. If you wish to change them to what you have installed locally, run ``sudo ls -l /dev/disk/by-uuid/`` and ``sudo ls -l /dev/disk/by-label/``. Match up the values and you should be good to go.
 
->    *This is the equivalent to the ``fstab`` edits one would need do in other Linux systems (or the manual mapping in a DE like KDE Plasma.) I do not claim to be an expert, but I recommend keeping ``"nofail"`` as a flag at the very least so that your system will boot if you misconfigure something.*
+>    *This is the equivalent to the ``fstab`` edits one would need do in other Linux systems (or the manual mapping in a DE like KDE Plasma.)*
+>    *I do not claim to be an expert, but I recommend keeping ``"nofail"`` as a flag at the very least so that your system will boot if you misconfigure something.*
 
 - Comment out `` niri-flake.cache.enable = false;`` in ``programs.nix`` *before* you build, so that the niri-flake used at time of writing builds its cache correctly. Afterward, uncomment as instructed.  
 
@@ -42,7 +43,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Comment out or delete games and programs as you see fit in ``progams.nix``. Heavy-Hitters are for install time (if not file size) are:
 
->>    ``blender``, ``davinci-resolve``, `` gimp3-with-plugins``, `` inkscape-with-extensions``, ``xivlauncher``.
+>    ``blender``, ``davinci-resolve``, `` gimp3-with-plugins``, `` inkscape-with-extensions``, ``xivlauncher``.
 --------------------------------------
 
 ##### Notes:
