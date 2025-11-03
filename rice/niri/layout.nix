@@ -53,8 +53,8 @@
       };
       shadow = {
         enable = true;
-        spread = 18;
-        softness = 16;
+        spread = 10;
+        softness = 26;
         draw-behind-window = true;
       };
     };

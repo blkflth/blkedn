@@ -10,13 +10,14 @@
     nix-init #tool of building packages
     unar #unarchive tools
     glibc #c language library
+    dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
     wev #find keystrokes for wayland compsitor; helpful when altering keybinds
     nix-output-monitor
     nvd
 
-    docker
-    docker-compose
+  # docker
+  # docker-compose
 
     # git
     git
@@ -35,17 +36,15 @@
     inkscape-with-extensions 
     feishin # Subsonic interface
     ani-cli #CLI anime streaming
-    nyaa # cli torrent downloader - see if this can be linked to media server
     nicotine-plus # soulseek client
 
     # music metadata editors
     picard
 
-    /* for hardware control -
-    thought these weren't necessary but 
-    CoolerControl's daemon was having issues. */
-    lm_sensors
-    fanctl
+    # hardware control
+    lm_sensors #tool for scanning system fans
+    lact #GPU config tool
+    amdctl #CPU config tool
 
     # display shenangians
     xdg-utils
@@ -61,6 +60,7 @@
     blender
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
+    winetricks #etxra wine DLLs
     mangohud #process overlay
     lutris
     xivlauncher
@@ -73,16 +73,22 @@
     noto-fonts-emoji-blob-bin
     adwaita-icon-theme
 
+    # custom packages
+    # fchat-horizon
   ];
-
+    /*
+  nixpkgs.config.packageOverrides = pkgs: {
+    fchat-horizon = pkgs.callPackage /home/jlc/Documents/Packages/Horizon/default.nix { }; 
+    
+    };
+    */
+  
+  /*
   # enable docker virtualizsation
   virtualisation.docker = {
     enable = true;
   };
-
-
-
-
+  */
 
   # Enable programs defined by Home Manager modules.
 

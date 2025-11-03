@@ -62,7 +62,7 @@
       {
         matches = [
           {
-            title = "^btm";
+            app-id = "^bottom.desktop";
           }
         ];
         default-column-width = { proportion = 0.33333; };
@@ -72,12 +72,45 @@
       {
         matches = [
           {
-            title = "bottom";
+            app-id = "^code.desktop";
           }
         ];
-        default-column-width = { proportion = 0.33333; };
-        default-window-height = { proportion = 0.33333; };
-        open-focused = false;
+        default-column-width = { proportion = 0.66667; };
+        open-focused = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^net.lutris.affinity-canva-30.desktop";
+          }
+        ];
+        default-column-width = { proportion = 0.66667; };
+        open-focused = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^net.lutris.affinity-photo-27.desktop";
+          }
+        ];
+        default-column-width = { proportion = 0.66667; };
+        open-focused = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^blender.desktop";
+          }
+        ];
+        open-maximized = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^davinci-resolve.desktop";
+          }
+        ];
+        open-maximized = true;
       }
     ];
   };

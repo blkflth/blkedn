@@ -24,6 +24,9 @@
   # kernel modules for system fan control
   boot.kernelModules = [ "nct6775" ];
 
+  # Allow NTFS Devices such as USB drives
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
