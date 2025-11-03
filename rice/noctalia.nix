@@ -180,6 +180,9 @@
           respectExpireTimeout = true;
         };
 
+        network = {
+          wifiEnabled = false;
+        };
 
         osd = {
           autoHideMs = 2000;
