@@ -73,6 +73,10 @@
   services = {
     # Video driver
     xserver.videoDrivers = ["amdgpu"];
+    # GPU Conig Tool
+    lact = { 
+      enable = true;
+    };
     # Noctalia startup service
     noctalia-shell.enable = true;
     # SDDM display Manager
