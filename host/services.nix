@@ -32,6 +32,11 @@
     enable32Bit = true;
   };
 
+  # enable Qt Configuuration, including theming
+  qt = {
+    enable = true;
+  };
+
   # enable portals for spawning extra windows
   xdg.portal = {
     enable = true;
@@ -77,18 +82,28 @@
     lact = { 
       enable = true;
     };
-    # Noctalia startup service
-    noctalia-shell.enable = true;
+
+    /* Noctalia systemd service - 
+    Use if not starting shell from Niri, such as if using only 
+    Niri with no other Desktop Environments */
+
+  # noctalia-shell.enable = true;
+
     # SDDM display Manager
     displayManager.sddm.enable = true;
+
     # Enable the X11 windowing system.
     xserver.enable = true;
+
     # KDE Plasma - here just in case
     # desktopManager.plasma6.enable = true;
+
     # Enable Bluetooth control
     blueman.enable = true;
+
     # Enable CUPS to print documents.
     printing.enable = true;
+    
     # Enable automatic login for the user.
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "jlc";

@@ -25,7 +25,7 @@
   boot.kernelModules = [ "nct6775" ];
 
   # Allow NTFS Devices such as USB drives
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [ "ntfs" "exfat" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

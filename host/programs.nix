@@ -42,11 +42,15 @@
     picard
 
     # hardware control
+    coolercontrol.coolercontrol-gui
+    coolercontrol.coolercontrol-ui-data
+      #fan controling software
     lm_sensors #tool for scanning system fans
     lact #GPU config tool
     amdctl #CPU config tool
 
     # display shenangians
+    inputs.noctalia.packages.${system}.default
     xdg-utils
     xdg-desktop-portal-gtk
     xdg-desktop-portal-termfilechooser
