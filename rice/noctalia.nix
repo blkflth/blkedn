@@ -85,6 +85,13 @@
                 id = "Workspace";
                 labelMode = "index";
               }
+              {
+                colorizeIcons = false;
+                hideMode = "hidden";
+                id = "Taskbar";
+                onlyActiveWorkspaces = true;
+                onlySameOutput = true;
+              }
             ];
             right = [
               {
@@ -102,7 +109,7 @@
                 id = "Volume";
               }
             ];
-            center = [
+            center = [ 
               {
                 hideWhenZero = true;
                 id = "NotificationHistory";
@@ -115,14 +122,7 @@
                 id = "Clock";
                 useCustomFont = false;
                 usePrimaryColor = true;
-              }
-              {
-                colorizeIcons = false;
-                hideMode = "hidden";
-                id = "Taskbar";
-                onlyActiveWorkspaces = true;
-                onlySameOutput = true;
-              }
+              }            
             ];
           };
         };
