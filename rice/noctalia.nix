@@ -73,10 +73,20 @@
           showCapsule = false;
           widgets = {
             left = [
+              {
+                customIconPath = "";
+                icon = "";
+                id = "ControlCenter";
+                useDistroLogo = true;
+              }
+              {
+                characterCount = 2;
+                hideUnoccupied = false;
+                id = "Workspace";
+                labelMode = "index";
+              }
             ];
             right = [
-            ];
-            center = [
               {
                 hideMode = "hidden";
                 id = "MediaMini";
@@ -91,6 +101,13 @@
                 displayMode = "onhover";
                 id = "Volume";
               }
+            ];
+            center = [
+              {
+                hideWhenZero = true;
+                id = "NotificationHistory";
+                showUnreadBadge = true;
+              }
               {
                 customFont = "";
                 formatHorizontal = "h:mm AP MM/dd";
@@ -100,28 +117,11 @@
                 usePrimaryColor = true;
               }
               {
-                customIconPath = "";
-                icon = "";
-                id = "ControlCenter";
-                useDistroLogo = true;
-              }
-              {
-                hideWhenZero = true;
-                id = "NotificationHistory";
-                showUnreadBadge = true;
-              }
-              {
                 colorizeIcons = false;
                 hideMode = "hidden";
                 id = "Taskbar";
                 onlyActiveWorkspaces = true;
                 onlySameOutput = true;
-              }
-              {
-                characterCount = 2;
-                hideUnoccupied = false;
-                id = "Workspace";
-                labelMode = "index";
               }
             ];
           };
