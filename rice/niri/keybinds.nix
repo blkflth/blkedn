@@ -22,29 +22,45 @@
               "Mod+Alt+Comma".action.spawn = noctalia "settings toggle";
               "Mod+Alt+Comma".hotkey-overlay.title = "Settings";
 
-              "Mod+V".action.spawn = noctalia "launcher clipboard";
-              "Mod+V".hotkey-overlay.title = "Clipboard";
+              "Mod+Shift+Comma".action.spawn = noctalia "sessionMenu toggle";
+              "Mod+Shift+Comma".hotkey-overlay.title = "Show Session Menu";
+
+              "Mod+Alt+V".action.spawn = noctalia "launcher clipboard";
+              "Mod+Alt+V".hotkey-overlay.title = "Clipboard";
 
               "Mod+Alt+Escape".action.spawn = noctalia "lockScreen lock";
               "Mod+Alt+Escape".hotkey-overlay.title = "Lock Screen";
+
+              "Mod+Shift+Alt+Escape".action.spawn = noctalia "sessionMenu lockAndSuspend";
+              "Mod+Shift+Alt+Escape".hotkey-overlay.title = "Suspend System";
 
               "Mod+Insert".action.spawn = noctalia "screenRecorder toggle";
               "Mod+Insert".hotkey-overlay.title = "Screen Recording";
 
               "Mod+Home".action.spawn = noctalia "notifications toggleDND";
               "Mod+Home".hotkey-overlay.title = "Toggle Do-Not-Disturb";
+              "Mod+Home".allow-when-locked = true;
 
               "Mod+Delete".action.spawn = noctalia "notifications clear";
               "Mod+Delete".hotkey-overlay.title = "Clear Notifications";
+              "Mod+Delete".allow-when-locked = true;
 
               "Mod+End".action.spawn = noctalia "notifications dismissAll";
               "Mod+End".hotkey-overlay.title = "Dismiss Notifications";
+              "Mod+End".allow-when-locked = true;
 
               "Mod+Prior".action.spawn = noctalia "bar toggle";
               "Mod+Prior".hotkey-overlay.title = "Toggle Bar";
 
               "Mod+Next".action.spawn = noctalia "wallpaper random";
               "Mod+Next".hotkey-overlay.title = "Random Wallpaper";
+              "Mod+Next".allow-when-locked = true;
+
+              "Mod+Alt+Next".action.spawn = noctalia "wallpaper toggle";
+              "Mod+Alt+Next".hotkey-overlay.title = "Select Wallpaper";
+
+              "Mod+Shift+Next".action.spawn = noctalia "wallpaper toggleAutomation";
+              "Mod+Shift+Next".hotkey-overlay.title = "Toggle Wallpaper Cycling";
 
               # and now niri's
 
