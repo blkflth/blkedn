@@ -87,7 +87,7 @@
     Use if not starting shell from Niri, such as if using only 
     Niri with no other Desktop Environments */
 
-  # noctalia-shell.enable = true;
+    noctalia-shell.enable = true;
 
     # SDDM display Manager
     displayManager.sddm.enable = true;
