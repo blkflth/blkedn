@@ -78,28 +78,9 @@
             ];
             center = [
               {
-                customFont = "";
-                formatHorizontal = "h:mm AP MM/dd";
-                formatVertical = "HH mm - dd MM";
-                id = "Clock";
-                useCustomFont = false;
-                usePrimaryColor = true;
-              }
-              {
-                hideWhenZero = true;
-                id = "NotificationHistory";
-                showUnreadBadge = true;
-              }
-              {
-                customIconPath = "";
-                icon = "";
-                id = "ControlCenter";
-                useDistroLogo = true;
-              }
-              {
                 hideMode = "hidden";
                 id = "MediaMini";
-                maxWidth = 145;
+                maxWidth = 175;
                 scrollingMode = "hover";
                 showAlbumArt = false;
                 showVisualizer = true;
@@ -109,6 +90,25 @@
               {
                 displayMode = "onhover";
                 id = "Volume";
+              }
+              {
+                customFont = "";
+                formatHorizontal = "h:mm AP MM/dd";
+                formatVertical = "HH mm - dd MM";
+                id = "Clock";
+                useCustomFont = false;
+                usePrimaryColor = true;
+              }
+              {
+                customIconPath = "";
+                icon = "";
+                id = "ControlCenter";
+                useDistroLogo = true;
+              }
+              {
+                hideWhenZero = true;
+                id = "NotificationHistory";
+                showUnreadBadge = true;
               }
               {
                 colorizeIcons = false;
@@ -144,7 +144,7 @@
           animationDisabled = false;
           animationSpeed = 1;
           avatarImage = "/home/jlc/Pictures/Icons/jlc.png";
-          compactLockScreen = true;
+          compactLockScreen = false;
           dimDesktop = false;
           forceBlackScreenCorners = true;
           language = "";
@@ -171,11 +171,11 @@
         notifications = {
           criticalUrgencyDuration = 15;
           doNotDisturb = false;
-          location = "bottom";
+          location = "top";
           lowUrgencyDuration = 3;
           monitors = [
           ];
-          normalUrgencyDuration = 8;
+          normalUrgencyDuration = 5;
           overlayLayer = true;
           respectExpireTimeout = true;
         };
