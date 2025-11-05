@@ -6,6 +6,7 @@
        /* { command = [ "noctalia-shell" ]; } */
         { argv = [ "vesktop" ]; }
         { argv = [ "firefox" ]; }
+        { argv = [ "fchat-horizon" ]; }
         #{ argv = [ "ghostty" "-e" "btm" ]; }
         #{ argv = [ "ghostty" "microfetch" ]; }
     ];

@@ -41,6 +41,7 @@
     # kdePackages.dolphin # KDE file browser
     nautilus #GNOME file browser
     vlc
+    obs-studio
     nicotine-plus # soulseek client
     picard # music metadata editor
     feishin # Subsonic interface
@@ -77,9 +78,13 @@
     inputs.matugen.packages.x86_64-linux.default #matugen input
 
     # custom packages
-    
+    fchat-horizon
+
   ];
  
+  nixpkgs.config.packageOverrides = pkgs: {
+    fchat-horizon = pkgs.callPackage ~/Documents/Packages/Horizon/fchat-horizon.nix { };
+  };
   
   /*
   # enable docker virtualizsation
