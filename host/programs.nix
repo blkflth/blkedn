@@ -25,25 +25,7 @@
     curl
     apt
 
-    # general use and media
-    nautilus #GNOME file browser
-    # kdePackages.dolphin # KDE file browser
-    davinci-resolve
-    gimp3-with-plugins
-    inkscape-with-extensions 
-    vlc
-  # nomacs #image viewer
-    feishin # Subsonic interface
-    ani-cli #CLI anime streaming
-    nicotine-plus # soulseek client
-
-    # music metadata editors
-    picard
-
     # hardware control
-   # coolercontrol.coolercontrol-gui
-   # coolercontrol.coolercontrol-ui-data
-      #fan controling software
     lm_sensors #tool for scanning system fans
     lact #GPU config tool
     amdctl #CPU config tool
@@ -55,12 +37,28 @@
     xdg-desktop-portal-termfilechooser
     xwayland-satellite
 
-    # styling tools
-    # base16-schemes
-    inputs.matugen.packages.x86_64-linux.default #matugen input
+    # general use and media
+    # kdePackages.dolphin # KDE file browser
+    nautilus #GNOME file browser
+    vlc
+    nicotine-plus # soulseek client
+    picard # music metadata editor
+    feishin # Subsonic interface
+    ani-cli #CLI anime streaming
+    
+
+    # Creative Software
+    davinci-resolve
+    gimp3-with-plugins
+    inkscape-with-extensions 
+    obsidian # Notes organization
+    blender
+
+    # productivity
+    xournalpp #Notetaking
+    libreoffice-fresh # Office Suite
 
     # game/3d tools
-    blender
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
@@ -69,13 +67,14 @@
     lutris
     xivlauncher
 
-    # cursors + fonts + icons
+    # styling tools
     bibata-cursors
     catppuccin-cursors
     nerd-fonts.atkynson-mono
     montserrat
     noto-fonts-emoji-blob-bin
     adwaita-icon-theme
+    inputs.matugen.packages.x86_64-linux.default #matugen input
 
     # custom packages
     
