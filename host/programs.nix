@@ -34,6 +34,8 @@
     davinci-resolve
     gimp3-with-plugins
     inkscape-with-extensions 
+    vlc
+    nomacs #image viewer
     feishin # Subsonic interface
     ani-cli #CLI anime streaming
     nicotine-plus # soulseek client
@@ -50,7 +52,7 @@
     amdctl #CPU config tool
 
     # display shenangians
-    inputs.noctalia.packages.${system}.default
+    inputs.noctalia.packages.${system}.default #Noctalia input
     xdg-utils
     xdg-desktop-portal-gtk
     xdg-desktop-portal-termfilechooser
@@ -58,7 +60,7 @@
 
     # styling tools
     # base16-schemes
-    inputs.matugen.packages.x86_64-linux.default
+    inputs.matugen.packages.x86_64-linux.default #matugen input
 
     # game/3d tools
     blender
@@ -79,14 +81,9 @@
     adwaita-icon-theme
 
     # custom packages
-    # fchat-horizon
-  ];
-    /*
-  nixpkgs.config.packageOverrides = pkgs: {
-    fchat-horizon = pkgs.callPackage /home/jlc/Documents/Packages/Horizon/default.nix { }; 
     
-    };
-    */
+  ];
+ 
   
   /*
   # enable docker virtualizsation
