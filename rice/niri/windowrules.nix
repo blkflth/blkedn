@@ -114,7 +114,18 @@
         ];
         open-maximized = true;
       }
+      {
+        matches = [
+          {
+            app-id = "^fchat-horizon.desktop";
+          }
+        ];
+        open-focused = false;
+        block-out-from = "screen-capture";
+        default-column-width = { proportion = 0.66667; };
+      }
     ];
   };
 
 }
+
