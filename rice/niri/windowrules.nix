@@ -40,6 +40,7 @@
         ];
         open-maximized = true;
         open-focused = true;
+        block-out-from = "screencast";
       }
       {
         matches = [
@@ -58,6 +59,7 @@
         ];
         default-column-width = { proportion = 0.33333; };
         open-focused = true;
+        block-out-from = "screen-capture";
       }
       {
         matches = [
