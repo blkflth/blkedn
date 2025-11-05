@@ -95,7 +95,7 @@
   # Enable programs defined by Home Manager modules.
 
     programs = {
-      coolercontrol.enable = true;
+    # coolercontrol.enable = true;
       steam.enable = true;
       steam.gamescopeSession.enable = true;
       gamemode.enable = true;
