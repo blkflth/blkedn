@@ -35,7 +35,7 @@
     gimp3-with-plugins
     inkscape-with-extensions 
     vlc
-    nomacs #image viewer
+  # nomacs #image viewer
     feishin # Subsonic interface
     ani-cli #CLI anime streaming
     nicotine-plus # soulseek client
@@ -44,8 +44,8 @@
     picard
 
     # hardware control
-    coolercontrol.coolercontrol-gui
-    coolercontrol.coolercontrol-ui-data
+   # coolercontrol.coolercontrol-gui
+   # coolercontrol.coolercontrol-ui-data
       #fan controling software
     lm_sensors #tool for scanning system fans
     lact #GPU config tool
