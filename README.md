@@ -57,6 +57,15 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
   *``blender``, ``davinci-resolve``, ``gimp3-with-plugins``, ``inkscape-with-extensions``, ``xivlauncher``.*
 
+## To-Do:
+
+- [ ] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
+- [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
+- [ ] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
+- [ ] Swap SDDM Greeter for TUIGreet
+- [ ] Investigate locking down Qt Version to prevent breakage of GUIs
+- [ ] Prune Wallpaper folder to only vibrant-color options
+- [ ] Tweak niri layout & window rules further
 
 ## Notes:
 
