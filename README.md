@@ -21,6 +21,22 @@
     - *Raycast Inspired and Raycast Compatible Launcher. Will be customized further with time.*
 
 --------------------------------------
+## To-Do:
+
+- [ ] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
+- [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
+- [ ] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
+- [ ] Swap SDDM Greeter for TUIGreet
+- [ ] Investigate locking down Qt Version to prevent breakage of GUIs
+- [ ] Symlink VSCode / Codium Config file to Nix folder so it can be edited
+- [ ] Swap VSCode for Codium after backing up VSIXs
+- [ ] Locate and link AppIcons for various programs
+- [ ] Investigate niri-flake command formatting to get ``spawn-at-startup`` and ``spawn`` commands for shell-based programs working
+- [ ] Prune Wallpaper folder to only vibrant-color options
+- [ ] Investigate passing through Lutris Web calls to host
+- [ ] Investigate and Declare Vicinae options
+- [ ] Tweak niri layout & window rules further
+--------------------------------------
 
 Nothing super complex  or special as far as NixOS settings go.
 You won't encounter a ton of custom logic for different hosts, here - It's easy enough to make the needed edits to a config when setting up a new machine.
@@ -56,18 +72,6 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
     Heavy-Hitters are for install time (if not file size) are:
 
   *``blender``, ``davinci-resolve``, ``gimp3-with-plugins``, ``inkscape-with-extensions``, ``xivlauncher``.*
-
-## To-Do:
-
-- [ ] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
-- [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
-- [ ] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
-- [ ] Swap SDDM Greeter for TUIGreet
-- [ ] Investigate locking down Qt Version to prevent breakage of GUIs
-- [ ] Prune Wallpaper folder to only vibrant-color options
-- [ ] Investigate passing through Lutris Web calls to host
-- [ ] Investigate and Declare Vicinae options
-- [ ] Tweak niri layout & window rules further
 
 ## Notes:
 
