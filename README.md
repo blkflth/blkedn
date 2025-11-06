@@ -36,6 +36,7 @@
 - [ ] Investigate passing through Lutris Web calls to host
 - [ ] Investigate and Declare Vicinae options
 - [ ] Tweak niri layout & window rules further
+- [ ] set ``prefer-no-csd``
 --------------------------------------
 
 Nothing super complex  or special as far as NixOS settings go.
