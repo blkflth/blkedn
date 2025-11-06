@@ -65,6 +65,8 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 - [ ] Swap SDDM Greeter for TUIGreet
 - [ ] Investigate locking down Qt Version to prevent breakage of GUIs
 - [ ] Prune Wallpaper folder to only vibrant-color options
+- [ ] Investigate passing through Lutris Web calls to host
+- [ ] Investigate and Declare Vicinae options
 - [ ] Tweak niri layout & window rules further
 
 ## Notes:
