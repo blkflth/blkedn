@@ -1,18 +1,20 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, lib, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./host/host-configuration.nix 
-      ./hw/virt.nix
-      inputs.home-manager.nixosModules.home-manager
-      inputs.matugen.nixosModules.default
-      
-    ];
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./host/host-configuration.nix
+    ./hw/virt.nix
+    inputs.home-manager.nixosModules.home-manager
+    inputs.matugen.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -22,23 +24,23 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # kernel modules for system fan control
-  boot.kernelModules = [ "nct6775" ];
+  boot.kernelModules = ["nct6775"];
 
   # Allow NTFS Devices such as USB drives
-  boot.supportedFilesystems = [ "ntfs" "exfat" ];
+  boot.supportedFilesystems = ["ntfs" "exfat"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable Home Manager
   home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "jlc" = import ./home.nix;
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jlc" = import ./home.nix;
     };
   };
 
@@ -66,5 +68,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

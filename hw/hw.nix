@@ -1,6 +1,6 @@
 {lib, ...}: {
-    imports = [
+  imports = [
     ./blueman.nix
     ./fancontrol.nix
-    ];
+  ];
 }

@@ -1,7 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
-
 {
-
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   # Enable networking
   networking.networkmanager.enable = true;
   # Enables wireless support via wpa_supplicant.
@@ -23,8 +26,7 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
-    };
-
+  };
 
   # enable OpenGL
   hardware.graphics = {
@@ -43,10 +45,10 @@
     wlr.enable = true;
     config = {
       common = {
-        default = [ "gnome" ];
+        default = ["gnome"];
       };
     };
-    extraPortals = with pkgs; [ xdg-desktop-portal-gnome  ];
+    extraPortals = with pkgs; [xdg-desktop-portal-gnome];
   };
 
   # Configure keymap in X11
@@ -56,9 +58,9 @@
   };
 
   environment.sessionVariables = {
-  # Niri-Flake setting for electron apps
+    # Niri-Flake setting for electron apps
     NIXOS_OZONE_WL = "1";
-    };
+  };
 
   # Nix CLI Helper tool, including flake paths for commands
   programs.nh = {
@@ -66,7 +68,7 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
     # flake = "~/Nix"; find out how tf this string needs to be written
-    };
+  };
 
   # Automatic Nix Store Management - Handling Garbage collection w/ nh's functions above
   nix = {
@@ -79,13 +81,15 @@
     # Video driver
     xserver.videoDrivers = ["amdgpu"];
     # GPU Conig Tool
-    lact = { 
+    lact = {
       enable = true;
     };
 
-    /* Noctalia systemd service - 
-    Use if not starting shell from Niri, such as if using only 
-    Niri with no other Desktop Environments */
+    /*
+       Noctalia systemd service -
+    Use if not starting shell from Niri, such as if using only
+    Niri with no other Desktop Environments
+    */
 
     noctalia-shell.enable = true;
 
@@ -103,11 +107,9 @@
 
     # Enable CUPS to print documents.
     printing.enable = true;
-    
+
     # Enable automatic login for the user.
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "jlc";
   };
-
-
 }

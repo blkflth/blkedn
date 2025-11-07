@@ -1,7 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
-
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     ghostty
   ];
@@ -10,5 +11,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-  
 }
