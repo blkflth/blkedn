@@ -4,7 +4,7 @@
 
   programs.niri.settings = {
     layout = {
-      gaps = 6;
+      gaps = 4;
       background-color = "00000000";
       center-focused-column = "on-overflow";
       preset-column-widths = [
@@ -21,10 +21,10 @@
         { proportion = 1.0; }
       ];
       struts = {
-        bottom = 10;
-        top = 10;
-        left = 10;
-        right = 10;
+        bottom = 8;
+        top = 8;
+        left = 8;
+        right = 8;
       };
 
       default-column-width.proportion = 0.33333;
@@ -49,12 +49,12 @@
         inactive.gradient.to = "#bb38dff6";
         active.color = "#72e25096";
         #inactive.color = "#000000";
-        width = 2;
+        width = 1.5;
       };
       shadow = {
         enable = true;
-        spread = 10;
-        softness = 26;
+        spread = 8;
+        softness = 28;
         draw-behind-window = true;
       };
     };
