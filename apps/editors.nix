@@ -8,13 +8,13 @@
 
     programs.vscode = {
       enable = true;
+      package = pkgs.vscodium-fhs;
       profiles.default.extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         jnoortheen.nix-ide
         rust-lang.rust-analyzer
         vscode-icons-team.vscode-icons
         sumneko.lua
-        tomoki1207.pdf
       ];
 
       
