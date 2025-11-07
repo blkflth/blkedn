@@ -1,6 +1,6 @@
 {lib, ...}: {
-    imports = [
+  imports = [
     ./noctalia.nix
     ./niri.nix
-    ];
+  ];
 }

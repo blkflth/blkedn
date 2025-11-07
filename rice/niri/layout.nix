@@ -1,24 +1,21 @@
-{...}:
-
-{
-
+{...}: {
   programs.niri.settings = {
     layout = {
       gaps = 6;
       background-color = "00000000";
       center-focused-column = "on-overflow";
       preset-column-widths = [
-      # { proportion = 0.25; }
-        { proportion = 0.33333; }
-        { proportion = 0.5; }
-        { proportion = 0.66667; }
+        # { proportion = 0.25; }
+        {proportion = 0.33333;}
+        {proportion = 0.5;}
+        {proportion = 0.66667;}
       ];
       preset-window-heights = [
-      # { proportion = 0.25; }
-        { proportion = 0.33333; }
-        { proportion = 0.5; }
-        { proportion = 0.66667; }
-        { proportion = 1.0; }
+        # { proportion = 0.25; }
+        {proportion = 0.33333;}
+        {proportion = 0.5;}
+        {proportion = 0.66667;}
+        {proportion = 1.0;}
       ];
       struts = {
         bottom = 10;
@@ -37,7 +34,7 @@
       };
       border = {
         enable = true;
-        /* 
+        /*
         active.gradient.angle = 225;
         active.gradient.relative-to = "workspace-view";
         active.gradient.from = "#1c68e2e6";
@@ -59,7 +56,6 @@
       };
     };
   };
-
 }
-
 #background: linear-gradient(225deg, #73E25196, #B5821F98);
+

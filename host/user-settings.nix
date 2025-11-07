@@ -1,14 +1,18 @@
-{ config, pkgs, inputs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   # Define a user account. set a password with ‘passwd’.
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
-    extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd"];
     packages = with pkgs; [
-    #  kdePackages.kate #useful to have on hand tbh!
-    #  thunderbird
+      #  kdePackages.kate #useful to have on hand tbh!
+      #  thunderbird
     ];
   };
 
@@ -32,5 +36,4 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  
 }
