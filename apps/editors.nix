@@ -1,11 +1,15 @@
-{ pkgs, lib, config, ... }: 
-
 {
-	home.packages = with pkgs; [
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  home.packages = with pkgs; [
     #vscodium-fhs
     pdf4qt
   ];
 
+<<<<<<< HEAD
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium-fhs;
@@ -26,5 +30,19 @@
       
       #/home/jlc/.config/Code/User/settings.json
     };
+=======
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      jnoortheen.nix-ide
+      rust-lang.rust-analyzer
+      vscode-icons-team.vscode-icons
+      sumneko.lua
+      tomoki1207.pdf
+    ];
+>>>>>>> 5a3c79d (Formatting)
 
+    #/home/jlc/.config/Code/User/settings.json
+  };
 }

@@ -1,14 +1,17 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   home.username = "jlc";
   home.homeDirectory = "/home/jlc";
 
   imports = [
-  inputs.vicinae.homeManagerModules.default
-  ./rice/rice.nix
-  ./apps/apps.nix
-  ./hw/hw.nix
+    inputs.vicinae.homeManagerModules.default
+    ./rice/rice.nix
+    ./apps/apps.nix
+    ./hw/hw.nix
   ];
 
   home.stateVersion = "25.05"; # Don't Change This.
@@ -17,13 +20,12 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+  ];
 
-    ];
-
-   services.vicinae = {
-        enable = true; # default: false
-        autoStart = true; # default: true
-    };
+  services.vicinae = {
+    enable = true; # default: false
+    autoStart = true; # default: true
+  };
 
   /*
   home.pointerCursor = {
@@ -35,19 +37,16 @@
   };
   */
 
-    #force override of files so home-manager doesn't throw a warning
+  #force override of files so home-manager doesn't throw a warning
 
-    gtk.gtk2.force = true;
-   # home.file.".config/gtk-3.0".force = true;
-   # home.file.".config/gtk-3.0/settings.ini".force = true;
-   # home.file.".config/gtk-4.0/".force = true;
-   # home.file.".config/gtk-4.0/settings.ini".force = true;
+  gtk.gtk2.force = true;
+  # home.file.".config/gtk-3.0".force = true;
+  # home.file.".config/gtk-3.0/settings.ini".force = true;
+  # home.file.".config/gtk-4.0/".force = true;
+  # home.file.".config/gtk-4.0/settings.ini".force = true;
 
-
-
-home.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "\${HOME}/.steam/root/compatibilitytools.d";
+  home.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
   programs.home-manager.enable = true;

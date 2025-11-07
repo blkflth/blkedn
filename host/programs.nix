@@ -78,6 +78,10 @@
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
+<<<<<<< HEAD
+=======
+    haskellPackages.gi-gst #enable streaming media
+>>>>>>> 5a3c79d (Formatting)
     mangohud #process overlay
     lutris
     xivlauncher
@@ -102,6 +106,16 @@
   nixpkgs.config.packageOverrides = pkgs: {
     fchat-horizon = pkgs.callPackage ~/Documents/Packages/Horizon/fchat-horizon.nix {};
   };
+<<<<<<< HEAD
+=======
+
+  /*
+  # enable docker virtualizsation
+  virtualisation.docker = {
+    enable = true;
+  };
+  */
+>>>>>>> 5a3c79d (Formatting)
 
   # Enable programs defined by Home Manager modules.
 
@@ -127,5 +141,23 @@
     trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
     ];
+<<<<<<< HEAD
   };
+=======
+  };
+
+  # VSCode Config Source
+
+  /*
+  programs.vscode = {
+    home.file = {
+        ".config/Code/User/settings.json".source =
+        lib.mkForce (
+          config.lib.file.mkOutOfStoreSymlink
+          /home/jlc/Nix/settings/vscode-settings.json
+        );
+    };
+  };
+  */
+>>>>>>> 5a3c79d (Formatting)
 }
