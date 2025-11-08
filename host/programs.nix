@@ -109,6 +109,7 @@
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
   /*
   # enable docker virtualizsation
   virtualisation.docker = {
@@ -119,6 +120,8 @@
 
   # Enable programs defined by Home Manager modules.
 
+=======
+>>>>>>> 8dfacc5 (re-added dev tools)
   programs = {
     coolercontrol.enable = true;
     steam.enable = true;
@@ -145,6 +148,7 @@
   };
 =======
   };
+<<<<<<< HEAD
 
   # VSCode Config Source
 
@@ -160,4 +164,6 @@
   };
   */
 >>>>>>> 5a3c79d (Formatting)
+=======
+>>>>>>> 8dfacc5 (re-added dev tools)
 }
