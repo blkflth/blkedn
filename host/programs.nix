@@ -28,6 +28,19 @@
     curl
     apt
 
+    #Languages
+    python3 #python
+
+    cargo #rust package manager
+    rustfmt #formatter
+    rustc #rust compiler
+    clippy #language interpreter
+    rustup #toolchain installer
+
+    rustlings #rust edu tool
+    rustycli # rust plasyground in terminal
+    rust-script #run expressions as scripts
+
     # hardware control
     lm_sensors #tool for scanning system fans
     lact #GPU config tool
@@ -65,10 +78,16 @@
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
+
     haskellPackages.gi-gst #enable streaming media
+
     mangohud #process overlay
     lutris
     xivlauncher
+
+    #enable streaming media
+    gst_all_1.gst-plugins-ugly
+    haskellPackages.gi-gst
 
     # styling tools
     bibata-cursors
@@ -86,13 +105,6 @@
   nixpkgs.config.packageOverrides = pkgs: {
     fchat-horizon = pkgs.callPackage ~/Documents/Packages/Horizon/fchat-horizon.nix {};
   };
-
-  /*
-  # enable docker virtualizsation
-  virtualisation.docker = {
-    enable = true;
-  };
-  */
 
   # Enable programs defined by Home Manager modules.
 
@@ -119,18 +131,4 @@
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
     ];
   };
-
-  # VSCode Config Source
-
-  /*
-  programs.vscode = {
-    home.file = {
-        ".config/Code/User/settings.json".source =
-        lib.mkForce (
-          config.lib.file.mkOutOfStoreSymlink
-          /home/jlc/Nix/settings/vscode-settings.json
-        );
-    };
-  };
-  */
 }
