@@ -33,11 +33,6 @@
     vicinae = {
       url = "github:vicinaehq/vicinae";
     };
-
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -46,7 +41,6 @@
     home-manager,
     niri,
     vicinae,
-    winapps,
     ...
   } @ inputs: let
     # users = "jlc";
@@ -62,19 +56,13 @@
         specialArgs = specialArgs;
         modules = [
           ./configuration.nix
-          {
-            environment.systemPackages = [
-              winapps.packages."${system}".winapps
-              winapps.packages."${system}".winapps-launcher
-            ];
-          }
+
           inputs.home-manager.nixosModules.home-manager
           inputs.noctalia.nixosModules.default
           inputs.niri.nixosModules.niri
           {
             nixpkgs.overlays = [niri.overlays.niri];
           }
-          # winapps
         ];
       };
 

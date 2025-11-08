@@ -24,7 +24,5 @@
       yzane.markdown-pdf
       tomoki1207.pdf
     ];
-
-    #/home/jlc/.config/Code/User/settings.json
   };
 }

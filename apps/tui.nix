@@ -1,7 +1,9 @@
-{ pkgs, lib, ... }:
-
 {
-	home.packages = with pkgs; [
+  pkgs,
+  lib,
+  ...
+}: {
+  home.packages = with pkgs; [
     clipboard-jh
     superfile
     numbat
@@ -11,6 +13,5 @@
     lazydocker
   ];
 
-    programs.bottom.enable = true;
-
+  programs.bottom.enable = true;
 }

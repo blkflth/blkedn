@@ -1,7 +1,4 @@
-{...}:
-
-{
-
+{...}: {
   programs.niri.settings = {
     animations = let
       anim = {
@@ -28,5 +25,4 @@
       window-close = anim;
     };
   };
-
 }

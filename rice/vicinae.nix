@@ -1,9 +1,10 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   /*
   home-manager.users.jlc =
   { config, lib, ... }:
   */
-
 }

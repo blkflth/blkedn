@@ -78,6 +78,9 @@
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
+
+    haskellPackages.gi-gst #enable streaming media
+
     mangohud #process overlay
     lutris
     xivlauncher
