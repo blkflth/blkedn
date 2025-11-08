@@ -1,7 +1,4 @@
-{...}:
-
-{
-
+{...}: {
   programs.niri.settings = {
     window-rules = [
       {
@@ -28,9 +25,10 @@
             title = "^Picture-in-Picture$";
           }
         ];
-        default-column-width = { proportion = 0.33333; };
-        default-window-height = { proportion = 0.5; };
+        default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.5;};
         open-floating = true;
+        open-focused = false;
       }
       {
         matches = [
@@ -49,7 +47,7 @@
           }
         ];
         open-focused = true;
-        default-column-width = { proportion = 0.33333; };
+        default-column-width = {proportion = 0.33333;};
       }
       {
         matches = [
@@ -57,7 +55,7 @@
             title = "^vesktop";
           }
         ];
-        default-column-width = { proportion = 0.33333; };
+        default-column-width = {proportion = 0.33333;};
         open-focused = true;
         block-out-from = "screen-capture";
       }
@@ -67,8 +65,8 @@
             app-id = "^bottom.desktop";
           }
         ];
-        default-column-width = { proportion = 0.33333; };
-        default-window-height = { proportion = 0.33333; };
+        default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.33333;};
         open-focused = false;
       }
       {
@@ -77,7 +75,7 @@
             app-id = "^code.desktop";
           }
         ];
-        default-column-width = { proportion = 0.66667; };
+        default-column-width = {proportion = 0.66667;};
         open-focused = true;
       }
       {
@@ -86,7 +84,7 @@
             app-id = "^net.lutris.affinity-canva-30.desktop";
           }
         ];
-        default-column-width = { proportion = 0.66667; };
+        default-column-width = {proportion = 0.66667;};
         open-focused = true;
       }
       {
@@ -95,7 +93,7 @@
             app-id = "^net.lutris.affinity-photo-27.desktop";
           }
         ];
-        default-column-width = { proportion = 0.66667; };
+        default-column-width = {proportion = 0.66667;};
         open-focused = true;
       }
       {
@@ -122,10 +120,8 @@
         ];
         open-focused = false;
         block-out-from = "screen-capture";
-        default-column-width = { proportion = 0.66667; };
+        default-column-width = {proportion = 0.66667;};
       }
     ];
   };
-
 }
-
