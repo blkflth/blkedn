@@ -1,6 +1,6 @@
 {lib, ...}: {
-    imports = [
-    ./waybar/style.nix
-    ./waybar/settings.nix
-    ];
+  imports = [
+    ./waybar/waybarstyle.nix
+    ./waybar/waybarsettings.nix
+  ];
 }
