@@ -72,7 +72,7 @@
       {
         matches = [
           {
-            app-id = "^code.desktop";
+            title = "^VSCodium";
           }
         ];
         default-column-width = {proportion = 0.66667;};
@@ -81,36 +81,32 @@
       {
         matches = [
           {
-            app-id = "^net.lutris.affinity-canva-30.desktop";
-          }
-        ];
-        default-column-width = {proportion = 0.66667;};
-        open-focused = true;
-      }
-      {
-        matches = [
-          {
-            app-id = "^net.lutris.affinity-photo-27.desktop";
-          }
-        ];
-        default-column-width = {proportion = 0.66667;};
-        open-focused = true;
-      }
-      {
-        matches = [
-          {
-            app-id = "^blender.desktop";
+            title = "^Affinity";
           }
         ];
         open-maximized = true;
+        open-focused = true;
+        block-out-from = "screencast";
       }
       {
         matches = [
           {
-            app-id = "^davinci-resolve.desktop";
+            title = "^blender";
           }
         ];
         open-maximized = true;
+        open-focused = true;
+        block-out-from = "screencast";
+      }
+      {
+        matches = [
+          {
+            title = "^davinci";
+          }
+        ];
+        open-maximized = true;
+        open-focused = true;
+        block-out-from = "screencast";
       }
       {
         matches = [
