@@ -4,7 +4,13 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  blender-pkgs = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/ae5fe741ba9acade281a9185139e3922811c9696.tar.gz";
+  }) {};
+
+  blender-3_6 = blender-pkgs.blender;
+in {
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
@@ -68,7 +74,7 @@
     gimp3-with-plugins
     inkscape-with-extensions
     obsidian # Notes organization
-    blender
+    blender-3_6
 
     # productivity
     xournalpp #Notetaking
