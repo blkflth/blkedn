@@ -7,6 +7,7 @@
 }: let
   blender-pkgs = import (builtins.fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/ae5fe741ba9acade281a9185139e3922811c9696.tar.gz";
+    sha256 = "18w4aa58lw82x79r4js2ppnq0d5xccfmic7r9n404lh9a6njdfjm";
   }) {};
 
   blender-3_6 = blender-pkgs.blender.override {hipSupport = true;};
