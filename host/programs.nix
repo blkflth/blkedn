@@ -6,10 +6,10 @@
   ...
 }: let
   blender-pkgs = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/9957cd48326fe8dbd52fdc50dd2502307f188b0d.tar.gz";
+    url = "https://github.com/NixOS/nixpkgs/archive/ae5fe741ba9acade281a9185139e3922811c9696.tar.gz";
   }) {};
 
-  blender-3_6 = blender-pkgs.blender-hip;
+  blender-3_6 = blender-pkgs.blender.override {hipSupport = true;};
 in {
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
