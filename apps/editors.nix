@@ -6,7 +6,6 @@
 }: {
   home.packages = with pkgs; [
     #vscodium-fhs
-    pdf4qt
   ];
 
   programs.neovim = {

@@ -34,19 +34,7 @@ in {
     wget
     curl
     apt
-
-    #Languages
-    python3 #python
-
-    cargo #rust package manager
-    rustfmt #formatter
-    rustc #rust compiler
-    clippy #language interpreter
-    rustup #toolchain installer
-
-    rustlings #rust edu tool
-    rustycli # rust plasyground in terminal
-    rust-script #run expressions as scripts
+    cargo
 
     # hardware control
     lm_sensors #tool for scanning system fans
@@ -72,8 +60,6 @@ in {
 
     # Creative Software
     davinci-resolve
-    gimp3-with-plugins
-    inkscape-with-extensions
     obsidian # Notes organization
     blender-3_6
 
@@ -86,15 +72,13 @@ in {
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
 
-    haskellPackages.gi-gst #enable streaming media
+    #enable streaming media
+    gst_all_1.gst-plugins-ugly
+    haskellPackages.gi-gst
 
     mangohud #process overlay
     lutris
     xivlauncher
-
-    #enable streaming media
-    gst_all_1.gst-plugins-ugly
-    haskellPackages.gi-gst
 
     # styling tools
     bibata-cursors
@@ -107,6 +91,7 @@ in {
 
     # custom packages
     fchat-horizon
+    nhentai
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
