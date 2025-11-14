@@ -91,7 +91,7 @@
       {
         matches = [
           {
-            title = "^blender";
+            title = "^Blender";
           }
         ];
         default-column-width = {proportion = 1.0;};
@@ -102,7 +102,7 @@
       {
         matches = [
           {
-            title = "^davinci";
+            title = "^Davinci";
           }
         ];
         open-maximized = true;
