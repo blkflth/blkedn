@@ -29,7 +29,6 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
       enkia.tokyo-night
-      github.copilot
       vadimcn.vscode-lldb
       eamodio.gitlens
       jnoortheen.nix-ide
