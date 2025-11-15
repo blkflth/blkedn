@@ -135,6 +135,10 @@
         useWallpaperColors = true;
       };
 
+      dock = {
+        enabled = false;
+      };
+
       general = {
         animationDisabled = false;
         animationSpeed = 1;
