@@ -97,7 +97,7 @@
         default-column-width = {proportion = 1.0;};
         open-maximized = true;
         open-focused = true;
-        block-out-from = "screencast";
+        #block-out-from = "screencast";
       }
       {
         matches = [

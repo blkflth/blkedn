@@ -91,7 +91,7 @@ in {
 
     # custom packages
     fchat-horizon
-    nhentai
+    jhentai
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
