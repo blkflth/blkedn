@@ -4,9 +4,11 @@
   ...
 }: {
   # import the home manager module
+  /*
   imports = [
     inputs.vicinae.homeModules.default
   ];
+  */
 
   services.vicinae = {
     enable = true;
