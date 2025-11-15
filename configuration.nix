@@ -32,6 +32,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # allow Insecure Packages
+  nixpkgs.config.permittedInsecurePackages = ["electron-36.9.5"];
+
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
