@@ -45,6 +45,8 @@
     users = {
       "jlc" = import ./home.nix;
     };
+    # Allow backups when files conflict
+    backupFileExtension = "bak";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
