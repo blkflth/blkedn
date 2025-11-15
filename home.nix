@@ -8,7 +8,7 @@
   home.homeDirectory = "/home/jlc";
 
   imports = [
-    inputs.vicinae.homeManagerModules.default
+    #inputs.vicinae.homeManagerModules.default
     ./rice/rice.nix
     ./apps/apps.nix
     ./hw/hw.nix
@@ -19,13 +19,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Allow backups when files conflict
+  backupFileExtension = "bak";
+
   home.packages = with pkgs; [
   ];
 
-  services.vicinae = {
+  /*
+    services.vicinae = {
     enable = true; # default: false
     autoStart = true; # default: true
   };
+  */
 
   /*
   home.pointerCursor = {
