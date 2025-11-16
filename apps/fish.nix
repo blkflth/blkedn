@@ -4,7 +4,7 @@
     fzf
     fishPlugins.tide #prompt
     fishPlugins.sponge #filters out typos
-    fishPlugins.z #directory navigation
+    #fishPlugins.z #directory navigation
     fishPlugins.puffer #text expansions
     fishPlugins.plugin-sudope #input ``sudo`` with ``esc+esc``
     fishPlugins.fzf-fish # fzf keybindings
