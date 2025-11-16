@@ -31,14 +31,14 @@
 - [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
 - [ ] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [ ] Swap SDDM Greeter for TUIGreet
-- [ ] Investigate locking down Qt Version to prevent breakage of GUIs
+- [x] Investigate locking down Qt Version to prevent breakage of GUIs
 - [x] Symlink VSCode / Codium Config file to Nix folder so it can be edited
 - [x] Swap VSCode for Codium after backing up VSIXs
 - [ ] Locate and link AppIcons for various programs
 - [ ] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
 - [ ] Prune Wallpaper folder to only vibrant-color options
 - [ ] Investigate passing through Lutris Web calls to host
-- [ ] Investigate and Declare Vicinae options
+- [x] Investigate and Declare Vicinae options
 - [ ] Tweak niri layout & window rules further
 - [x] set `prefer-no-csd`
 
