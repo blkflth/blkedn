@@ -36,6 +36,9 @@ in {
     apt
     cargo
 
+    #languages
+    python3
+
     # hardware control
     lm_sensors #tool for scanning system fans
     lact #GPU config tool
