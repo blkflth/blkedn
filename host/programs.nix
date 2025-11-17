@@ -105,6 +105,13 @@ in {
   # Enable programs defined by Home Manager modules.
 
   programs = {
+    direnv = {
+      enable = true;
+      direnvrcExtra = ''
+
+        echo "loaded direnv!"
+      '';
+    };
     coolercontrol.enable = true;
     steam.enable = true;
     steam.gamescopeSession.enable = true;
