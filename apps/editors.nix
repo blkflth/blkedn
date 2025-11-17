@@ -27,6 +27,7 @@
     package = pkgs.vscodium-fhs;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
+      mkhl.direnv
       enkia.tokyo-night
       vadimcn.vscode-lldb
       eamodio.gitlens
