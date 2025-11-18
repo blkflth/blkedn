@@ -120,8 +120,8 @@ in {
 
     # System Commands
 
-    "Mod+Shift+Return".action.spawn = ["ghostty" "-e" "fish"];
-    "Mod+Shift+Return".hotkey-overlay.title = "Open Terminal ⌨️";
+    "Mod+Return".action.spawn = ["ghostty" "-e" "fish" "-C" "microfetch"];
+    "Mod+Return".hotkey-overlay.title = "Open Terminal ⌨️";
 
     #  "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];
     #  "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
