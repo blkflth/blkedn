@@ -120,7 +120,7 @@ in {
 
     # System Commands
 
-    "Mod+Return".action.spawn = ["ghostty" "-e" "fish" "-C" "microfetch"];
+    "Mod+Return".action.spawn = ["ghostty" "-e" "fish"];
     "Mod+Return".hotkey-overlay.title = "Open Terminal ⌨️";
 
     #  "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];

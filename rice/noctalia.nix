@@ -66,7 +66,7 @@
         floating = true;
         position = "top";
         marginHorizontal = 1;
-        marginVertical = 0.78;
+        marginVertical = 0.92;
         showCapsule = false;
         widgets = {
           left = [
@@ -150,7 +150,7 @@
         lockOnSuspend = true;
         radiusRatio = 0.62;
         scaleRatio = 1;
-        screenRadiusRatio = 1.6600000000000001;
+        screenRadiusRatio = 1.00;
         showScreenCorners = true;
       };
 
@@ -206,7 +206,7 @@
         backgroundOpacity = 0.9;
         customLaunchPrefix = "";
         customLaunchPrefixEnabled = false;
-        enableClipboardHistory = true;
+        enableClipboardHistory = false;
         pinnedExecs = [
         ];
         position = "center";
@@ -276,6 +276,7 @@
         transitionDuration = 1500;
         transitionEdgeSmoothness = 0.15;
         transitionType = "disc";
+        panelPosition = "center";
       };
     };
     # this may also be a string or a path to a JSON file,

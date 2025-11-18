@@ -14,6 +14,7 @@
     ./niri/keybinds.nix
     ./niri/layout.nix
     ./niri/windowrules.nix
+    ./niri/layerrules.nix
     ./niri/animations.nix
     ./niri/overview.nix
   ];
@@ -23,12 +24,6 @@
       prefer-no-csd = true;
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
       hotkey-overlay.skip-at-startup = true;
-      layer-rules = [
-        {
-          matches = [{namespace = "^quickshell$";}];
-          place-within-backdrop = true;
-        }
-      ];
     };
   };
 }
