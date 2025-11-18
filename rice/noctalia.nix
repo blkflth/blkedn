@@ -39,7 +39,7 @@
           }
         ];
 
-        position = "close_to_bar_button";
+        position = "center";
         shortcuts = {
           left = [
             {
