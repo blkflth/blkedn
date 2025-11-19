@@ -69,9 +69,11 @@
         "org.freedesktop.impl.portal.Print" = ["kde"];
       };
     };
-    configPackages = with pkgs; [xdg-desktop-portal-termfilechooser];
     extraPortals = with pkgs; [
       kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-termfilechooser
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
     ];
   };
 
