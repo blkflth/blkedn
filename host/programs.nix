@@ -53,6 +53,8 @@ in {
 
     # general use and media
     kdePackages.dolphin # KDE file browser
+    kdePackages.kio-fuse #to mount remote filesystems via FUSE
+    kdePackages.kio-extras #extra protocols support (sftp, fish and more)
     vlc
     obs-studio
     nicotine-plus # soulseek client
