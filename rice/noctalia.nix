@@ -248,7 +248,7 @@
       };
 
       ui = {
-        fontDefault = "Montserrat Thin";
+        fontDefault = "Montserrat Light";
         fontDefaultScale = 1;
         fontFixed = "AtkynsonMono Nerd Font Mono";
         fontFixedScale = 1;
