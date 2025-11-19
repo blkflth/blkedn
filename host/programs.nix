@@ -58,6 +58,7 @@ in {
 
     # general use and media
     kdePackages.dolphin # KDE file browser
+    kdePackages.kde-cli-tools #System Interaction Tooling
     kdePackages.kio-fuse #to mount remote filesystems via FUSE
     kdePackages.kio-extras #extra protocols support (sftp, fish and more)
     vlc
