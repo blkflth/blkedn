@@ -49,12 +49,10 @@ in {
     xdg-utils
     xdg-desktop-portal-gtk
     kdePackages.xdg-desktop-portal-kde
-    xdg-desktop-portal-termfilechooser
     xwayland-satellite
 
     # general use and media
     kdePackages.dolphin # KDE file browser
-    nautilus #GNOME file browser
     vlc
     obs-studio
     nicotine-plus # soulseek client
@@ -93,6 +91,9 @@ in {
     noto-fonts-emoji-blob-bin
     adwaita-icon-theme
     inputs.matugen.packages.x86_64-linux.default #matugen input
+
+    #SDDM Theming
+    where-is-my-sddm-theme
 
     # custom packages
     fchat-horizon

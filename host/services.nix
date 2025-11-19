@@ -54,26 +54,25 @@
       niri = {
         default = [
           "gnome"
-          "wlr"
-          "gtk"
-          "termfilechooser"
+          "kde"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["kde"];
         "org.freedesktop.impl.portal.OpenURI" = ["kde"];
         "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
         "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
         "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
+        /*
         "org.freedesktop.impl.portal.Access" = ["kde"];
         "org.freedesktop.impl.portal.Account" = ["kde"];
         "org.freedesktop.impl.portal.Notification" = ["kde"];
         "org.freedesktop.impl.portal.Settings" = ["kde"];
         "org.freedesktop.impl.portal.RemoteDesktop" = ["kde"];
         "org.freedesktop.impl.portal.Print" = ["kde"];
+        */
       };
     };
     extraPortals = with pkgs; [
       kdePackages.xdg-desktop-portal-kde
-      xdg-desktop-portal-termfilechooser
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
     ];
@@ -125,6 +124,7 @@
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
+      theme = "where-is-my-sddm-theme";
     };
     # Enable the X11 windowing system.
     xserver.enable = true;

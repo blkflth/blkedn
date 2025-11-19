@@ -126,7 +126,7 @@ in {
     #  "Mod+Shift+Return".action.spawn = [ "ghostty" "cd Nix" ];
     #  "Mod+Shift+Return".hotkey-overlay.title = "Open ~/Nix Directory";
 
-    "Mod+E".action.spawn = ["ghostty" "-e" "superfile"]; #open TUI file explorer
+    "Mod+E".action.spawn = ["dolphin"]; #open file explorer
     "Mod+E".hotkey-overlay.title = "Open File Explorer 📂";
 
     "Mod+Ctrl+S".action.spawn = ["ghostty" "-e" "btm"]; #open system monitor
