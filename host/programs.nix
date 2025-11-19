@@ -11,7 +11,12 @@
   }) {};
 
   blender-3_6 = blender-pkgs.blender.override {hipSupport = true;};
+
+  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
 in {
+  imports = [
+    aagl-gtk-on-nix.module
+  ];
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
@@ -119,9 +124,14 @@ in {
       '';
     };
     coolercontrol.enable = true;
+
     steam.enable = true;
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
+
+    honkers-railway-launcher.enable = true;
+    sleepy-launcher.enable = true;
+
     virt-manager.enable = true;
     firefox.enable = true;
     # enable Niri Window Manager - NixOS source in flake, builds using cachix
@@ -134,10 +144,12 @@ in {
   nix.settings = {
     substituters = [
       "https://vicinae.cachix.org"
+      "https://ezkea.cachix.org"
     ];
 
     trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
     ];
   };
 }
