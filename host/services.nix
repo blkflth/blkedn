@@ -45,10 +45,17 @@
     wlr.enable = true;
     config = {
       common = {
-        default = ["gnome"];
+        default = ["kde"];
+      };
+      niri = {
+        default = ["kde"];
       };
     };
-    extraPortals = with pkgs; [xdg-desktop-portal-gnome];
+    configPackages = with pkgs; [xdg-desktop-portal-termfilechooser];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      kdePackages.xdg-desktop-portal-kde
+    ];
   };
 
   # Configure keymap in X11
@@ -94,8 +101,10 @@
     noctalia-shell.enable = true;
 
     # SDDM display Manager
-    displayManager.sddm.enable = true;
-
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
     # Enable the X11 windowing system.
     xserver.enable = true;
 

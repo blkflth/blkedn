@@ -48,11 +48,12 @@ in {
     inputs.noctalia.packages.${system}.default #Noctalia input
     xdg-utils
     xdg-desktop-portal-gtk
+    kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-termfilechooser
     xwayland-satellite
 
     # general use and media
-    # kdePackages.dolphin # KDE file browser
+    kdePackages.dolphin # KDE file browser
     nautilus #GNOME file browser
     vlc
     obs-studio
