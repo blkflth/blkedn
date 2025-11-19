@@ -45,15 +45,14 @@
     wlr.enable = true;
     config = {
       common = {
-        default = ["kde"];
+        default = ["gnome"];
       };
       niri = {
-        default = ["kde"];
+        default = ["gnome"];
       };
     };
     configPackages = with pkgs; [xdg-desktop-portal-termfilechooser];
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
       kdePackages.xdg-desktop-portal-kde
     ];
   };
