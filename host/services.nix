@@ -45,10 +45,28 @@
     wlr.enable = true;
     config = {
       common = {
-        default = ["gnome"];
+        default = [
+          "kde"
+          "gnome"
+          "gtk"
+        ];
       };
       niri = {
-        default = ["gnome"];
+        default = [
+          "gnome"
+          "wlr"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = ["kde"];
+        "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
+        "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
+        "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
+        "org.freedesktop.impl.portal.Access" = ["kde"];
+        "org.freedesktop.impl.portal.Account" = ["kde"];
+        "org.freedesktop.impl.portal.Notification" = ["kde"];
+        "org.freedesktop.impl.portal.Settings" = ["kde"];
+        "org.freedesktop.impl.portal.RemoteDesktop" = ["kde"];
+        "org.freedesktop.impl.portal.Print" = ["kde"];
       };
     };
     configPackages = with pkgs; [xdg-desktop-portal-termfilechooser];
