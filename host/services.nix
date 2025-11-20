@@ -46,15 +46,12 @@
     config = {
       common = {
         default = [
-          "kde"
           "gnome"
-          "gtk"
         ];
       };
       niri = {
         default = [
           "gnome"
-          "kde"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["kde"];
         "org.freedesktop.impl.portal.OpenURI" = ["kde"];
@@ -120,12 +117,14 @@
 
     noctalia-shell.enable = true;
 
+    /*
     # SDDM display Manager
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "where-is-my-sddm-theme";
     };
+    */
+
     # Enable the X11 windowing system.
     xserver.enable = true;
 

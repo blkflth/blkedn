@@ -103,8 +103,8 @@ in {
     adwaita-icon-theme
     inputs.matugen.packages.x86_64-linux.default #matugen input
 
-    #SDDM Theming
-    where-is-my-sddm-theme
+    #greeter theme
+    tuigreet
 
     # custom packages
     fchat-horizon
