@@ -17,6 +17,14 @@
     shell = pkgs.fish;
   };
 
+  environment = {
+    shells = [pkgs.fish];
+    variables = {
+      EDITOR = "codium";
+      VISUAL = "codium";
+    };
+  };
+
   # Define hostname.
   networking.hostName = "blkedn";
 
