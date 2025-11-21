@@ -61,7 +61,7 @@
       };
 
       bar = {
-        backgroundOpacity = "0.00";
+        backgroundOpacity = "0.30";
         density = "default";
         floating = true;
         position = "top";
