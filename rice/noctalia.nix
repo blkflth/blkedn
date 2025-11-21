@@ -61,13 +61,13 @@
       };
 
       bar = {
-        backgroundOpacity = "0.78";
-        density = "compact";
+        backgroundOpacity = "0.00";
+        density = "default";
         floating = true;
         position = "top";
         marginHorizontal = 1;
-        marginVertical = 0.92;
-        showCapsule = false;
+        marginVertical = 0.47;
+        showCapsule = true;
         widgets = {
           left = [
             {
@@ -76,18 +76,29 @@
               id = "ControlCenter";
               useDistroLogo = true;
             }
-            {
-              characterCount = 2;
-              hideUnoccupied = false;
-              id = "Workspace";
-              labelMode = "index";
-            }
+
             {
               colorizeIcons = false;
               hideMode = "hidden";
               id = "Taskbar";
               onlyActiveWorkspaces = true;
               onlySameOutput = true;
+            }
+          ];
+          center = [
+            {
+              customFont = "";
+              formatHorizontal = "h:mm AP MM/dd";
+              formatVertical = "h mm AP - MM dd";
+              id = "Clock";
+              useCustomFont = false;
+              usePrimaryColor = true;
+            }
+            {
+              characterCount = 2;
+              hideUnoccupied = false;
+              id = "Workspace";
+              labelMode = "index";
             }
           ];
           right = [
@@ -105,20 +116,10 @@
               displayMode = "onhover";
               id = "Volume";
             }
-          ];
-          center = [
             {
               hideWhenZero = true;
               id = "NotificationHistory";
               showUnreadBadge = true;
-            }
-            {
-              customFont = "";
-              formatHorizontal = "h:mm AP MM/dd";
-              formatVertical = "HH mm - dd MM";
-              id = "Clock";
-              useCustomFont = false;
-              usePrimaryColor = true;
             }
           ];
         };
