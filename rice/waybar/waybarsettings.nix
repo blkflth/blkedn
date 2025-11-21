@@ -1,4 +1,17 @@
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  noctalia = cmd:
+    [
+      "noctalia-shell"
+      "ipc"
+      "call"
+    ]
+    ++ (pkgs.lib.splitString " " cmd);
+in {
   programs.waybar = {
     settings = {
       mainBar = {
@@ -11,11 +24,11 @@
         height = 0;
         modules-left = [
           "custom/nix"
-          "niri/workspaces"
           "niri/window"
         ];
         modules-center = [
           "niri/language"
+          "niri/workspaces"
           "clock"
         ];
         modules-right = [

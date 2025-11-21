@@ -113,16 +113,20 @@
        Noctalia systemd service -
     Use if not starting shell from Niri, such as if using only
     Niri with no other Desktop Environments
-    */
 
     noctalia-shell.enable = true;
 
+    */
     /*
     # SDDM display Manager
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
     };
+
+    # Enable automatic login for the user.
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "jlc";
     */
 
     # Enable the X11 windowing system.
@@ -136,9 +140,5 @@
 
     # Enable CUPS to print documents.
     printing.enable = true;
-
-    # Enable automatic login for the user.
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "jlc";
   };
 }
