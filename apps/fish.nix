@@ -12,4 +12,8 @@
     fishPlugins.fish-bd #command to go up in directory
     fishPlugins.colored-man-pages #does what it says
   ];
+
+  programs.fish = {
+    enable = true;
+  };
 }
