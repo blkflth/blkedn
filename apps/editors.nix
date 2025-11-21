@@ -24,6 +24,7 @@
 
   programs.vscode = {
     enable = true;
+    defaultEditor = true;
     package = pkgs.vscodium-fhs;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim

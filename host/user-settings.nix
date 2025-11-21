@@ -14,6 +14,7 @@
       #  kdePackages.kate #useful to have on hand tbh!
       #  thunderbird
     ];
+    shell = pkgs.fish;
   };
 
   # Define hostname.
