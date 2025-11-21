@@ -29,7 +29,7 @@
 
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
 - [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
-- [ ] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
+- [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
 - [x] Investigate locking down Qt Version to prevent breakage of GUIs
 - [x] Symlink VSCode / Codium Config file to Nix folder so it can be edited
