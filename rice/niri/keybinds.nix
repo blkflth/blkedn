@@ -123,7 +123,7 @@ in {
     "Mod+Return".action.spawn = ["ghostty" "-e" "fish"];
     "Mod+Return".hotkey-overlay.title = "Open Terminal ⌨️";
 
-    "Mod+E".action.spawn = ["dolphin"]; #open file explorer
+    "Mod+E".action.spawn = ["thunar"]; #open file explorer
     "Mod+E".hotkey-overlay.title = "Open File Explorer 📂";
 
     "Mod+Ctrl+S".action.spawn = ["ghostty" "-e" "btm"]; #open system monitor

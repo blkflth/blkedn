@@ -23,7 +23,7 @@ in {
     bluez-headers # bluetooth enabling
     alejandra #nix language formatting
     nix-init #tool of building packages
-    p7zip #unarchive tools
+    xarchiver #GTK frontend for 7zip
     glibc #c language library
     dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
@@ -53,15 +53,11 @@ in {
     inputs.noctalia.packages.${system}.default #Noctalia input
     xdg-utils
     xdg-desktop-portal-gtk
-    kdePackages.xdg-desktop-portal-kde
+    xdg-desktop-portal-xapp
     xwayland-satellite
 
     # general use and media
-    kdePackages.dolphin # KDE file browser
-    kdePackages.ksvg #SVG Display
-    kdePackages.kde-cli-tools #System Interaction Tooling
-    kdePackages.kio-fuse #to mount remote filesystems via FUSE
-    kdePackages.kio-extras #extra protocols support (sftp, fish and more)
+
     vlc
     obs-studio
     nicotine-plus # soulseek client
@@ -136,6 +132,15 @@ in {
 
     virt-manager.enable = true;
     firefox.enable = true;
+
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-volman
+        thunar-archive-plugin
+      ];
+    };
+
     # enable Niri Window Manager - NixOS source in flake, builds using cachix
     niri.enable = true;
     niri.package = pkgs.niri-stable;
