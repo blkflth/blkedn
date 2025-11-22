@@ -269,7 +269,7 @@
       };
 
       wallpaper = {
-        defaultWallpaper = "/home/jlc/Pictures/wallpapers/tokyo_night-04.png";
+        defaultWallpaper = "/home/jlc/Pictures/wallpapers/tokyo_night-02.png";
         directory = "/home/jlc/Pictures/wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
