@@ -61,8 +61,8 @@
       };
 
       bar = {
-        backgroundOpacity = "0.30";
-        density = "default";
+        backgroundOpacity = "0.00";
+        density = "comfortable";
         floating = true;
         position = "top";
         marginHorizontal = 1;
@@ -76,22 +76,24 @@
               id = "ControlCenter";
               useDistroLogo = true;
             }
-
             {
-              colorizeIcons = false;
-              hideMode = "hidden";
-              id = "Taskbar";
-              onlyActiveWorkspaces = true;
-              onlySameOutput = true;
+              id = "SystemMonitor";
+              showCpuUsage = true;
+              showCpuTemp = true;
+              showMemoryUsage = true;
+              showMemoryAsPercent = true;
+              showNetworkStats = false;
+              showDiskUsage = true;
+              usePrimaryColor = true;
             }
           ];
           center = [
             {
-              customFont = "";
+              customFont = "AtkynsonMono Nerd Font Propo";
               formatHorizontal = "h:mm AP MM/dd";
               formatVertical = "h mm AP - MM dd";
               id = "Clock";
-              useCustomFont = false;
+              useCustomFont = true;
               usePrimaryColor = true;
             }
             {
@@ -99,6 +101,14 @@
               hideUnoccupied = false;
               id = "Workspace";
               labelMode = "index";
+            }
+            {
+              colorizeIcons = false;
+              hideMode = "transparent";
+              id = "TaskbarGrouped";
+              labelMode = "index";
+              hideUnoccupied = true;
+              showLabelsOnlyWhenOccupied = true;
             }
           ];
           right = [
@@ -246,6 +256,7 @@
         pywalfox = false;
         qt = true;
         vicinae = true;
+        code = true;
       };
 
       ui = {
@@ -278,6 +289,8 @@
         transitionEdgeSmoothness = 0.15;
         transitionType = "disc";
         panelPosition = "center";
+        hideFilenames = true;
+        searchSubfolders = true;
       };
     };
     # this may also be a string or a path to a JSON file,
