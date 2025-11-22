@@ -23,7 +23,7 @@ in {
     bluez-headers # bluetooth enabling
     alejandra #nix language formatting
     nix-init #tool of building packages
-    unar #unarchive tools
+    p7zip #unarchive tools
     glibc #c language library
     dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
