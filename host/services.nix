@@ -48,6 +48,8 @@
         default = [
           "gnome"
         ];
+        "org.freedesktop.impl.portal.FileChooser" = ["kde"];
+        "org.freedesktop.impl.portal.OpenURI" = ["kde"];
       };
       niri = {
         default = [
