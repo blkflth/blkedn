@@ -35,7 +35,7 @@
 - [x] Symlink VSCode / Codium Config file to Nix folder so it can be edited
 - [x] Swap VSCode for Codium after backing up VSIXs
 - [ ] Locate and link AppIcons for various programs
-- [ ] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
+- [x] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
 - [x] Prune Wallpaper folder to only vibrant-color options
 - [ ] Investigate passing through Lutris Web calls to host
 - [x] Investigate and Declare Vicinae options
