@@ -83,13 +83,18 @@
               showMemoryUsage = true;
               showMemoryAsPercent = true;
               showNetworkStats = false;
-              showDiskUsage = true;
               usePrimaryColor = true;
+              showDiskUsage = true;
+              diskPath = [
+                "~/SSD1"
+                "~/SSD2"
+                "~/SSD3"
+              ];
             }
           ];
           center = [
             {
-              customFont = "AtkynsonMono Nerd Font Propo";
+              customFont = "AtkynsonMono NFP";
               formatHorizontal = "h:mm AP MM/dd";
               formatVertical = "h mm AP - MM dd";
               id = "Clock";
@@ -231,7 +236,7 @@
         mprisBlacklist = [
         ];
         preferredPlayer = "";
-        visualizerType = "wave";
+        visualizerType = "linear";
         volumeOverdrive = false;
         volumeStep = 5;
       };
@@ -260,9 +265,9 @@
       };
 
       ui = {
-        fontDefault = "Montserrat Light";
+        fontDefault = "AtkynsonMono NFP";
         fontDefaultScale = 1;
-        fontFixed = "AtkynsonMono Nerd Font Mono";
+        fontFixed = "AtkynsonMono NFM";
         fontFixedScale = 1;
         panelsOverlayLayer = true;
         tooltipsEnabled = true;
@@ -283,7 +288,7 @@
           }
         ];
         randomEnabled = true;
-        randomIntervalSec = 4140;
+        randomIntervalSec = 1800;
         setWallpaperOnAllMonitors = true;
         transitionDuration = 1500;
         transitionEdgeSmoothness = 0.15;
@@ -291,6 +296,7 @@
         panelPosition = "center";
         hideFilenames = true;
         searchSubfolders = true;
+        enableOverviewWallpaper = true;
       };
     };
     # this may also be a string or a path to a JSON file,
