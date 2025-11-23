@@ -33,6 +33,10 @@
     vicinae = {
       url = "github:vicinaehq/vicinae";
     };
+
+    affinty-nix = {
+      url = "github:mrshmllow/affinity-nix";
+    };
   };
 
   outputs = {
@@ -41,6 +45,7 @@
     home-manager,
     niri,
     vicinae,
+    affinty-nix,
     ...
   } @ inputs: let
     # users = "jlc";
@@ -81,6 +86,9 @@
             modules = [
               ./home.nix
               vicinae.homeManagerModules.default
+              {
+                home.packages = [affinity-nix.packages.x86_64-linux.v3];
+              }
             ];
           };
       };
