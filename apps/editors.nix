@@ -46,6 +46,10 @@
       tomoki1207.pdf
       fill-labs.dependi
       ms-python.python
+      charliermarsh.ruff
+      ms-python.vscode-pylance
+      ms-toolsai.jupyter
+      njpwerner.autodocstring
       rust-lang.rust-analyzer
     ];
   };
