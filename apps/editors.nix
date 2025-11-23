@@ -29,6 +29,7 @@
       asvetliakov.vscode-neovim
       mkhl.direnv
       enkia.tokyo-night
+      ecmel.vscode-html-css
       vadimcn.vscode-lldb
       eamodio.gitlens
       jnoortheen.nix-ide
