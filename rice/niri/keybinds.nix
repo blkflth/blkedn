@@ -126,6 +126,9 @@ in {
     "Mod+E".action.spawn = ["thunar"]; #open file explorer
     "Mod+E".hotkey-overlay.title = "Open File Explorer 📂";
 
+    "Mod+Shift+S".action.spawn = ["firestorm"]; #open SL Viewer
+    "Mod+Shift+S".hotkey-overlay.title = "Open Firestorm 🔥";
+
     "Mod+Ctrl+S".action.spawn = ["ghostty" "-e" "btm"]; #open system monitor
     "Mod+Ctrl+S".hotkey-overlay.title = "Open System Monitoring 📊";
 

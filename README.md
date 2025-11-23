@@ -28,7 +28,7 @@
 ## To-Do:
 
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
-- [ ] Declare MIME Types to prefer Affinity Suite and bespoke programs
+- [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
 - [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
 - [x] Investigate locking down Qt Version to prevent breakage of GUIs
@@ -37,7 +37,7 @@
 - [ ] Locate and link AppIcons for various programs
 - [x] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
 - [x] Prune Wallpaper folder to only vibrant-color options
-- [ ] Investigate passing through Lutris Web calls to host
+- [x] Investigate passing through Lutris Web calls to host (Unneeded since packaging FS for Nix)
 - [x] Investigate and Declare Vicinae options
 - [ ] Tweak niri layout & window rules further
 - [x] set `prefer-no-csd`

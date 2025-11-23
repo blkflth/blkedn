@@ -25,6 +25,7 @@ in {
     nix-init #tool of building packages
     xarchiver #GTK frontend for 7zip
     glibc #c language library
+    gvfs #virtual filesystem support
     dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
     wev #find keystrokes for wayland compsitor; helpful when altering keybinds
@@ -105,10 +106,12 @@ in {
     # custom packages
     fchat-horizon
     jhentai
+    firestorm
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
     fchat-horizon = pkgs.callPackage ~/Documents/Packages/Horizon/fchat-horizon.nix {};
+    firestorm = pkgs.callPackage ~/Documents/Packages/Firestorm/firestorm.nix {};
   };
 
   # Enable programs defined by Home Manager modules.
