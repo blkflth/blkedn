@@ -43,16 +43,6 @@
       {
         matches = [
           {
-            title = "^vesktop";
-          }
-        ];
-        default-column-width = {proportion = 0.33333;};
-        open-focused = true;
-        block-out-from = "screencast";
-      }
-      {
-        matches = [
-          {
             app-id = "^bottom.desktop";
           }
         ];
@@ -97,6 +87,16 @@
           }
         ];
         open-maximized = true;
+        open-focused = true;
+        block-out-from = "screencast";
+      }
+      {
+        matches = [
+          {
+            app-id = "^vesktop.desktop";
+          }
+        ];
+        default-column-width = {proportion = 0.33333;};
         open-focused = true;
         block-out-from = "screencast";
       }
