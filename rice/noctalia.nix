@@ -294,9 +294,9 @@
         transitionEdgeSmoothness = 0.15;
         transitionType = "disc";
         panelPosition = "center";
-        hideFilenames = true;
-        searchSubfolders = true;
-        enableOverviewWallpaper = true;
+        hideWallpaperFilenames = true;
+        recursiveSearch = true;
+        overviewEnabled = true;
       };
     };
     # this may also be a string or a path to a JSON file,
