@@ -103,7 +103,17 @@
       {
         matches = [
           {
-            title = "^F-Chat";
+            title = "^Proton";
+          }
+        ];
+        open-focused = false;
+        block-out-from = "screencast";
+        default-column-width = {proportion = 0.66667;};
+      }
+      {
+        matches = [
+          {
+            app-id = "^fchat";
           }
         ];
         open-focused = false;
