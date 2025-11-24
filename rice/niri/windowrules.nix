@@ -30,16 +30,7 @@
         open-floating = true;
         open-focused = false;
       }
-      {
-        matches = [
-          {
-            title = "^Firestorm";
-          }
-        ];
-        open-maximized = true;
-        open-focused = true;
-        block-out-from = "screencast";
-      }
+
       {
         matches = [
           {
@@ -52,7 +43,7 @@
       {
         matches = [
           {
-            title = "^vesktop";
+            app-id = "^vesktop.desktop";
           }
         ];
         default-column-width = {proportion = 0.33333;};
@@ -86,7 +77,7 @@
         ];
         open-maximized = true;
         open-focused = true;
-        block-out-from = "screencast";
+        #block-out-from = "screencast";
       }
       {
         matches = [
@@ -112,7 +103,27 @@
       {
         matches = [
           {
-            app-id = "^fchat-horizon.desktop";
+            title = "^F-Chat";
+          }
+        ];
+        open-focused = false;
+        block-out-from = "screencast";
+        default-column-width = {proportion = 0.66667;};
+      }
+      {
+        matches = [
+          {
+            title = "^Firestorm";
+          }
+        ];
+        open-maximized = true;
+        open-focused = true;
+        block-out-from = "screencast";
+      }
+      {
+        matches = [
+          {
+            title = "^JHenTai";
           }
         ];
         open-focused = false;
