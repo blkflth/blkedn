@@ -93,7 +93,7 @@
       {
         matches = [
           {
-            app-id = "^vesktop.desktop";
+            title = "^discord";
           }
         ];
         default-column-width = {proportion = 0.33333;};
