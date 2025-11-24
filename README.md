@@ -28,6 +28,8 @@
 ## To-Do:
 
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
+- [ ] set up Japanese IME and font
+- [ ] Go through packages and move options into ``home-manager`` wherever possible
 - [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
 - [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
