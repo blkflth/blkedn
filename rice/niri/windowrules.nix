@@ -43,7 +43,7 @@
       {
         matches = [
           {
-            app-id = "^vesktop.desktop";
+            title = "^vesktop";
           }
         ];
         default-column-width = {proportion = 0.33333;};
