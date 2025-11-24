@@ -45,7 +45,7 @@
     home-manager,
     niri,
     vicinae,
-    affinty-nix,
+    affinity-nix,
     ...
   } @ inputs: let
     # users = "jlc";
