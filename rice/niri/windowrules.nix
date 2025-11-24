@@ -57,7 +57,7 @@
         ];
         default-column-width = {proportion = 0.33333;};
         open-focused = true;
-        block-out-from = "screen-capture";
+        block-out-from = "screencast";
       }
       {
         matches = [
@@ -116,7 +116,7 @@
           }
         ];
         open-focused = false;
-        block-out-from = "screen-capture";
+        block-out-from = "screencast";
         default-column-width = {proportion = 0.66667;};
       }
     ];
