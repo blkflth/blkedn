@@ -68,7 +68,7 @@ in {
     ani-cli #CLI anime streaming
 
     # Creative Software
-    kdePackages.kdenlive #video editor
+    davinci-resolve #video editor
     obsidian # Notes organization
     blender-3_6
 
