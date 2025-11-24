@@ -93,7 +93,7 @@
       {
         matches = [
           {
-            title = "^discord";
+            title = "^vencord";
           }
         ];
         default-column-width = {proportion = 0.33333;};
