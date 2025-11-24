@@ -34,9 +34,7 @@
       url = "github:vicinaehq/vicinae";
     };
 
-    affinty-nix = {
-      url = "github:mrshmllow/affinity-nix";
-    };
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs = {
@@ -68,6 +66,9 @@
           {
             nixpkgs.overlays = [niri.overlays.niri];
           }
+          {
+            environment.systemPackages = [affinity-nix.packages.x86_64-linux.v3];
+          }
         ];
       };
 
@@ -86,9 +87,6 @@
             modules = [
               ./home.nix
               vicinae.homeManagerModules.default
-              {
-                home.packages = [affinity-nix.packages.x86_64-linux.v3];
-              }
             ];
           };
       };
