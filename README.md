@@ -13,7 +13,7 @@
 - [`niri`](https://github.com/YaLTeR/niri)
   - _Fluid and Intuitive Windowing System that does away with the concept of a 'desktop' entirely._
 
-##### Desktop Environment
+##### Desktop Shell
 
 - [`Noctalia`](https://github.com/noctalia-dev/noctalia-shell)
   - _Straightforward and Powerful Environment optimized for niri. Reduced here to a status bar with benefits._
