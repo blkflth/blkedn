@@ -51,7 +51,6 @@
       ms-toolsai.jupyter
       njpwerner.autodocstring
       rust-lang.rust-analyzer
-      serayuzgur.crates
       tamasfe.even-better-toml
     ];
   };
