@@ -41,7 +41,6 @@
       jgclark.vscode-todo-highlight
       vscode-icons-team.vscode-icons
       esbenp.prettier-vscode
-      tamasfe.even-better-toml
       yzhang.markdown-all-in-one
       yzane.markdown-pdf
       tomoki1207.pdf
@@ -52,6 +51,8 @@
       ms-toolsai.jupyter
       njpwerner.autodocstring
       rust-lang.rust-analyzer
+      serayuzgur.crates
+      tamasfe.even-better-toml
     ];
   };
 }
