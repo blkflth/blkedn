@@ -68,7 +68,8 @@ in {
     ani-cli #CLI anime streaming
 
     # Creative Software
-    #davinci-resolve #video editor
+    davinci-resolve #video editor
+    ffmpeg #video format converter
     obsidian # Notes organization
     blender-3_6
 
