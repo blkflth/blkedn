@@ -116,8 +116,8 @@
       enable = true;
     };
 
-    services.gvfs.enable = true; # Mount, trash, and other functionalities
-    services.tumbler.enable = true; # Thumbnail support for images
+    gvfs.enable = true; # Mount, trash, and other functionalities
+    tumbler.enable = true; # Thumbnail support for images
 
     # Enable the X11 windowing system.
     xserver.enable = true;
