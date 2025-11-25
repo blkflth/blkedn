@@ -77,6 +77,17 @@
     variant = "";
   };
 
+  # IME for Japanese Input
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc-ut
+      fcitx5-gtk
+    ];
+  };
+
   environment.sessionVariables = {
     # Niri-Flake setting for electron apps
     NIXOS_OZONE_WL = "1";
@@ -110,6 +121,8 @@
 
     # Enable the X11 windowing system.
     xserver.enable = true;
+    # Start IME on Wayland
+    xserver.desktopManager.runXdgAutostartIfNone = true;
 
     # KDE Plasma - here just in case
     # desktopManager.plasma6.enable = true;
