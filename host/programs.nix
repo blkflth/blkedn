@@ -82,8 +82,8 @@ in {
     winetricks #etxra wine DLLs
 
     #enable streaming media
-    gst_all_1.gst-plugins-ugly
-    haskellPackages.gi-gst
+    # gst_all_1.gst-plugins-ugly
+    # haskellPackages.gi-gst
 
     mangohud #process overlay
     lutris
