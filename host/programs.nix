@@ -25,7 +25,6 @@ in {
     nix-init #tool of building packages
     xarchiver #GTK frontend for 7zip
     glibc #c language library
-    gvfs #virtual filesystem support
     dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
     wev #find keystrokes for wayland compsitor; helpful when altering keybinds
@@ -137,6 +136,7 @@ in {
     virt-manager.enable = true;
     firefox.enable = true;
 
+    xfconf.enable = true; #allow Thundar configs
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [

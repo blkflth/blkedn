@@ -105,25 +105,8 @@
       enable = true;
     };
 
-    /*
-       Noctalia systemd service -
-    Use if not starting shell from Niri, such as if using only
-    Niri with no other Desktop Environments
-
-    noctalia-shell.enable = true;
-
-    */
-    /*
-    # SDDM display Manager
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-
-    # Enable automatic login for the user.
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "jlc";
-    */
+    services.gvfs.enable = true; # Mount, trash, and other functionalities
+    services.tumbler.enable = true; # Thumbnail support for images
 
     # Enable the X11 windowing system.
     xserver.enable = true;
