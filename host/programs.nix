@@ -59,7 +59,6 @@ in {
     # general use and media
 
     vlc
-    obs-studio
     nicotine-plus # soulseek client
     picard # music metadata editor
     feishin # Subsonic interface
@@ -67,6 +66,9 @@ in {
     ani-cli #CLI anime streaming
 
     # Creative Software
+
+    obs-studio
+    olive-editor #video editor
     davinci-resolve #video editor
     ffmpeg #video format converter
     obsidian # Notes organization
