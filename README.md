@@ -36,7 +36,7 @@
 - [x] Locate and link AppIcons for various programs (Unneeded)
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
 - [x] Set up Japanese IME 
-- [ ] Configure font-swtiching for Japanese
+- [x] Configure font-swtiching for Japanese
 - [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
 - [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
