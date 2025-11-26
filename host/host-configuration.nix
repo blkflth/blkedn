@@ -11,5 +11,6 @@
     ./greeter.nix
     ./services.nix
     ./user-settings.nix
+    ./priv/priv.nix
   ];
 }
