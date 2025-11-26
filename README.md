@@ -5,8 +5,8 @@
   
   <i>JLC's NixOS Dotfiles.</i>
 </div>
-
-<video src=".github/assets/ricing.mp4>" width="1280" height="720" controls>Showcase</video>
+[![Showcase](https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/thumbnail.jpg)]
+(https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/ricing.mp4)
 
 ### Highlights:
 
