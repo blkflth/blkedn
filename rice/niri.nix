@@ -7,7 +7,6 @@
   imports = [
     # import the noctalia manager module
     ./noctalia.nix
-    # inputs.noctalia.homeModules.default
 
     # import settings broken out into other files
     ./niri/startup.nix

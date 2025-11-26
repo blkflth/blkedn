@@ -17,8 +17,8 @@
       closeOnFocusLoss = true;
       faviconService = "twenty";
       font = {
-        normal = "Montserrat SemiBold";
-        size = 10.5;
+        normal = "AtkynsonMono NFP";
+        size = 11.0;
       };
       keybinding = "default";
       keybinds = {
