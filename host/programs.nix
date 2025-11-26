@@ -93,8 +93,7 @@ in {
     xivlauncher
 
     # styling tools
-    bibata-cursors
-    catppuccin-cursors
+    catppuccin-cursors.frappeDark
     font-manager
     adwaita-icon-theme
     kdePackages.fcitx5-configtool # IME Config tool
