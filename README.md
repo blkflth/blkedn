@@ -6,6 +6,8 @@
   <i>JLC's NixOS Dotfiles.</i>
 </div>
 
+<video src=".github/assets/ricing.mp4>" width="1280" height="720" controls>
+
 ### Highlights:
 
 ##### Window Manager
@@ -28,10 +30,12 @@
 ### To-Do:
 
 - [ ] Tweak niri layout & window rules further
+- [ ] Declare Vicinae Extensions
 - [ ] Go through packages and move options into ``home-manager`` wherever possible
-- [x] Locate and link AppIcons for various programs
+- [x] Locate and link AppIcons for various programs (Unneeded)
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
-- [x] set up Japanese IME and font
+- [x] Set up Japanese IME 
+- [ ] Configure font-swtiching for Japanese
 - [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
 - [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
@@ -41,8 +45,6 @@
 - [x] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
 - [x] Prune Wallpaper folder to only vibrant-color options
 - [x] Investigate passing through Lutris Web calls to host (Unneeded since packaging FS for Nix)
-- [x] Investigate and Declare Vicinae options
-
 - [x] set `prefer-no-csd`
 
 ---
@@ -71,9 +73,9 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 > _This should only need to be done once._
 
-- Change your Icon/Wallpaper/Screen-Recording files and locations in `noctalia.nix`, as well as your geolocation for weather and your monitor name in that same file.
+- Change your Icon/Wallpaper/Screen-Recording files and locations in `noctalia.nix`, as well as your geolocation for weather and your monitor output name in that same file.
 
-> _It's probably best to comment this file out of `rice.nix`'s imports to start, and, after Noctalia is built, to then follow the [instructions](https://docs.noctalia.dev/getting-started/nixos/#noctalia-settings) on Noctalia's site for getting the `.json` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import._
+> _If you elect to use the Noctalia `systemd` service instead of spawning from `niri`, It's probably best to comment this file out of `rice.nix`'s imports to start, and, after Noctalia is built, to then follow the [instructions](https://docs.noctalia.dev/getting-started/nixos/#noctalia-settings) on Noctalia's site for getting the `.json` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import. If using the `spawn-at-startup` option as in this config, you can check Noctalia's site and look for ``Assets/settings-default.json` to get the correct name for any setting you wish to change._
 
 - Comment out or delete games and programs as you see fit in `progams.nix`.
 
