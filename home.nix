@@ -23,16 +23,6 @@
   home.packages = with pkgs; [
   ];
 
-  #Set System Pointer Cursor
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      package = pkgs.catppuccin-cursors;
-      name = "frappeDark";
-      size = 24;
-    };
-  };
-
   #force override of files so home-manager doesn't throw a warning
 
   gtk.gtk2.force = true;

@@ -27,6 +27,12 @@
       environment = {
         NIXOS_OZONE_WL = "1";
       };
+      cursor = {
+        hide-after-inactive-ms = 60000;
+        hide-when-typing = true;
+        theme = "catppuccin-frappe-dark-cursors";
+        size = 22;
+      };
     };
   };
 }
