@@ -106,19 +106,8 @@ in {
 
     #greeter theme
     tuigreet
-    /*
-    # custom packages
-    fchat-horizon
-    jhentai
-    firestorm
-    */
   ];
-  /*
-  nixpkgs.config.packageOverrides = pkgs: {
-    fchat-horizon = pkgs.callPackage ~/Documents/Packages/Horizon/fchat-horizon.nix {};
-    firestorm = pkgs.callPackage ~/Documents/Packages/Firestorm/firestorm.nix {};
-  };
-  */
+
   # Enable programs defined by Home Manager modules.
 
   programs = {
