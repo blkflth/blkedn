@@ -1,3 +1,5 @@
 .gitattributes !filter !diff
 priv/** filter=git-crypt diff=git-crypt
 priv.nix filter=git-crypt diff=git-crypt
+horizon.nix filter=git-crypt diff=git-crypt
+firestorm.nix filter=git-crypt diff=git-crypt
