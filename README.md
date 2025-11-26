@@ -4,6 +4,7 @@
   <h1>dotfiles</h1>
   
   <i>JLC's NixOS Dotfiles.</i>
+
 [![Showcase](https://img.youtube.com/vi/pEOkPy0UQNA/0.jpg)](https://youtu.be/pEOkPy0UQNA)
 </div>
 
