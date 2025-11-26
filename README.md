@@ -4,9 +4,7 @@
   <h1>dotfiles</h1>
   
   <i>JLC's NixOS Dotfiles.</i>
-  
-https://github.com/blkflth/blkedn/blob/main/.github/assets/ricing.mp4
-
+[![Showcase](https://img.youtube.com/vi/pEOkPy0UQNA/0.jpg)](https://youtu.be/pEOkPy0UQNA)
 </div>
 
 
