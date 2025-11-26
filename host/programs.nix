@@ -96,10 +96,6 @@ in {
     bibata-cursors
     catppuccin-cursors
     font-manager
-    nerd-fonts.atkynson-mono
-    nerd-fonts.jetbrains-mono
-    montserrat
-    noto-fonts-emoji-blob-bin
     adwaita-icon-theme
     kdePackages.fcitx5-configtool # IME Config tool
     inputs.matugen.packages.x86_64-linux.default #matugen input

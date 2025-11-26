@@ -77,6 +77,33 @@
     variant = "";
   };
 
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.atkynson-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji-blob-bin
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [
+          "AtknsonMono NFM"
+          "Noto Sans Mono CJK JP"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Sans CJK JP"
+        ];
+        serif = [
+          "Noto Serif"
+          "Noto Serif CJK JP"
+        ];
+      };
+    };
+  };
+
   # IME for Japanese Input
   i18n.inputMethod = {
     enable = true;
@@ -116,6 +143,7 @@
       enable = true;
     };
 
+    #thunar utils
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
 
@@ -123,9 +151,6 @@
     xserver.enable = true;
     # Start IME on Wayland
     xserver.desktopManager.runXdgAutostartIfNone = true;
-
-    # KDE Plasma - here just in case
-    # desktopManager.plasma6.enable = true;
 
     # Enable Bluetooth control
     blueman.enable = true;
