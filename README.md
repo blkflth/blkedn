@@ -6,7 +6,7 @@
   <i>JLC's NixOS Dotfiles.</i>
 </div>
 
-<video src=".github/assets/ricing.mp4>" width="1280" height="720" controls>
+<video src=".github/assets/ricing.mp4>" width="1280" height="720" controls></video>
 
 ### Highlights:
 
