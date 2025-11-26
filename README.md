@@ -5,8 +5,7 @@
   
   <i>JLC's NixOS Dotfiles.</i>
 </div>
-[![Showcase](https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/thumbnail.jpg)]
-(https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/ricing.mp4)
+[![Showcase](https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/thumbnail.jpg)](https://raw.githubusercontent.com/blkflth/blkedn/main/.github/assets/ricing.mp4)
 
 ### Highlights:
 
