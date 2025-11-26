@@ -10,38 +10,39 @@
 
 ##### Window Manager
 
-- [`niri`](https://github.com/YaLTeR/niri)
+- [`Niri`](https://github.com/YaLTeR/niri)
   - _Fluid and Intuitive Windowing System that does away with the concept of a 'desktop' entirely._
 
 ##### Desktop Shell
 
 - [`Noctalia`](https://github.com/noctalia-dev/noctalia-shell)
-  - _Straightforward and Powerful Environment optimized for niri. Reduced here to a status bar with benefits._
+  - _Flexible and Powerful Environment optimized for Niri. Used as bar, notifications, wallpaper, and system control._
 
 ##### Launcher
 
 - [`Vicinae`](https://github.com/vicinaehq/vicinae)
-  - _Raycast Inspired and Raycast Compatible Launcher. Will be customized further with time._
+  - _Raycast Inspired/Compatible Launcher. Also used for clipboard and utility functions._
 
 ---
 
-## To-Do:
+### To-Do:
 
-- [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile
-- [x] set up Japanese IME and font
+- [ ] Tweak niri layout & window rules further
 - [ ] Go through packages and move options into ``home-manager`` wherever possible
+- [x] Locate and link AppIcons for various programs
+- [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
+- [x] set up Japanese IME and font
 - [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
 - [x] Investigate Bar options outside Noctalia (Keep Noctalia as general Shell)
 - [x] Swap SDDM Greeter for TUIGreet
 - [x] Investigate locking down Qt Version to prevent breakage of GUIs
 - [x] Symlink VSCode / Codium Config file to Nix folder so it can be edited
 - [x] Swap VSCode for Codium after backing up VSIXs
-- [ ] Locate and link AppIcons for various programs
 - [x] Investigate niri-flake command formatting to get `spawn-at-startup` and `spawn` commands for shell-based programs working
 - [x] Prune Wallpaper folder to only vibrant-color options
 - [x] Investigate passing through Lutris Web calls to host (Unneeded since packaging FS for Nix)
 - [x] Investigate and Declare Vicinae options
-- [ ] Tweak niri layout & window rules further
+
 - [x] set `prefer-no-csd`
 
 ---
@@ -78,7 +79,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
   Heavy-Hitters are for install time (if not file size) are:
 
-  _`blender`, `davinci-resolve`, `gimp3-with-plugins`, `inkscape-with-extensions`, `xivlauncher`._
+  _`blender`, `affinity`, `xivlauncher`._
 
 ## Notes:
 
