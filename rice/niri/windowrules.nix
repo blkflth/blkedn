@@ -39,6 +39,7 @@
         ];
         open-focused = true;
         default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.5;};
       }
       {
         matches = [
@@ -56,7 +57,7 @@
             title = "^VSCodium";
           }
         ];
-        default-column-width = {proportion = 0.66667;};
+        default-column-width = {proportion = 0.5;};
         open-focused = true;
       }
       {
@@ -65,9 +66,9 @@
             title = "^Affinity";
           }
         ];
-        open-maximized = true;
+        default-column-width = {proportion = 0.5;}
         open-focused = true;
-        #block-out-from = "screencast";
+        block-out-from = "screencast";
       }
       {
         matches = [
@@ -75,8 +76,7 @@
             title = "^Blender";
           }
         ];
-        default-column-width = {proportion = 1.0;};
-        open-maximized = true;
+        default-column-width = {proportion = 0.5;};
         open-focused = true;
         #block-out-from = "screencast";
       }
@@ -113,7 +113,7 @@
       {
         matches = [
           {
-            app-id = "^fchat";
+            app-id = "^fch";
           }
         ];
         open-focused = false;
@@ -133,7 +133,7 @@
       {
         matches = [
           {
-            title = "^JHenTai";
+            title = "^JHe";
           }
         ];
         open-focused = false;
