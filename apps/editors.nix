@@ -26,9 +26,10 @@
     enable = true;
     package = pkgs.vscodium-fhs;
     profiles.default.extensions = with pkgs.vscode-extensions; [
+      alefragnani.project-manager
+      alefragnani.bookmarks
       asvetliakov.vscode-neovim
       mkhl.direnv
-      enkia.tokyo-night
       ecmel.vscode-html-css
       vadimcn.vscode-lldb
       eamodio.gitlens
@@ -48,7 +49,6 @@
       ms-python.python
       charliermarsh.ruff
       ms-python.vscode-pylance
-      ms-toolsai.jupyter
       njpwerner.autodocstring
       rust-lang.rust-analyzer
       tamasfe.even-better-toml
