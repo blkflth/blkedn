@@ -66,7 +66,7 @@
             title = "^Affinity";
           }
         ];
-        default-column-width = {proportion = 0.5;}
+        default-column-width = {proportion = 0.5;};
         open-focused = true;
         block-out-from = "screencast";
       }
