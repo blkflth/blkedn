@@ -13,7 +13,7 @@
   */
   blender = pkgs.blender.override {hipSupport = true;};
 
-  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
+  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.11.tar.gz");
 in {
   imports = [
     aagl-gtk-on-nix.module
@@ -121,7 +121,6 @@ in {
     gamemode.enable = true;
 
     honkers-railway-launcher.enable = true;
-    sleepy-launcher.enable = true;
 
     virt-manager.enable = true;
     firefox.enable = true;
@@ -142,6 +141,7 @@ in {
   niri-flake.cache.enable = false; #uncomment once cache is built
 
   # cachix sources
+
   nix.settings = {
     substituters = [
       "https://vicinae.cachix.org"
