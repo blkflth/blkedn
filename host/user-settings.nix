@@ -9,7 +9,8 @@
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
-    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd" "samba"];
+    shell = pkgs.fish;
     packages = with pkgs; [
       #  kdePackages.kate #useful to have on hand tbh!
       #  thunderbird
@@ -17,7 +18,6 @@
   };
 
   environment = {
-    shells = [pkgs.fish];
     variables = {
       EDITOR = "codium";
       VISUAL = "codium";
@@ -26,6 +26,7 @@
 
   # Define hostname.
   networking.hostName = "blkedn";
+  networking.firewall.extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
 
   # Set your time zone.
   time.timeZone = "America/New_York";
