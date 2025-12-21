@@ -10,7 +10,6 @@
     isNormalUser = true;
     description = "JLC";
     extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd" "samba"];
-    shell = pkgs.fish;
     packages = with pkgs; [
       #  kdePackages.kate #useful to have on hand tbh!
       #  thunderbird
@@ -19,6 +18,7 @@
 
   environment = {
     variables = {
+      SHELL = "fish";
       EDITOR = "codium";
       VISUAL = "codium";
     };
