@@ -23,14 +23,6 @@
   home.packages = with pkgs; [
   ];
 
-  #force override of files so home-manager doesn't throw a warning
-
-  gtk.gtk2.force = true;
-  # home.file.".config/gtk-3.0".force = true;
-  # home.file.".config/gtk-3.0/settings.ini".force = true;
-  # home.file.".config/gtk-4.0/".force = true;
-  # home.file.".config/gtk-4.0/settings.ini".force = true;
-
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
