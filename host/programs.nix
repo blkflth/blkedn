@@ -97,8 +97,11 @@ in {
     catppuccin-cursors.frappeDark
     font-manager
     adwaita-icon-theme
+    dracula-icon-theme
     kdePackages.fcitx5-configtool # IME Config tool
     inputs.matugen.packages.x86_64-linux.default #matugen input
+    dconf-editor
+    dconf2nix
 
     #greeter theme
     tuigreet
@@ -125,7 +128,8 @@ in {
     virt-manager.enable = true;
     firefox.enable = true;
 
-    xfconf.enable = true; #allow Thundar configs
+    dconf.enable = true;
+    xfconf.enable = true; #allow Thunar configs
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
