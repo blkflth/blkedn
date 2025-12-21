@@ -7,6 +7,7 @@
     firefox
     protonmail-desktop
     proton-pass
+    protonvpn-gui
     vesktop
   ];
 }
