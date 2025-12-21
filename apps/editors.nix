@@ -27,7 +27,6 @@
     package = pkgs.vscodium-fhs;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
-      alefragnani.bookmarks
       asvetliakov.vscode-neovim
       mkhl.direnv
       ecmel.vscode-html-css
