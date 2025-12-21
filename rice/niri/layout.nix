@@ -24,6 +24,24 @@
         right = 7;
       };
 
+      default-column-display = "tabbed";
+
+      tab-indicator = {
+        enable = true;
+        hide-when-single-tab = true;
+        place-within-column = true;
+        position = "top";
+        width = 4.0;
+        length.total-proportion = 0.5;
+        corner-radius = 0.0;
+        gap = 5.0;
+        gaps-between-tabs = 0.0;
+        active.color = "#72e25096";
+        inactive.gradient.from = "#1c68e2e6";
+        inactive.gradient.to = "#bb38dff6";
+        urgent.color = "#e44949ed";
+      };
+
       default-column-width.proportion = 0.33333;
       focus-ring = {
         enable = true;
