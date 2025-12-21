@@ -81,6 +81,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.atkynson-mono
+      nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -144,8 +145,20 @@
     };
 
     #thunar utils
-    gvfs.enable = true; # Mount, trash, and other functionalities
+    gvfs = {
+      enable = true; # Mount, trash, and other functionalities
+      package = lib.mkForce pkgs.gnome.gvfs; #full GVFS package for SMB browsing
+    };
     tumbler.enable = true; # Thumbnail support for images
+
+    samba = {
+      enable = true;
+      openFirewall = true;
+      usershares = {
+        enable = true;
+        group = "samba";
+      };
+    };
 
     # Enable the X11 windowing system.
     xserver.enable = true;
