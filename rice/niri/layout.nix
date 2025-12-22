@@ -34,12 +34,12 @@
         width = 4.0;
         length.total-proportion = 0.66667;
         corner-radius = 3.0;
-        gap = 2.0;
-        gaps-between-tabs = 0.2;
-        active.color = "#72e25096";
-        inactive.gradient.from = "#1c68e2e6";
-        inactive.gradient.to = "#bb38dff6";
-        urgent.color = "#e44949ed";
+        gap = 4.0;
+        gaps-between-tabs = 2.0;
+        active.color = "#15e62ae3";
+        inactive.gradient.from = "#1c68e2ff";
+        inactive.gradient.to = "#b51de0ff";
+        urgent.color = "#e44949ff";
       };
 
       default-column-width.proportion = 0.33333;
