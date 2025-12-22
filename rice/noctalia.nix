@@ -26,11 +26,11 @@
             id = "shortcuts-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "weather-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "audio-card";
           }
           {
@@ -62,8 +62,9 @@
 
       bar = {
         backgroundOpacity = "0.00";
-        density = "comfortable";
-        floating = true;
+        density = "default";
+        floating = false;
+        transparent = false;
         position = "top";
         marginHorizontal = 1;
         marginVertical = 0.47;
@@ -86,9 +87,7 @@
               usePrimaryColor = true;
               showDiskUsage = true;
               diskPath = [
-                "~/SSD1"
-                "~/SSD2"
-                "~/SSD3"
+                "/"
               ];
             }
           ];
@@ -244,13 +243,8 @@
       settingsVersion = 16;
       setupCompleted = true;
       templates = {
-        discord = false;
-        discord_armcord = false;
-        discord_dorion = false;
-        discord_equibop = false;
-        discord_lightcord = false;
-        discord_vesktop = true;
-        discord_webcord = false;
+        discord = true;
+        niri = true;
         enableUserTemplates = false;
         foot = false;
         fuzzel = false;
