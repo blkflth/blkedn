@@ -27,7 +27,7 @@
   # Mount Point for NAS
   environment.systemPackages = [pkgs.cifs-utils];
   fileSystems."/home/jlc/NAS" = {
-    device = "//192.168.0.107/nas-share/";
+    device = "//smb://192.168.0.107/nas-share/";
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
