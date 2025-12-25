@@ -74,6 +74,7 @@ in {
     davinci-resolve #video editor
     ffmpeg #video format converter
     obsidian # Notes organization
+    gimp-with-plugins
     blender
 
     # productivity
