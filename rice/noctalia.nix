@@ -39,7 +39,7 @@
           }
         ];
 
-        position = "center";
+        position = "close_to_bar_button";
         shortcuts = {
           left = [
             {
@@ -61,7 +61,8 @@
       };
 
       bar = {
-        backgroundOpacity = "0.00";
+        backgroundOpacity = "1.00";
+        capsuleOpacity = 1;
         density = "default";
         floating = false;
         transparent = false;
@@ -69,13 +70,63 @@
         marginHorizontal = 1;
         marginVertical = 0.47;
         showCapsule = true;
+        showOutline = true;
+        outerCorners = true;
         widgets = {
           left = [
             {
+              id = "ControlCenter";
               customIconPath = "";
               icon = "";
-              id = "ControlCenter";
               useDistroLogo = true;
+            }
+            {
+              id = "Tray";
+            }
+            {
+              id = "Workspace";
+              characterCount = 2;
+              hideUnoccupied = false;
+              labelMode = "index";
+            }
+            {
+              id = "TaskbarGrouped";
+              colorizeIcons = false;
+              hideMode = "transparent";
+              labelMode = "index";
+              hideUnoccupied = true;
+              showLabelsOnlyWhenOccupied = true;
+            }
+          ];
+          center = [
+            {
+              id = "Clock";
+              customFont = "AtkynsonMono NFP";
+              formatHorizontal = "h:mm AP MM/dd";
+              formatVertical = "h mm AP - MM dd";
+              useCustomFont = true;
+              usePrimaryColor = true;
+            }
+            {
+              id = "NotificationHistory";
+              hideWhenZero = true;
+              showUnreadBadge = true;
+            }
+          ];
+          right = [
+            {
+              id = "MediaMini";
+              hideMode = "hidden";
+              maxWidth = 175;
+              scrollingMode = "hover";
+              showAlbumArt = false;
+              showVisualizer = true;
+              useFixedWidth = false;
+              visualizerType = "linear";
+            }
+            {
+              id = "Volume";
+              displayMode = "onhover";
             }
             {
               id = "SystemMonitor";
@@ -91,51 +142,6 @@
               ];
             }
           ];
-          center = [
-            {
-              customFont = "AtkynsonMono NFP";
-              formatHorizontal = "h:mm AP MM/dd";
-              formatVertical = "h mm AP - MM dd";
-              id = "Clock";
-              useCustomFont = true;
-              usePrimaryColor = true;
-            }
-            {
-              characterCount = 2;
-              hideUnoccupied = false;
-              id = "Workspace";
-              labelMode = "index";
-            }
-            {
-              colorizeIcons = false;
-              hideMode = "transparent";
-              id = "TaskbarGrouped";
-              labelMode = "index";
-              hideUnoccupied = true;
-              showLabelsOnlyWhenOccupied = true;
-            }
-          ];
-          right = [
-            {
-              hideMode = "hidden";
-              id = "MediaMini";
-              maxWidth = 175;
-              scrollingMode = "hover";
-              showAlbumArt = false;
-              showVisualizer = true;
-              useFixedWidth = false;
-              visualizerType = "linear";
-            }
-            {
-              displayMode = "onhover";
-              id = "Volume";
-            }
-            {
-              hideWhenZero = true;
-              id = "NotificationHistory";
-              showUnreadBadge = true;
-            }
-          ];
         };
       };
 
@@ -148,10 +154,6 @@
         manualSunset = "18:30";
         schedulingMode = "off";
         useWallpaperColors = true;
-      };
-
-      dock = {
-        enabled = false;
       };
 
       general = {
@@ -178,8 +180,30 @@
         weatherEnabled = true;
         monthBeforeDay = true;
         name = "Philadelphia, USA";
+        showCalendarWeather = true;
+        firstDayOfWeek = -1;
+        weatherShowEffects = true;
       };
-
+      calendar = {
+        cards = [
+          {
+            enabled = true;
+            id = "calendar-header-card";
+          }
+          {
+            enabled = true;
+            id = "calendar-month-card";
+          }
+          {
+            enabled = true;
+            id = "timer-card";
+          }
+          {
+            enabled = true;
+            id = "weather-card";
+          }
+        ];
+      };
       notifications = {
         criticalUrgencyDuration = 15;
         doNotDisturb = false;
@@ -190,6 +214,50 @@
         normalUrgencyDuration = 5;
         overlayLayer = true;
         respectExpireTimeout = true;
+        sounds = {
+          enabled = false;
+          volume = 0.5;
+          separateSounds = false;
+          criticalSoundFile = "";
+          normalSoundFile = "";
+          lowSoundFile = "";
+          excludedApps = "discord,firefox,chrome,chromium,edge";
+        };
+      };
+
+      sessionMenu = {
+        enableCountdown = true;
+        countdownDuration = 10000;
+        position = "center";
+        showHeader = true;
+        largeButtonsStyle = false;
+        showNumberLabels = true;
+        powerOptions = [
+          {
+            action = "lock";
+            enabled = true;
+          }
+          {
+            action = "suspend";
+            enabled = true;
+          }
+          {
+            action = "hibernate";
+            enabled = true;
+          }
+          {
+            action = "reboot";
+            enabled = true;
+          }
+          {
+            action = "logout";
+            enabled = true;
+          }
+          {
+            action = "shutdown";
+            enabled = true;
+          }
+        ];
       };
 
       network = {
@@ -265,6 +333,12 @@
         fontFixedScale = 1;
         panelsOverlayLayer = true;
         tooltipsEnabled = true;
+        panelBackgroundOpacity = 0.93;
+        panelsAttachedToBar = true;
+        settingsPanelMode = "attached";
+        wifiDetailsViewMode = "grid";
+        bluetoothDetailsViewMode = "grid";
+        bluetoothHideUnnamedDevices = false;
       };
 
       wallpaper = {
@@ -291,6 +365,45 @@
         hideWallpaperFilenames = true;
         recursiveSearch = true;
         overviewEnabled = true;
+      };
+
+      systemMonitor = {
+        cpuWarningThreshold = 80;
+        cpuCriticalThreshold = 90;
+        tempWarningThreshold = 80;
+        tempCriticalThreshold = 90;
+        gpuWarningThreshold = 80;
+        gpuCriticalThreshold = 90;
+        memWarningThreshold = 80;
+        memCriticalThreshold = 90;
+        diskWarningThreshold = 80;
+        diskCriticalThreshold = 90;
+        cpuPollingInterval = 3000;
+        tempPollingInterval = 3000;
+        gpuPollingInterval = 3000;
+        enableDgpuMonitoring = false;
+        memPollingInterval = 3000;
+        diskPollingInterval = 3000;
+        networkPollingInterval = 3000;
+        useCustomColors = false;
+        warningColor = "";
+        criticalColor = "";
+      };
+
+      dock = {
+        enabled = false;
+        displayMode = "auto_hide";
+        backgroundOpacity = 1;
+        floatingRatio = 1;
+        size = 1;
+        onlySameOutput = true;
+        monitors = [];
+        pinnedApps = [];
+        colorizeIcons = false;
+        pinnedStatic = false;
+        inactiveIndicators = false;
+        deadOpacity = 0.6;
+        animationSpeed = 1;
       };
     };
     # this may also be a string or a path to a JSON file,
