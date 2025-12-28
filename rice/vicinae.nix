@@ -20,23 +20,27 @@
       };
     };
     settings = {
-      closeOnFocusLoss = true;
-      faviconService = "twenty";
+      close_on_focus_loss = true;
+      favicon_service = "twenty";
       font = {
-        normal = "AtkynsonMono NFP";
-        size = 11.0;
+        normal = {
+          normal = "AtkynsonMono NFP";
+          size = 11.0;
+        };
       };
       keybinding = "default";
       keybinds = {
       };
-      popToRootOnClose = true;
-      rootSearch = {
-        searchFiles = false;
-      };
+      pop_to_root_on_close = true;
+      search_files_in_root = false;
       theme = {
         dark = {
           name = "matugen";
+          icon_theme = "default";
         };
+      };
+      launcher_window = {
+        opacity = 1.0;
       };
       window = {
         csd = false;
