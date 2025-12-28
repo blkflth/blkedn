@@ -11,6 +11,8 @@
   programs.neovim = {
     enable = true;
     withPython3 = true;
+    viAlias = true;
+    vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       statix
       LazyVim
