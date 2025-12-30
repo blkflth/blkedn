@@ -118,8 +118,8 @@ in {
     };
     coolercontrol.enable = true;
 
-    steam.enable = false;
-    steam.gamescopeSession.enable = false;
+    steam.enable = true;
+    steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
     honkers-railway-launcher.enable = true;
