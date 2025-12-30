@@ -5,19 +5,15 @@
   lib,
   ...
 }: let
-  /*
-    blender-pkgs = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/ae5fe741ba9acade281a9185139e3922811c9696.tar.gz";
-    sha256 = "18w4aa58lw82x79r4js2ppnq0d5xccfmic7r9n404lh9a6njdfjm";
-  }) {};
-  */
   blender = pkgs.blender.override {hipSupport = true;};
-
-  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.11.tar.gz");
+  # aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.11.tar.gz");
 in {
-  imports = [
+  /*
+    imports = [
     aagl-gtk-on-nix.module
   ];
+  */
+
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
@@ -122,7 +118,7 @@ in {
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
-    honkers-railway-launcher.enable = true;
+    # honkers-railway-launcher.enable = true;
 
     virt-manager.enable = true;
     firefox.enable = true;
