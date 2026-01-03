@@ -62,6 +62,10 @@ in {
     feishin # Subsonic interface
     element-desktop #matrix client
     ani-cli #CLI anime streaming
+    youtube-tui
+    tukai #terminal touch-typing practice
+    sherlock #username checker
+    scli #signal client
 
     # Creative Software
 
@@ -76,6 +80,9 @@ in {
     # productivity
     xournalpp #Notetaking
     libreoffice-fresh # Office Suite
+    kanri #kanban board
+    hoard #CLI Command Organizer
+    gtt #google translate tui
 
     # game/3d tools
     protonup-ng #installed proton GE
