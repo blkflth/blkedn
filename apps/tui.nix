@@ -22,6 +22,21 @@
       enable = true;
     };
 
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    #better cd command
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+      options = [
+        "--cmd cd"
+      ];
+    };
+
+    #better ls command
     eza = {
       enable = true;
       enableFishIntegration = true;
@@ -30,9 +45,15 @@
       git = true;
       extraOptions = [
         "--group-directories-first"
+        "--no-time"
+        "--no-permissions"
+        "--tree"
+        "--long"
+        "--no-user"
       ];
     };
 
+    #better find command
     fd = {
       enable = true;
       ignores = [
@@ -42,6 +63,7 @@
       hidden = true;
     };
 
+    #better cat command
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [

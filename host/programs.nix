@@ -83,6 +83,7 @@ in {
     kanri #kanban board
     hoard #CLI Command Organizer
     gtt #google translate tui
+    tlrc #simiplified man pages written in rust
 
     # game/3d tools
     protonup-ng #installed proton GE
@@ -112,6 +113,7 @@ in {
   # Enable programs defined by Home Manager modules.
 
   programs = {
+    fish.enable = true;
     direnv = {
       enable = true;
       direnvrcExtra = ''
