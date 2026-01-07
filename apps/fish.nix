@@ -16,7 +16,6 @@
     shellAliases = {
       build = "nh os switch ~/Nix --impure";
       update = "nh os switch -u -a ~/Nix --impure";
-      test = "nh os test ~/Nix --impure";
       preview = "nh os test -n ~/Nix --impure";
       scrub = "nh clean all --keep-since 7d, --keep 5";
       sweep = "nix-collect-garbage -v";
