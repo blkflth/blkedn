@@ -30,7 +30,17 @@
         open-floating = true;
         open-focused = false;
       }
-
+      {
+        matches = [
+          {
+            app-id = "^steam";
+          }
+        ];
+        default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.5;};
+        open-floating = true;
+        open-focused = false;
+      }
       {
         matches = [
           {
