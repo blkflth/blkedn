@@ -5,11 +5,13 @@
   ...
 }: {
   home.packages = with pkgs; [
-    yazi
+    xdg-desktop-portal-termfilechooser
   ];
 
   programs.yazi = {
     enable = true;
+    enableFishIntegration = true;
+
     settings = {
       log = {
         enabled = false;
@@ -17,19 +19,44 @@
       mgr = {
         show_hidden = true;
       };
-    };
-    yaziPlugins = {
-      enable = true;
-      plugins = {
-        starship.enable = true;
-        jump-to-char = {
-          enable = true;
-          keys.toggle.on = ["F"];
-        };
-        ouch.enable = true;
-        system-clipboard.enable = true;
-        full-border.enable = true;
+      input = {
+        cursor_blink = true;
       };
+      confirm = {
+        trash = true;
+        delete = true;
+        overwrite = true;
+        quit = false;
+      };
+      which = {
+        sort_sensitive = false;
+        sort_translit = true;
+      };
+      preview = {
+        wrap = "yes";
+        image_filter = "catmull-rom";
+        image_quality = 80;
+      };
+    };
+
+    plugins = {
+      yatline = pkgs.yaziPlugins.yatline;
+      yatline-catppuccin = pkgs.yaziPlugins.yatline-catppuccin;
+      wl-clipboard = pkgs.yaziPlugins.wl-clipboard;
+      toggle-pane = pkgs.yaziPlugins.toggle-pane;
+      sudo = pkgs.yaziPlugins.sudo;
+      smart-paste = pkgs.yaziPlugins.smart-paste;
+      smart-enter = pkgs.yaziPlugins.smart-enter;
+      smart-filter = pkgs.yaziPlugins.smart-filter;
+      restore = pkgs.yaziPlugins.restore;
+      relative-motions = pkgs.yaziPlugins.relative-motions;
+      recycle-bin = pkgs.yaziPlugins.recycle-bin;
+      ouch = pkgs.yaziPlugins.ouch;
+      mount = pkgs.yaziPlugins.mount;
+      mediainfo = pkgs.yaziPlugins.mediainfo;
+      jump-to-char = pkgs.yaziPlugins.jump-to-char;
+      compress = pkgs.yaziPlugins.compress;
+      dupes = pkgs.yaziPlugins.dupes;
     };
   };
 }
