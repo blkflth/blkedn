@@ -53,6 +53,7 @@ in {
     xdg-desktop-portal-gtk
     xdg-desktop-portal-xapp
     xwayland-satellite
+    cmatrix
 
     # general use and media
 
