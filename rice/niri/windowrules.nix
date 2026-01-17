@@ -37,7 +37,9 @@
           }
         ];
         open-floating = true;
-        open-focused = false;
+        open-focused = true;
+        default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.5;};
       }
       {
         matches = [
