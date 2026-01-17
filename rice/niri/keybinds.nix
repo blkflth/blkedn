@@ -95,7 +95,7 @@ in {
 
     "Mod+Shift+C".action = center-column;
     "Mod+Alt+C".action = center-visible-columns;
-    "Mod+Shift+Alt+C".action = toggle-column-tabbed-display;
+    "Mod+T".action = toggle-column-tabbed-display;
 
     "Mod+Alt+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
@@ -143,10 +143,10 @@ in {
     "Mod+Alt+E".action.spawn = ["vicinae" "vicinae://extensions/vicinae/vicinae/search-emojis"];
     "Mod+Alt+E".hotkey-overlay.title = "Emojis 🤠";
 
-    "Mod+T".action.spawn = ["vicinae" "vicinae://extensions/asubbotin@raycast/pomodoro/pomodoro-control-timer"];
-    "Mod+T".hotkey-overlay.title = "Start Pomodoro Timer ⏲️";
+    # "Mod+T".action.spawn = ["vicinae" "vicinae://extensions/asubbotin@raycast/pomodoro/pomodoro-control-timer"];
+    #"Mod+T".hotkey-overlay.title = "Start Pomodoro Timer ⏲️";
 
-    "Mod+Alt+T".action.spawn = ["vicinae" "vicinae://extensions/ThatNerd@raycast/timers/startCustomTimer"];
-    "Mod+Alt+T".hotkey-overlay.title = "Start Custom Timer ⏲️";
+    #"Mod+Alt+T".action.spawn = ["vicinae" "vicinae://extensions/ThatNerd@raycast/timers/startCustomTimer"];
+    #"Mod+Alt+T".hotkey-overlay.title = "Start Custom Timer ⏲️";
   };
 }

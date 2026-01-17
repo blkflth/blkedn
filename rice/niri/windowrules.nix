@@ -33,6 +33,58 @@
       {
         matches = [
           {
+            app-id = "^feh$";
+          }
+        ];
+        open-floating = true;
+        open-focused = false;
+      }
+      {
+        matches = [
+          {
+            app-id = "^xarchiver$";
+          }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "thunar$";
+            title = "^Rename ";
+          }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^dot\.floating\.thunar$";
+          }
+        ];
+        open-floating = true;
+        default-column-width = {proportion = 0.33333;};
+        default-window-height = {proportion = 0.5;};
+      }
+      {
+        matches = [
+          {
+            app-id = "^thunar-bulk-rename$";
+          }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "^thunar-volman$";
+          }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {
             app-id = "^steam";
           }
         ];
@@ -113,17 +165,17 @@
       {
         matches = [
           {
-            title = "^Proton";
+            title = "^Proton$";
           }
         ];
-        open-focused = false;
+        open-focused = true;
         block-out-from = "screencast";
         default-column-width = {proportion = 0.66667;};
       }
       {
         matches = [
           {
-            app-id = "^fch";
+            app-id = "^fcha";
           }
         ];
         open-focused = false;
@@ -147,6 +199,7 @@
           }
         ];
         open-focused = false;
+        open-floating = true;
         block-out-from = "screencast";
         default-column-width = {proportion = 0.66667;};
       }
