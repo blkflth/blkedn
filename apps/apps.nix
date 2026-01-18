@@ -7,5 +7,9 @@
     ./tui.nix
   ];
 
-  programs.feh.enable = true; #image viewer
+  programs = {
+    feh = {
+      enable = true; #image viewer
+    };
+  };
 }
