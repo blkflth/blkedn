@@ -15,10 +15,10 @@
       enable = true;
       theme = "dark";
       style = "native";
-      addons = with pkgs.ankiAddons; [
-        anki-connect
-        review-heatmap
-        recolor
+      addons = [
+        pkgs.ankiAddons.anki-connect
+        pkgs.ankiAddons.review-heatmap
+        pkgs.ankiAddons.recolor
       ];
       sync = {
         autoSync = true;
