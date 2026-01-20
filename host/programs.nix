@@ -83,6 +83,7 @@ in {
     libreoffice-fresh # Office Suite
     kanri #kanban board
     tagainjisho #Japanese Dictionary
+    memento #mpv player for JP Study
     hoard #CLI Command Organizer
     gtt #google translate tui
     tlrc #simiplified man pages written in rust
