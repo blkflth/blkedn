@@ -82,7 +82,7 @@ in {
     xournalpp #Notetaking
     libreoffice-fresh # Office Suite
     kanri #kanban board
-    tagainjisho #Japanese Dictionary
+    tagainijisho #Japanese Dictionary
     memento #mpv player for JP Study
     hoard #CLI Command Organizer
     gtt #google translate tui
