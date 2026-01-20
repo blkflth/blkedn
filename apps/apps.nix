@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./web.nix
     ./fish.nix
@@ -15,10 +19,10 @@
       enable = true;
       theme = "dark";
       style = "native";
-      addons = [
-        pkgs.ankiAddons.anki-connect
-        pkgs.ankiAddons.review-heatmap
-        pkgs.ankiAddons.recolor
+      addons = with pkgs.ankiAddons; [
+        anki-connect
+        review-heatmap
+        recolor
       ];
       sync = {
         autoSync = true;
