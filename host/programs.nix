@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  blender = pkgs.blender.override {hipSupport = true;};
+  blender = pkgs.blender.override {rocmSupport = true;};
   # aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.11.tar.gz");
 in {
   /*
