@@ -15,6 +15,9 @@
       # configure noctalia here; defaults will
       # be deep merged with these attributes.
 
+      settingsVersion = 16;
+      setupCompleted = true;
+
       controlCenter = {
         cards = [
           {
@@ -148,12 +151,29 @@
       colorSchemes = {
         predefinedScheme = "Noctalia (Default)";
         darkMode = true;
-        generateTemplatesForPredefined = true;
-        matugenSchemeType = "scheme-content";
+        useWallpaperColors = true;
+        generationMethod = "content";
         manualSunrise = "06:30";
         manualSunset = "18:30";
         schedulingMode = "off";
-        useWallpaperColors = true;
+      };
+
+      templates = {
+        enableUserTheming = false;
+        activeTemplates = [
+          discord
+          niri
+          foot
+          fuzzel
+          ghostty
+          gtk
+          kcolorscheme
+          kitty
+          pywalfox
+          qt
+          vicinae
+          code
+        ];
       };
 
       general = {
@@ -184,6 +204,7 @@
         firstDayOfWeek = -1;
         weatherShowEffects = true;
       };
+
       calendar = {
         cards = [
           {
@@ -306,24 +327,6 @@
         visualizerType = "linear";
         volumeOverdrive = false;
         volumeStep = 5;
-      };
-
-      settingsVersion = 16;
-      setupCompleted = true;
-      templates = {
-        discord = true;
-        niri = true;
-        enableUserTemplates = false;
-        foot = false;
-        fuzzel = false;
-        ghostty = true;
-        gtk = true;
-        kcolorscheme = true;
-        kitty = false;
-        pywalfox = false;
-        qt = true;
-        vicinae = true;
-        code = true;
       };
 
       ui = {
