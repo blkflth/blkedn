@@ -161,6 +161,7 @@
       templates = {
         enableUserTheming = false;
         activeTemplates = [
+          /*
           discord
           niri
           foot
@@ -173,6 +174,7 @@
           qt
           vicinae
           code
+          */
         ];
       };
 
