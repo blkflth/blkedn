@@ -54,6 +54,7 @@ in {
     xdg-desktop-portal-xapp
     xwayland-satellite
     cmatrix
+    gpu-screen-recorder #used for Noctalia's inbuilt function
 
     # general use and media
 
