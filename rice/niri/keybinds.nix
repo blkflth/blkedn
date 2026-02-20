@@ -94,8 +94,11 @@ in {
     "Mod+Alt+R".action = switch-preset-window-height-back;
 
     "Mod+Shift+C".action = center-column;
+    "Mod+Shift+C".hotkey-overlay.title = "Center Column";
     "Mod+Alt+C".action = center-visible-columns;
+    "Mod+Alt+C".hotkey-overlay.title = "Center Visible Columns";
     "Mod+T".action = toggle-column-tabbed-display;
+    "Mod+T".hotkey-overlay.title = "Toggle Tabbed Display";
 
     "Mod+Alt+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
