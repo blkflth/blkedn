@@ -23,7 +23,7 @@
       signal = "scli";
       translate = "gtt";
       practice = "tukai";
-      anime "ani-cli";
+      anime = "ani-cli";
     };
   };
 }
