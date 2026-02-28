@@ -67,7 +67,7 @@ in {
     youtube-tui
     tukai #terminal touch-typing practice
     sherlock #username checker
-    scli #signal client
+    gurk-rs #signal client
 
     # Creative Software
 

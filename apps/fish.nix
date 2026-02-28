@@ -20,7 +20,7 @@
       scrub = "nh clean all --keep-since 7d, --keep 5";
       sweep = "nix-collect-garbage -v";
       assess = "nix-collect-garbage -v --dry-run";
-      signal = "scli";
+      signal = "gurk";
       translate = "gtt";
       practice = "tukai";
       anime = "ani-cli";
