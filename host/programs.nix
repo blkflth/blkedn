@@ -140,7 +140,7 @@ in {
     xfconf.enable = true; #allow Thunar configs
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [
+      plugins = with pkgs; [
         thunar-volman
         thunar-archive-plugin
       ];
