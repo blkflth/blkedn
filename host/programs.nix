@@ -59,6 +59,7 @@ in {
     # general use and media
 
     vlc
+    ungoogled-chromium
     nicotine-plus # soulseek client
     picard # music metadata editor
     feishin # Subsonic interface
