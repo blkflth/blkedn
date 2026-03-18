@@ -109,7 +109,6 @@ in {
     adwaita-icon-theme
     dracula-icon-theme
     kdePackages.fcitx5-configtool # IME Config tool
-    inputs.matugen.packages.x86_64-linux.default #matugen input
 
     #greeter theme
     tuigreet

@@ -13,7 +13,6 @@
     ./host/host-configuration.nix
     ./hw/virt.nix
     inputs.home-manager.nixosModules.home-manager
-    inputs.matugen.nixosModules.default
   ];
 
   # Bootloader.
@@ -33,7 +32,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # allow Insecure Packages
-  nixpkgs.config.permittedInsecurePackages = ["electron-36.9.5"];
+  nixpkgs.config.permittedInsecurePackages = ["electron-36.9.5" "electron-37" "electron-38" "electron-39" "electron-40"];
 
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
