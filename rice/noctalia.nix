@@ -67,7 +67,7 @@
         backgroundOpacity = "1.00";
         capsuleOpacity = 1;
         density = "default";
-        floating = false;
+        barType = "framed";
         transparent = false;
         position = "top";
         marginHorizontal = 1;
@@ -75,6 +75,10 @@
         showCapsule = true;
         showOutline = true;
         outerCorners = true;
+        showOnWorkSpaceSwitch = false;
+        mouseWheelAction = "content";
+        middleClickAction = "none";
+        rightClickAction = "settings";
         widgets = {
           left = [
             {
@@ -161,17 +165,42 @@
       templates = {
         enableUserTheming = false;
         activeTemplates = [
-          vesktop
-          niri
-          foot
-          fuzzel
-          ghostty
-          gtk
-          kcolorscheme
-          kitty
-          qt
-          vicinae
-          code
+          {
+            enabled = true;
+            id = "discord";
+          }
+          {
+            enabled = true;
+            id = "niri";
+          }
+          {
+            enabled = true;
+            id = "ghostty";
+          }
+          {
+            enabled = true;
+            id = "gtk";
+          }
+          {
+            enabled = true;
+            id = "kcolorscheme";
+          }
+          {
+            enabled = true;
+            id = "qt";
+          }
+          {
+            enabled = true;
+            id = "vicinae";
+          }
+          {
+            enabled = true;
+            id = "code";
+          }
+          {
+            enabled = true;
+            id = "steam";
+          }
         ];
       };
 
@@ -188,6 +217,7 @@
         scaleRatio = 1;
         screenRadiusRatio = 1.00;
         showScreenCorners = true;
+        showChangelogOnStartup = true;
       };
 
       location = {
@@ -259,11 +289,11 @@
           }
           {
             action = "suspend";
-            enabled = true;
+            enabled = false;
           }
           {
             action = "hibernate";
-            enabled = true;
+            enabled = false;
           }
           {
             action = "reboot";
