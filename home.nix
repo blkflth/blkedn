@@ -27,7 +27,7 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
-  home-manager.backupFileExtension = "bak";
+  backupFileExtension = "bak";
 
   programs.home-manager.enable = true;
 }
