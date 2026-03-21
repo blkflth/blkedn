@@ -161,7 +161,6 @@
       templates = {
         enableUserTheming = false;
         activeTemplates = [
-          /*
           discord
           niri
           foot
@@ -170,11 +169,9 @@
           gtk
           kcolorscheme
           kitty
-          pywalfox
           qt
           vicinae
           code
-          */
         ];
       };
 
