@@ -13,6 +13,11 @@
 
   gtk = {
     enable = true;
+    colorScheme = "dark";
+    theme = {
+      name = "adw-gtk3";
+      package = pkgs.adw-gtk3;
+    };
     font = {
       name = "AtkynsonMono NFP";
       package = pkgs.nerd-fonts.atkynson-mono;
