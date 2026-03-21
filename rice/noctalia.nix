@@ -161,7 +161,7 @@
       templates = {
         enableUserTheming = false;
         activeTemplates = [
-          discord
+          vesktop
           niri
           foot
           fuzzel
