@@ -121,7 +121,7 @@
             title = "^VSCodium";
           }
         ];
-        default-column-width = {proportion = 0.5;};
+        default-column-width = {proportion = 0.33333;};
         open-focused = true;
       }
       {
