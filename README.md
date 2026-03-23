@@ -33,6 +33,7 @@
 - [ ] Tweak niri layout & window rules further
 - [ ] Declare Vicinae Extensions
 - [ ] Go through packages and move options into ``home-manager`` wherever possible
+- [ ] Properly configure Home-Manager backup settings to stop service restart error for gtk-4.0 css file (no more clobbering)
 - [x] Locate and link AppIcons for various programs (Unneeded)
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
 - [x] Set up Japanese IME 
