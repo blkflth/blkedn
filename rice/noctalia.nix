@@ -9,7 +9,11 @@
   ];
 
   # configure options
+
   programs.noctalia-shell = {
+    xdg.configFile."noctalia/settings.json".source = ./settings.json;
+
+    /*
     enable = true;
     settings = {
       # configure noctalia here; defaults will
@@ -439,6 +443,6 @@
       };
     };
     # this may also be a string or a path to a JSON file,
-    # but in this case must include *all* settings.
+    */
   };
 }
