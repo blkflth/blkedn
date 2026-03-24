@@ -7,8 +7,8 @@
     "density": "default",
     "showOutline": true,
     "showCapsule": true,
-    "capsuleOpacity": 1,
-    "capsuleColorKey": "none",
+    "capsuleOpacity": 0.1,
+    "capsuleColorKey": "tertiary",
     "widgetSpacing": 6,
     "contentPadding": 2,
     "fontScale": 1,
@@ -39,7 +39,7 @@
         },
         {
           "blacklist": [],
-          "chevronColor": "none",
+          "chevronColor": "tertiary",
           "colorizeIcons": false,
           "drawerEnabled": true,
           "hidePassive": false,
@@ -47,11 +47,24 @@
           "pinned": []
         },
         {
+          "defaultSettings": {
+            "cursorPosition": 0,
+            "filePath": "",
+            "fontSize": 14,
+            "panelHeight": 400,
+            "panelWidth": 600,
+            "scratchpadContent": "",
+            "scrollPositionX": 0,
+            "scrollPositionY": 0
+          },
+          "id": "plugin:notes-scratchpad"
+        },
+        {
           "characterCount": 2,
           "colorizeIcons": false,
-          "emptyColor": "secondary",
+          "emptyColor": "tertiary",
           "enableScrollWheel": true,
-          "focusedColor": "primary",
+          "focusedColor": "secondary",
           "followFocusedScreen": false,
           "fontWeight": "bold",
           "groupedBorderOpacity": 1,
@@ -59,8 +72,8 @@
           "iconScale": 0.8,
           "id": "Workspace",
           "labelMode": "index",
-          "occupiedColor": "secondary",
-          "pillSize": 0.6,
+          "occupiedColor": "primary",
+          "pillSize": 0.6000000000000001,
           "showApplications": false,
           "showApplicationsHover": false,
           "showBadge": true,
@@ -69,7 +82,7 @@
         },
         {
           "colorizeIcons": false,
-          "hideMode": "hidden",
+          "hideMode": "transparent",
           "iconScale": 0.8,
           "id": "Taskbar",
           "maxTaskbarWidth": 40,
@@ -83,7 +96,10 @@
       ],
       "center": [
         {
-          "clockColor": "none",
+          "id": "plugin:weekly-calendar"
+        },
+        {
+          "clockColor": "secondary",
           "customFont": "AtkynsonMono NFP",
           "formatHorizontal": "h:mm AP MM/dd",
           "formatVertical": "h mm AP - MM dd",
@@ -104,57 +120,55 @@
         {
           "hideWhenZero": true,
           "hideWhenZeroUnread": false,
-          "iconColor": "none",
+          "iconColor": "tertiary",
           "id": "NotificationHistory",
           "showUnreadBadge": true,
-          "unreadBadgeColor": "primary"
+          "unreadBadgeColor": "secondary"
         }
       ],
       "right": [
         {
           "compactMode": false,
-          "hideMode": "hidden",
+          "hideMode": "transparent",
           "hideWhenIdle": false,
           "id": "MediaMini",
           "maxWidth": 175,
           "panelShowAlbumArt": true,
           "scrollingMode": "hover",
-          "showAlbumArt": false,
+          "showAlbumArt": true,
           "showArtistFirst": true,
           "showProgressRing": true,
           "showVisualizer": true,
-          "textColor": "none",
+          "textColor": "secondary",
           "useFixedWidth": false,
           "visualizerType": "linear"
         },
         {
           "displayMode": "onhover",
-          "iconColor": "none",
+          "iconColor": "secondary",
           "id": "Volume",
           "middleClickCommand": "pwvucontrol || pavucontrol",
-          "textColor": "none"
+          "textColor": "tertiary"
         },
         {
           "compactMode": true,
-          "diskPath": [
-            "/"
-          ],
-          "iconColor": "none",
+          "diskPath": "/",
+          "iconColor": "tertiary",
           "id": "SystemMonitor",
           "showCpuCores": false,
           "showCpuFreq": false,
           "showCpuTemp": true,
           "showCpuUsage": true,
-          "showDiskAvailable": false,
+          "showDiskAvailable": true,
           "showDiskUsage": true,
-          "showDiskUsageAsPercent": false,
-          "showGpuTemp": false,
+          "showDiskUsageAsPercent": true,
+          "showGpuTemp": true,
           "showLoadAverage": false,
           "showMemoryAsPercent": true,
           "showMemoryUsage": true,
           "showNetworkStats": false,
           "showSwapUsage": false,
-          "textColor": "none",
+          "textColor": "tertiary",
           "useMonospaceFont": true,
           "usePadding": false
         },
@@ -193,9 +207,9 @@
     "animationSpeed": 1,
     "animationDisabled": false,
     "compactLockScreen": false,
-    "lockScreenAnimations": false,
+    "lockScreenAnimations": true,
     "lockOnSuspend": true,
-    "showSessionButtonsOnLockScreen": true,
+    "showSessionButtonsOnLockScreen": false,
     "showHibernateOnLockScreen": false,
     "enableLockScreenMediaControls": false,
     "enableShadows": true,
@@ -250,12 +264,12 @@
     "fontFixedScale": 1,
     "tooltipsEnabled": true,
     "scrollbarAlwaysVisible": true,
-    "boxBorderEnabled": false,
-    "panelBackgroundOpacity": 0.93,
+    "boxBorderEnabled": true,
+    "panelBackgroundOpacity": 0.99,
     "translucentWidgets": false,
     "panelsAttachedToBar": true,
     "settingsPanelMode": "attached",
-    "settingsPanelSideBarCardStyle": false
+    "settingsPanelSideBarCardStyle": true
   },
   "location": {
     "name": "Philadelphia, USA",
@@ -305,7 +319,7 @@
     "randomIntervalSec": 1800,
     "transitionDuration": 1500,
     "transitionType": [
-      "disc"
+      "pixelate"
     ],
     "skipStartupTransition": false,
     "transitionEdgeSmoothness": 0.15,
@@ -355,7 +369,7 @@
     "density": "default"
   },
   "controlCenter": {
-    "position": "close_to_bar_button",
+    "position": "center",
     "diskPath": "/",
     "shortcuts": {
       "left": [
@@ -385,7 +399,7 @@
         "id": "shortcuts-card"
       },
       {
-        "enabled": false,
+        "enabled": true,
         "id": "weather-card"
       },
       {
@@ -395,6 +409,10 @@
       {
         "enabled": true,
         "id": "media-sysmon-card"
+      },
+      {
+        "enabled": false,
+        "id": "brightness-card"
       }
     ]
   },
@@ -537,8 +555,8 @@
   },
   "notifications": {
     "enabled": true,
-    "enableMarkdown": false,
-    "density": "default",
+    "enableMarkdown": true,
+    "density": "compact",
     "monitors": [],
     "location": "top",
     "overlayLayer": true,
@@ -602,7 +620,7 @@
     "schedulingMode": "off",
     "manualSunrise": "06:30",
     "manualSunset": "18:30",
-    "generationMethod": "content",
+    "generationMethod": "vibrant",
     "monitorForColors": ""
   },
   "templates": {
@@ -668,7 +686,7 @@
     "colorGeneration": ""
   },
   "plugins": {
-    "autoUpdate": false,
+    "autoUpdate": true,
     "notifyUpdates": true
   },
   "idle": {
@@ -690,6 +708,11 @@
     "overviewEnabled": true,
     "gridSnap": false,
     "gridSnapScale": false,
-    "monitorWidgets": []
+    "monitorWidgets": [
+      {
+        "name": "DP-3",
+        "widgets": []
+      }
+    ]
   }
 }
