@@ -20,6 +20,6 @@
   };
 
   environment.etc."greetd/environments".text = ''
-    niri
+    niri-session
   '';
 }
