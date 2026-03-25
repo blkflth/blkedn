@@ -137,18 +137,28 @@
 
   # General services
   services = {
+    # limit systemd journal size
+    # https://wiki.archlinux.org/title/Systemd/Journal#Persistent_Journals
+    journald.extraConfig = ''
+      SystemMaxUse=100M
+      RuntimeMaxUse=50M
+      SystemMaxFileSize=50M
+    '';
+
     # Video driver
     xserver.videoDrivers = ["amdgpu"];
+
     # GPU Conig Tool
     lact = {
       enable = true;
     };
 
-    #thunar utils
+    # thunar utils
     gvfs = {
       enable = true; # Mount, trash, and other functionalities
       package = lib.mkForce pkgs.gnome.gvfs; #full GVFS package for SMB browsing
     };
+
     tumbler.enable = true; # Thumbnail support for images
 
     samba = {
@@ -162,6 +172,7 @@
 
     # Enable the X11 windowing system.
     xserver.enable = true;
+
     # Start IME on Wayland
     xserver.desktopManager.runXdgAutostartIfNone = true;
 
