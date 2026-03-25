@@ -12,8 +12,7 @@
 
   programs.noctalia-shell = {
     enable = true;
-    settings = {
-      xdg.configFile."noctalia/settings.json".source = ./settings.json;
-    };
   };
+
+  xdg.configFile."noctalia/settings.json".source = ./settings.json;
 }
