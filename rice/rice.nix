@@ -32,7 +32,10 @@
     gtk3 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   gtk.gtk2.force = true;
+  xdg.configFile."gtk-4.0/gtk.css".force = true;
+  xdg.configFile."gtk-4.0/settings.ini".force = true;
 }
