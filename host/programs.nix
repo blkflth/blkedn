@@ -145,7 +145,6 @@ in {
     # enable Niri Window Manager - NixOS source in flake, builds using cachix
     niri = {
       enable = true;
-      package = pkgs.niri-stable;
       useNautilus = false;
     };
   };
