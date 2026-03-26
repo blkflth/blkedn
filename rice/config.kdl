@@ -1,0 +1,308 @@
+input {
+    keyboard {
+        xkb {
+            layout ""
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+overview {
+    workspace-shadow {
+        softness 80
+        spread 60
+    }
+}
+layout {
+    gaps 4
+    struts {
+        left 7
+        right 7
+        top 7
+        bottom 7
+    }
+    focus-ring {
+        width 1
+        urgent-color "#e44949ed"
+    }
+    border {
+        width 1.500000
+        active-color "#72e25096"
+        inactive-gradient angle=225 from="#1c68e2e6" relative-to="workspace-view" to="#bb38dff6"
+    }
+    background-color "00000000"
+    shadow {
+        on
+        offset x=0.000000 y=5.000000
+        softness 28
+        spread 8
+        draw-behind-window true
+        color "#00000070"
+    }
+    tab-indicator {
+        hide-when-single-tab
+        place-within-column
+        gap 4.000000
+        width 4.000000
+        length total-proportion=0.666670
+        position "left"
+        gaps-between-tabs 2.000000
+        corner-radius 3.000000
+        urgent-color "#e44949ff"
+        active-color "#15e62ae3"
+        inactive-gradient angle=180 from="#1c68e2ff" relative-to="window" to="#b51de0ff"
+    }
+    default-column-width { proportion 0.333330; }
+    preset-column-widths {
+        proportion 0.333330
+        proportion 0.500000
+        proportion 0.666670
+    }
+    preset-window-heights {
+        proportion 0.333330
+        proportion 0.500000
+        proportion 0.666670
+        proportion 1.000000
+    }
+    center-focused-column "on-overflow"
+    default-column-display "tabbed"
+}
+cursor {
+    xcursor-theme "catppuccin-frappe-dark-cursors"
+    xcursor-size 22
+    hide-when-typing
+    hide-after-inactive-ms 60000
+}
+hotkey-overlay { skip-at-startup; }
+environment { "NIXOS_OZONE_WL" "1"; }
+binds {
+    Mod+0 { focus-workspace 10; }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Alt+C hotkey-overlay-title="Center Visible Columns" { center-visible-columns; }
+    Mod+Alt+Comma hotkey-overlay-title="Settings 🗒️" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+Alt+E hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://extensions/vicinae/vicinae/search-emojis"; }
+    Mod+Alt+End { quit; }
+    Mod+Alt+Escape hotkey-overlay-title="Lock Screen ⛓️" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Alt+F { maximize-column; }
+    Mod+Alt+H { move-column-left; }
+    Mod+Alt+J { move-column-to-workspace-down; }
+    Mod+Alt+K { move-column-to-workspace-up; }
+    Mod+Alt+L { move-column-right; }
+    Mod+Alt+Next hotkey-overlay-title="Select Wallpaper 🖼️" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
+    Mod+Alt+Print { screenshot-window write-to-disk=true; }
+    Mod+Alt+R { switch-preset-window-height-back; }
+    Mod+Alt+S hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+Alt+Tab { toggle-window-floating; }
+    Mod+Alt+V hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Ctrl+S hotkey-overlay-title="Open System Monitoring 📊" { spawn "ghostty" "-e" "btm"; }
+    Mod+Delete allow-when-locked=true hotkey-overlay-title="Clear Notifications 🔔" { spawn "noctalia-shell" "ipc" "call" "notifications" "clear"; }
+    Mod+E hotkey-overlay-title="Open File Explorer 📂" { spawn "thunar"; }
+    Mod+End allow-when-locked=true hotkey-overlay-title="Dismiss Notifications 🔔" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismissAll"; }
+    Mod+Grave { show-hotkey-overlay; }
+    Mod+H { focus-column-left-or-last; }
+    Mod+Home allow-when-locked=true hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
+    Mod+Insert hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-right-or-first; }
+    Mod+Next allow-when-locked=true hotkey-overlay-title="Random Wallpaper " { spawn "noctalia-shell" "ipc" "call" "wallpaper" "random"; }
+    Mod+Print { screenshot show-pointer=false; }
+    Mod+Prior hotkey-overlay-title="Toggle Bar 🎩" { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
+    Mod+R { switch-preset-column-width-back; }
+    Mod+Return hotkey-overlay-title="Open Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
+    Mod+Shift+Alt+Escape hotkey-overlay-title="Suspend System 💤" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
+    Mod+Shift+C hotkey-overlay-title="Center Column" { center-column; }
+    Mod+Shift+Comma hotkey-overlay-title="Show Session Menu ⛓️" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+H { move-column-to-last; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L { move-column-to-first; }
+    Mod+Shift+Next hotkey-overlay-title="Toggle Wallpaper Cycling" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggleAutomation"; }
+    Mod+Shift+Q { close-window; }
+    Mod+Shift+Tab { switch-focus-between-floating-and-tiling; }
+    Mod+Space hotkey-overlay-title="App Launcher 🚀" { spawn "vicinae" "toggle"; }
+    Mod+T hotkey-overlay-title="Toggle Tabbed Display" { toggle-column-tabbed-display; }
+    Mod+Tab { toggle-overview; }
+}
+spawn-sh-at-startup "noctalia-shell"
+spawn-at-startup "vesktop"
+window-rule {
+    match is-focused=false
+    opacity 0.920000
+}
+window-rule {
+    match is-urgent=true
+    opacity 1.000000
+}
+window-rule {
+    geometry-corner-radius 12.000000 12.000000 12.000000 12.000000
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-floating true
+    open-focused false
+}
+window-rule {
+    match app-id="^feh$"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-floating true
+    open-focused true
+}
+window-rule {
+    match app-id="^xarchiver$"
+    open-floating true
+}
+window-rule {
+    match app-id="thunar$" title="^Rename "
+    open-floating true
+}
+window-rule {
+    match app-id="^dot.floating.thunar$"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-floating true
+}
+window-rule {
+    match app-id="^thunar-bulk-rename$"
+    open-floating true
+}
+window-rule {
+    match app-id="^thunar-volman$"
+    open-floating true
+}
+window-rule {
+    match app-id="^steam"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-floating true
+    open-focused false
+}
+window-rule {
+    match app-id="^ghostty$"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-focused true
+}
+window-rule {
+    match app-id="^bottom.desktop"
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.333330; }
+    open-focused false
+}
+window-rule {
+    match title="^VSCodium"
+    default-column-width { proportion 0.333330; }
+    open-focused true
+}
+window-rule {
+    match title="^Affinity"
+    default-column-width { proportion 0.500000; }
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^Blender"
+    default-column-width { proportion 0.500000; }
+    open-focused true
+}
+window-rule {
+    match title="^Davinci"
+    open-maximized true
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^vencord"
+    default-column-width { proportion 0.333330; }
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^Proton$"
+    default-column-width { proportion 0.666670; }
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match app-id="^fcha"
+    default-column-width { proportion 0.666670; }
+    open-focused false
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^Firestorm"
+    open-maximized true
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^JHe"
+    default-column-width { proportion 0.666670; }
+    open-floating true
+    open-focused false
+    block-out-from "screencast"
+}
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+animations {
+    slowdown 1.000000
+    horizontal-view-movement {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    overview-open-close {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-close {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-movement {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-open {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-resize {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    workspace-switch {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+}

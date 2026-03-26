@@ -10,20 +10,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    /*
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    */
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
 
     vicinae = {
@@ -37,7 +37,6 @@
     self,
     nixpkgs,
     home-manager,
-    niri,
     vicinae,
     #affinity-nix,
     ...
@@ -58,10 +57,7 @@
 
           inputs.home-manager.nixosModules.home-manager
           inputs.noctalia.nixosModules.default
-          inputs.niri.nixosModules.niri
-          {
-            nixpkgs.overlays = [niri.overlays.niri];
-          }
+
           {
             #environment.systemPackages = [affinity-nix.packages.x86_64-linux.v3];
           }

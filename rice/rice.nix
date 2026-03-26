@@ -8,8 +8,10 @@
   imports = [
     ./vicinae.nix
     ./noctalia.nix
-    ./niri.nix
+    # ./niri.nix
   ];
+
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
   gtk = {
     enable = true;
@@ -29,13 +31,13 @@
       package = pkgs.dracula-icon-theme;
     };
 
+    gtk2.force = true;
     gtk3 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
     gtk4.theme = config.gtk.theme;
   };
 
-  gtk.gtk2.force = true;
   xdg.configFile."gtk-4.0/gtk.css".force = true;
   xdg.configFile."gtk-4.0/settings.ini".force = true;
 }
