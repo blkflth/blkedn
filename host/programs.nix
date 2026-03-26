@@ -81,9 +81,7 @@ in {
     blender
 
     # productivity
-    xournalpp #Notetaking
     libreoffice-fresh # Office Suite
-    kanri #kanban board
     tagainijisho #Japanese Dictionary
     memento #mpv player for JP Study
     hoard #CLI Command Organizer
@@ -131,7 +129,6 @@ in {
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
-    # honkers-railway-launcher.enable = true;
 
     virt-manager.enable = true;
     firefox.enable = true;
