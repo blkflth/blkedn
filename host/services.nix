@@ -56,7 +56,7 @@
       };
       niri = {
         default = [
-          "gnome"
+          "gnome;gtk"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
         "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
