@@ -129,7 +129,6 @@ in {
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
-
     virt-manager.enable = true;
     firefox.enable = true;
 
@@ -144,10 +143,13 @@ in {
     };
 
     # enable Niri Window Manager - NixOS source in flake, builds using cachix
-    niri.enable = true;
-    niri.package = pkgs.niri-stable;
+    niri = {
+      enable = true;
+      package = pkgs.niri-stable;
+      useNautilus = false;
+    };
   };
-  niri-flake.cache.enable = false; #uncomment once cache is built
+  #niri-flake.cache.enable = false; #uncomment once cache is built
 
   # cachix sources
 
