@@ -70,6 +70,7 @@ in {
     # and now niri's
 
     "Mod+Grave".action = show-hotkey-overlay;
+    "Mod+Alt+End".action = quit;
 
     "Mod+Print".action.screenshot = {show-pointer = false;};
     "Mod+Alt+Print".action.screenshot-window = {write-to-disk = true;};
