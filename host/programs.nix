@@ -6,14 +6,7 @@
   ...
 }: let
   blender = pkgs.blender.override {rocmSupport = true;};
-  # aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.11.tar.gz");
 in {
-  /*
-    imports = [
-    aagl-gtk-on-nix.module
-  ];
-  */
-
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
@@ -148,7 +141,17 @@ in {
       useNautilus = false;
     };
   };
-  #niri-flake.cache.enable = false; #uncomment once cache is built
+
+  #workaround for bug in thunar-archive plugin's support for Xarchiver
+  nixpkgs.overlays = [
+    (final: prev: {
+      thunar-archive-plugin = prev.thunar-archive-plugin.overrideAttrs (old: {
+        postInstall = ''
+          cp ${final.xarchiver}/libexec/thunar-archive-plugin/* $out/libexec/thunar-archive-plugin/
+        '';
+      });
+    })
+  ];
 
   # cachix sources
 
