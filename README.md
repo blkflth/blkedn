@@ -33,7 +33,7 @@
 - [ ] Tweak niri layout & window rules further
 - [ ] Declare Vicinae Extensions
 - [ ] Go through packages and move options into ``home-manager`` wherever possible
-- [ ] Properly configure Home-Manager backup settings to stop service restart error for gtk-4.0 css file (no more clobbering)
+- [x] Properly configure Home-Manager backup settings to stop service restart error for gtk-4.0 css file (no more clobbering)
 - [x] Locate and link AppIcons for various programs (Unneeded)
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
 - [x] Set up Japanese IME 
@@ -56,34 +56,49 @@ You won't encounter a ton of custom logic for different hosts, here - It's easy 
 
 Makes generous use of imports to break up config file lengths. Home-Manager for dotfiles is used sparingly and _mostly_ with intention.
 
-## If you wish to copy this configuration as a starting point:
+## If you wish to copy this configuration as a starting point or if you are reinstalling:
 
-- Create a new directory (I placed mine at `~/Nix`) and run the following command:
+- Install NixOS; Do not configure a desktop environment.
 
-  `nix flake init -t github:blkflth/blkedn`
+- Run `sudo nano /etc/nixos/configuration.nix` - take note of the `system.stateVersion` at the bottom of the config.
 
-- Copy your `hardware-configuration.nix` from the default `/etc/nixos` location and overwrite the one here (The one here is only tracked in case of a full-or-partial system upgrade locally).
+- Enable flakes by adding `nix.settings.experimental-features = ["nix-command" "flakes"];` to the config.
 
-- Edit all hostname, usename, timezone and keyboard layout variables in the files imported to `host-configuration.nix`, as well as in `flake.nix` and `home.nix`.
+- Add `git` and `vim` to the system packages towards the bottom of the file. 
+
+- Run `sudo nixos-rebuid switch`.
+
+- In the home folder, run `git clone https://github.com/blkflth/blkedn`
+
+- Run `rm blkedn/hardware-configuration.nix`.
+
+- Rename `~/blkedn` directory using `mv blkedn <new-name>` (this configuration assumes the new name is `~/Nix`)
+
+- Copy your `hardware-configuration.nix` from the default `/etc/nixos` location by running `cp /etc/nixos/hardware-configuration.nix ~/Nix`.
+
+- Edit `~/Nix/configuration.nix` and change the `system.stateVersion` to match the one from the file in `/etc/nixos`.
+
+- Edit all hostname, usename, timezone and keyboard layout variables in the files imported to `host-configuration.nix`, as well as in `flake.nix` and `home.nix`. This config assumes the username is `jlc` and the hostname is `blkedn`.
 
 - Remove or change the SSD bindings in `drives.nix`. If you wish to change them to what you have installed locally, run `sudo ls -l /dev/disk/by-uuid/` and `sudo ls -l /dev/disk/by-label/`. Match up the values and you should be good to go.
 
 > _This is the equivalent to the `fstab` edits one would need do in other Linux systems (or the manual mapping in a DE like KDE Plasma.)_
 > _I do not claim to be an expert, but I recommend keeping `"nofail"` as a flag at the very least so that your system will boot if you misconfigure something._
 
-- Comment out `niri-flake.cache.enable = false;` in `programs.nix` _before_ you build, so that the niri-flake used at time of writing builds its cache correctly. Afterward, uncomment as instructed.
+- Comment out or delete programs as you see fit in `programs.nix`.
 
-> _This should only need to be done once._
+- Run `sudo nixos-rebuil switch --flake ~/Nix#blkedn` (the hostname you configured follows the pound sign), and reboot after activating configuration with password.
 
-- Change your Icon/Wallpaper/Screen-Recording files and locations in `noctalia.nix`, as well as your geolocation for weather and your monitor output name in that same file.
+- After logging in to Niri/Noctalia: Press `Super+Enter` to launch a terminal - If `fish` launches in `ghostty`, then everything has gone correctly. Run `tide configure` to be walked through setting up a prompt for the shell.
 
-> _If you elect to use the Noctalia `systemd` service instead of spawning from `niri`, It's probably best to comment this file out of `rice.nix`'s imports to start, and, after Noctalia is built, to then follow the [instructions](https://docs.noctalia.dev/getting-started/nixos/#noctalia-settings) on Noctalia's site for getting the `.json` file that's generated when editing settings through the GUI. Any system-specific values can just be copied over, and then you can uncomment the import. If using the `spawn-at-startup` option as in this config, you can check Noctalia's site and look for ``Assets/settings-default.json` to get the correct name for any setting you wish to change._
+> _From this point onward, the nixos-rebuild commands are run throuh `nh` and aliased by default. Check aliases in `~/Nix/apps/fish.nix` - Look up Home-Manager options for `fish` to see what other things can be configured._
 
-- Comment out or delete games and programs as you see fit in `progams.nix`.
+- Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
-  Heavy-Hitters are for install time (if not file size) are:
+- Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings" - Open up `~/Nix/rice/settings.json` and replace the file contents with what you just copied.
 
-  _`blender`, `affinity`, `xivlauncher`._
+- Open up a terminal and run `build` to lock in all changes.
+
 
 ## Notes:
 
@@ -92,8 +107,6 @@ The initial build will take quite some time, depending on what programs you're i
 - If CoolerControl isn't able to see your system fans, run `lm_sensors` and follow the on-screen instructions.
 
   > _Thereafter, write the indicated kernel module's name into the `boot.kernelModules` field in `configuration.nix` and reboot._
-
-- Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
 > _The settings here deviate from the default niri bindings due simply to personal preference._
 
@@ -107,6 +120,10 @@ The initial build will take quite some time, depending on what programs you're i
 > _Use `Shift+Enter` to open a new instance._
 
 - If you're going to change keybinds, it's very useful to open up `wev` in a terminal to get the valid names of your keys.
+
+- If reinstalling on a system, delete the directories `~/.steam` and `~/.local/Steam` before launching Steam so that it can rebuild those correctly.
+
+- If you misconfigure `niri`'s `config.kdl` (located in `~/Nix/rice`), it can force the window manager to go to default settings when you log in. If this happens: Exit `niri` using `Super+Shift+E`. Go to a second TTY using `Control+Alt+F2`. Log in using your normal username and password, and then run `fish`. Run `vim Nix/rice/config.kdl` to get the file with syntax-highlighting, and make any necessary edits. After saving and exiting back to the shell, run `build`, go back to the first TTY using `Control+Alt+F1`, and log in.
 
 > [!WARNING]
 > Subject to drastic change without notice.
