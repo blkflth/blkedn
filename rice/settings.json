@@ -454,12 +454,12 @@
   },
   "network": {
     "airplaneModeEnabled": false,
-    "bluetoothRssiPollingEnabled": false,
+    "bluetoothRssiPollingEnabled": true,
     "bluetoothRssiPollIntervalMs": 60000,
     "networkPanelView": "wifi",
     "wifiDetailsViewMode": "grid",
     "bluetoothDetailsViewMode": "grid",
-    "bluetoothHideUnnamedDevices": false,
+    "bluetoothHideUnnamedDevices": true,
     "disableDiscoverability": false,
     "bluetoothAutoConnect": true
   },
