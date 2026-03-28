@@ -15,7 +15,6 @@
     "enableExclusionZoneInset": true,
     "backgroundOpacity": 1,
     "useSeparateOpacity": false,
-    "floating": false,
     "marginVertical": 8,
     "marginHorizontal": 18,
     "frameThickness": 8,
@@ -47,17 +46,10 @@
           "pinned": []
         },
         {
-          "defaultSettings": {
-            "cursorPosition": 0,
-            "filePath": "",
-            "fontSize": 14,
-            "panelHeight": 400,
-            "panelWidth": 600,
-            "scratchpadContent": "",
-            "scrollPositionX": 0,
-            "scrollPositionY": 0
-          },
           "id": "plugin:notes-scratchpad"
+        },
+        {
+          "id": "plugin:mimeapp-gui"
         },
         {
           "characterCount": 2,
@@ -81,6 +73,9 @@
           "unfocusedIconsOpacity": 1
         },
         {
+          "id": "plugin:niri-auto-tile"
+        },
+        {
           "colorizeIcons": false,
           "hideMode": "transparent",
           "iconScale": 0.8,
@@ -96,9 +91,6 @@
       ],
       "center": [
         {
-          "id": "plugin:weekly-calendar"
-        },
-        {
           "clockColor": "secondary",
           "customFont": "AtkynsonMono NFP",
           "formatHorizontal": "h:mm AP MM/dd",
@@ -106,16 +98,6 @@
           "id": "Clock",
           "tooltipFormat": "HH:mm ddd, MMM dd",
           "useCustomFont": true
-        },
-        {
-          "defaultSettings": {
-            "customColor": "none",
-            "showConditionIcon": true,
-            "showTempUnit": true,
-            "showTempValue": true,
-            "tooltipOption": "everything"
-          },
-          "id": "plugin:weather-indicator"
         },
         {
           "hideWhenZero": true,
@@ -142,6 +124,9 @@
           "textColor": "secondary",
           "useFixedWidth": false,
           "visualizerType": "linear"
+        },
+        {
+          "id": "plugin:screen-recorder"
         },
         {
           "displayMode": "onhover",
@@ -171,15 +156,6 @@
           "textColor": "tertiary",
           "useMonospaceFont": true,
           "usePadding": false
-        },
-        {
-          "defaultSettings": {
-            "activeColor": "primary",
-            "hideInactive": false,
-            "inactiveColor": "none",
-            "removeMargins": false
-          },
-          "id": "plugin:privacy-indicator"
         }
       ]
     },
@@ -220,7 +196,7 @@
     "language": "",
     "allowPanelsOnScreenWithoutBar": true,
     "showChangelogOnStartup": true,
-    "telemetryEnabled": false,
+    "telemetryEnabled": true,
     "enableLockScreenCountdown": true,
     "lockScreenCountdownDuration": 10000,
     "autoStartAuth": false,
@@ -255,7 +231,8 @@
         "Del"
       ]
     },
-    "reverseScroll": false
+    "reverseScroll": false,
+    "smoothScrollEnabled": true
   },
   "ui": {
     "fontDefault": "AtkynsonMono NFP",
@@ -308,7 +285,7 @@
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
-    "viewMode": "recursive",
+    "viewMode": "single",
     "setWallpaperOnAllMonitors": true,
     "fillMode": "crop",
     "fillColor": "#000000",
@@ -325,6 +302,7 @@
     "transitionEdgeSmoothness": 0.15,
     "panelPosition": "center",
     "hideWallpaperFilenames": true,
+    "useOriginalImages": false,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
     "useWallhaven": false,
@@ -475,7 +453,6 @@
     "indicatorOpacity": 0.6
   },
   "network": {
-    "wifiEnabled": false,
     "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": false,
     "bluetoothRssiPollIntervalMs": 60000,
@@ -602,6 +579,7 @@
     "volumeOverdrive": false,
     "spectrumFrameRate": 60,
     "visualizerType": "linear",
+    "spectrumMirrored": true,
     "mprisBlacklist": [],
     "preferredPlayer": "",
     "volumeFeedback": false,
@@ -621,7 +599,8 @@
     "manualSunrise": "06:30",
     "manualSunset": "18:30",
     "generationMethod": "vibrant",
-    "monitorForColors": ""
+    "monitorForColors": "",
+    "syncGsettings": true
   },
   "templates": {
     "activeTemplates": [
@@ -631,15 +610,7 @@
       },
       {
         "enabled": true,
-        "id": "niri"
-      },
-      {
-        "enabled": true,
         "id": "ghostty"
-      },
-      {
-        "enabled": true,
-        "id": "gtk"
       },
       {
         "enabled": true,
@@ -660,6 +631,14 @@
       {
         "enabled": true,
         "id": "steam"
+      },
+      {
+        "enabled": true,
+        "id": "niri"
+      },
+      {
+        "enabled": true,
+        "id": "gtk"
       }
     ],
     "enableUserTheming": false
