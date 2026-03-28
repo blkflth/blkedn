@@ -203,7 +203,7 @@ window-rule {
     open-focused false
 }
 window-rule {
-    match app-id="^lutris$"
+    match app-id="^lutris"
     open-floating true
 }
 window-rule {
@@ -252,6 +252,12 @@ window-rule {
 }
 window-rule {
     match title="^Davinci"
+    open-maximized true
+    open-focused true
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^gimp"
     open-maximized true
     open-focused true
     block-out-from "screencast"
