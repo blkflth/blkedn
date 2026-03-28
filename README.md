@@ -102,8 +102,6 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 ## Notes:
 
-The initial build will take quite some time, depending on what programs you're installing.
-
 - If CoolerControl isn't able to see your system fans, run `lm_sensors` and follow the on-screen instructions.
 
   > _Thereafter, write the indicated kernel module's name into the `boot.kernelModules` field in `configuration.nix` and reboot._
@@ -122,6 +120,8 @@ The initial build will take quite some time, depending on what programs you're i
 - If you're going to change keybinds, it's very useful to open up `wev` in a terminal to get the valid names of your keys.
 
 - If reinstalling on a system, delete the directories `~/.steam` and `~/.local/Steam` before launching Steam so that it can rebuild those correctly.
+
+- To configure a the _"Open Terminal Here"_ custom action in `thunar`: Open a terminal and run `whereis ghostty`. Open the custom actions configuration, and clear out the default command. Open the file picker for the executable, and use the search to find the ghostty executable in home-manager's paths. Select ghostty, and then add `-e fish` after the filled-in command.
 
 - If you misconfigure `niri`'s `config.kdl` (located in `~/Nix/rice`), it can force the window manager to go to default settings when you log in. If this happens: Exit `niri` using `Super+Shift+E`. Go to a second TTY using `Control+Alt+F2`. Log in using your normal username and password, and then run `fish`. Run `vim Nix/rice/config.kdl` to get the file with syntax-highlighting, and make any necessary edits. After saving and exiting back to the shell, run `build`, go back to the first TTY using `Control+Alt+F1`, and log in.
 
