@@ -24,8 +24,8 @@
       favicon_service = "twenty";
       font = {
         normal = {
-          normal = "AtkynsonMono NFP";
-          size = 11.0;
+          normal = "AtkynsonMono Nerd Font";
+          size = 12.0;
         };
       };
       keybinding = "default";
@@ -35,8 +35,8 @@
       search_files_in_root = false;
       theme = {
         dark = {
-          name = "matugen";
-          icon_theme = "default";
+          name = "noctalia";
+          icon_theme = "Dracula";
         };
       };
       launcher_window = {
