@@ -203,6 +203,26 @@ window-rule {
     open-focused false
 }
 window-rule {
+    match app-id="^net.lutris.Lutris.desktop"
+    open-floating true
+}
+window-rule {
+    match app-id=^protonup-qt.desktop"
+    open-floating true
+}
+window-rule {
+    match app-id="^fcitx5-configtool.desktop"
+    open-floating true
+}
+window-rule {
+    match app-id="^xivlauncher.desktop"
+    open-floating true
+}
+window-rule {
+    match app-id="^io.github.ilya_zlobintsev.LACT.desktop"
+    open-floating true
+}
+window-rule {
     match app-id="^ghostty$"
     default-column-width { proportion 0.333330; }
     default-window-height { proportion 0.500000; }
