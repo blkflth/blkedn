@@ -1,0 +1,8 @@
+theme = noctalia
+font-family = AtkynsonMono Nerd Font Mono
+font-size = 16
+adjust-cell-height = 1
+link-url = true
+link-previews = true
+working-directory = inherit
+window-inherit-working-directory = true

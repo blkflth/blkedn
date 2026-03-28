@@ -10,5 +10,7 @@
   programs.ghostty = {
     enable = true;
     enableFishIntegration = true;
+    systemd.enable = true;
   };
+  xdg.configFile."ghostty/config.ghostty".source = ./config.ghostty;
 }
