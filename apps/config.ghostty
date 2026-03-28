@@ -1,6 +1,6 @@
 theme = noctalia
 font-family = AtkynsonMono Nerd Font Mono
-font-size = 16
+font-size = 14
 adjust-cell-height = 1
 link-url = true
 link-previews = true
