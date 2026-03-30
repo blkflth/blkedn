@@ -10,17 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    /*
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    */
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +17,11 @@
 
     vicinae = {
       url = "github:vicinaehq/vicinae";
+    };
+
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
@@ -38,6 +32,7 @@
     nixpkgs,
     home-manager,
     vicinae,
+    vicinae-extensions,
     #affinity-nix,
     ...
   } @ inputs: let

@@ -48,5 +48,12 @@
         rounding = 10;
       };
     };
+    extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+      bluetooth
+      firefox
+      niri
+      nix
+      process-manager
+    ];
   };
 }
