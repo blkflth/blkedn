@@ -25,6 +25,9 @@
   # kernel modules for system fan control
   boot.kernelModules = ["nct6775"];
 
+  #Enable AMD GPU Overclocking
+  hardware.amdgpu.overdrive.enable = true;
+
   # Allow different filesystems
   boot.supportedFilesystems = ["ntfs" "exfat" "ext4"];
 
