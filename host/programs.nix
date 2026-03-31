@@ -50,7 +50,6 @@ in {
     gpu-screen-recorder #used for Noctalia's inbuilt function
 
     # general use and media
-
     vlc
     ungoogled-chromium
     nicotine-plus # soulseek client
@@ -59,17 +58,13 @@ in {
     element-desktop #matrix client
     ani-cli #CLI anime streaming
     youtube-tui
-    tukai #terminal touch-typing practice
-    sherlock #username checker
     gurk-rs #signal client
 
     # Creative Software
-
     obs-studio
     #olive-editor #video editor
     davinci-resolve #video editor
     ffmpeg #video format converter
-    obsidian # Notes organization
     gimp-with-plugins
     blender
 
@@ -80,16 +75,13 @@ in {
     hoard #CLI Command Organizer
     gtt #google translate tui
     tlrc #simiplified man pages written in rust
+    tukai #terminal touch-typing practice
+    obsidian # Notes organization
 
     # game/3d tools
     protonup-ng #installed proton GE
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
-
-    #enable streaming media
-    # gst_all_1.gst-plugins-ugly
-    # haskellPackages.gi-gst
-
     mangohud #process overlay
     lutris
     xivlauncher
