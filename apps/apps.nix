@@ -22,7 +22,6 @@
       addons = with pkgs.ankiAddons; [
         anki-connect
         review-heatmap
-        recolor
       ];
       sync = {
         autoSync = true;
