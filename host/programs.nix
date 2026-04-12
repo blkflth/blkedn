@@ -52,6 +52,7 @@ in {
     # general use and media
     vlc
     ungoogled-chromium
+    bazaar #flathub installer
     nicotine-plus # soulseek client
     picard # music metadata editor
     feishin # Subsonic interface
@@ -96,6 +97,9 @@ in {
     #greeter theme
     tuigreet
   ];
+
+  # enable flatpaks
+  services.flatpak.enable = true;
 
   # Enable programs defined by Home Manager modules.
 
