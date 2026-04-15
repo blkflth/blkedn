@@ -86,6 +86,7 @@ in {
     mangohud #process overlay
     lutris
     xivlauncher
+    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.mo2installer #Mod Organizer 2 Client
 
     # styling tools
     catppuccin-cursors.frappeDark

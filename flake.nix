@@ -24,6 +24,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
+
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
