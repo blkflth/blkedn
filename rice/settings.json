@@ -99,6 +99,9 @@
           "useCustomFont": true
         },
         {
+          "id": "plugin:pomodoro"
+        },
+        {
           "hideWhenZero": true,
           "hideWhenZeroUnread": false,
           "iconColor": "tertiary",
