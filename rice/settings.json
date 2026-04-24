@@ -46,10 +46,12 @@
           "pinned": []
         },
         {
-          "id": "plugin:notes-scratchpad"
-        },
-        {
-          "id": "plugin:mimeapp-gui"
+          "defaultSettings": {
+            "animationsFolder": "~/.config/niri/animations",
+            "iconColor": "none",
+            "targetFile": "~/.config/niri/config.kdl"
+          },
+          "id": "plugin:niri-animation-picker"
         },
         {
           "characterCount": 2,
@@ -71,9 +73,6 @@
           "showBadge": true,
           "showLabelsOnlyWhenOccupied": true,
           "unfocusedIconsOpacity": 1
-        },
-        {
-          "id": "plugin:niri-auto-tile"
         },
         {
           "colorizeIcons": false,
@@ -252,6 +251,7 @@
     "name": "Philadelphia, USA",
     "weatherEnabled": true,
     "weatherShowEffects": true,
+    "weatherTaliaMascotAlways": false,
     "useFahrenheit": true,
     "use12hourFormat": true,
     "showWeekNumberInCalendar": false,
@@ -260,7 +260,8 @@
     "analogClockInCalendar": false,
     "firstDayOfWeek": -1,
     "hideWeatherTimezone": true,
-    "hideWeatherCityName": true
+    "hideWeatherCityName": true,
+    "autoLocate": false
   },
   "calendar": {
     "cards": [
@@ -287,6 +288,7 @@
     "showHiddenFiles": false,
     "viewMode": "single",
     "setWallpaperOnAllMonitors": true,
+    "linkLightAndDarkWallpapers": true,
     "fillMode": "crop",
     "fillColor": "#000000",
     "useSolidColor": false,
@@ -453,7 +455,6 @@
     "indicatorOpacity": 0.6
   },
   "network": {
-    "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": true,
     "bluetoothRssiPollIntervalMs": 60000,
     "networkPanelView": "wifi",
