@@ -332,4 +332,4 @@ animations {
         curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
     }
 }
-include "./niri/animations/pixelate.kdl"
+include "./../../.config/niri/animations/pixelate.kdl"
