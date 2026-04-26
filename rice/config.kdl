@@ -179,15 +179,15 @@ window-rule {
 }
 window-rule {
     match app-id=r#"^xarchiver$"#
-    match app-id=r#"^thunar$"# title=r#"^Rename "#
+    match app-id=r#"^thunar$"# title=r#"^Rename $"#
     match app-id=r#"^thunar-bulk-rename$"#
     match app-id=r#"^thunar-volman$"#
     match app-id=r#"^gimp$"# title=r#"Preferences"#
-    match app-id=r#"^lutris"#
-    match app-id=r#"^protonup-qt$"#
-    match app-id=r#"^fcitx5$"#
-    match app-id=r#"^LACT$"#
-    match app-id=r#"^xivlauncher$"#
+    match app-id=r#"^net\.lutris\.Lutris$"#
+    match app-id=r#"^net\.davidotek\.pupgui2$"#
+    match app-id=r#"^org\.fcitx$"#
+    match app-id=r#"^io\.github\.ilya_zlobintsev\.LACT$"#
+    match app-id=r#"^XIVLauncher\.Core$"#
 
     open-floating true
 }
