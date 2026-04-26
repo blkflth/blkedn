@@ -179,7 +179,7 @@ window-rule {
 }
 window-rule {
     match app-id=r#"^xarchiver$"#
-    match app-id=r#"^thunar$"# title=r#"^Rename $"#
+    match app-id=r#"^Thunar$"# title=r#"^Rename $"#
     match app-id=r#"^thunar-bulk-rename$"#
     match app-id=r#"^thunar-volman$"#
     match app-id=r#"^gimp$"# title=r#"Preferences"#
@@ -203,7 +203,7 @@ window-rule {
 window-rule {
     match app-id="firefox$" title="^(Picture-in-Picture|Library|About Mozilla Firefox)$"
     match app-id="^steam"
-
+    match title="Lutris"
     default-column-width { proportion 0.333330; }
     default-window-height { proportion 0.500000; }
     open-floating true
