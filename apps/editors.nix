@@ -17,7 +17,6 @@
     plugins = with pkgs.vimPlugins; [
       statix
       LazyVim
-      nvim-treesitter
       blink-cmp
       blink-cmp-spell
       blink-cmp-git
