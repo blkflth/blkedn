@@ -21,7 +21,6 @@
       style = "native";
       addons = with pkgs.ankiAddons; [
         anki-connect
-        review-heatmap
       ];
       sync = {
         autoSync = true;
