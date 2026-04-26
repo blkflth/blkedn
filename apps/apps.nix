@@ -15,6 +15,7 @@
     feh = {
       enable = true; #image viewer
     };
+    /*
     anki = {
       enable = true;
       theme = "dark";
@@ -26,5 +27,6 @@
         autoSync = true;
       };
     };
+    */
   };
 }
