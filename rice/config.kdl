@@ -23,6 +23,10 @@ overview {
         spread 60
     }
 }
+
+// -----------------------------------------------------------------------------
+// layout
+// -----------------------------------------------------------------------------
 layout {
     gaps 4
     struts {
@@ -85,6 +89,11 @@ cursor {
 }
 hotkey-overlay { skip-at-startup; }
 environment { "NIXOS_OZONE_WL" "1"; }
+
+
+// -----------------------------------------------------------------------------
+// keybinds
+// -----------------------------------------------------------------------------
 binds {
     Mod+0 { focus-workspace 10; }
     Mod+1 { focus-workspace 1; }
@@ -145,8 +154,17 @@ binds {
     Mod+T hotkey-overlay-title="Toggle Tabbed Display" { toggle-column-tabbed-display; }
     Mod+Tab { toggle-overview; }
 }
+
+// -----------------------------------------------------------------------------
+// startup
+// -----------------------------------------------------------------------------
 spawn-sh-at-startup "noctalia-shell"
 spawn-at-startup "vesktop"
+
+// -----------------------------------------------------------------------------
+// Window rules
+// -----------------------------------------------------------------------------
+
 window-rule {
     match is-focused=false
     opacity 0.920000
@@ -160,139 +178,105 @@ window-rule {
     clip-to-geometry true
 }
 window-rule {
-    match app-id="firefox$" title="^Picture-in-Picture$"
+    match app-id=r#"^xarchiver$"#
+    match app-id=r#"^thunar$"# title=r#"^Rename "#
+    match app-id=r#"^thunar-bulk-rename$"#
+    match app-id=r#"^thunar-volman$"#
+    match app-id=r#"^gimp$"# title=r#"Preferences"#
+    match app-id=r#"^lutris"#
+    match app-id=r#"^protonup-qt$"#
+    match app-id=r#"^fcitx5$"#
+    match app-id=r#"^LACT$"#
+    match app-id=r#"^xivlauncher$"#
+
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^dot\.floating\.thunar$"#
+    match app-id=r#"^dot\.floating\.ghostty$"#
+    default-column-width { proportion 0.333330; }
+    default-window-height { proportion 0.500000; }
+    open-floating true
+}
+
+window-rule {
+    match app-id="firefox$" title="^(Picture-in-Picture|Library|About Mozilla Firefox)$"
+    match app-id="^steam"
+
     default-column-width { proportion 0.333330; }
     default-window-height { proportion 0.500000; }
     open-floating true
     open-focused false
 }
+
 window-rule {
     match app-id="^feh$"
-    default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.500000; }
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.33; }
     open-floating true
     open-focused true
 }
+
 window-rule {
-    match app-id="^xarchiver$"
-    open-floating true
-}
-window-rule {
-    match app-id="thunar$" title="^Rename "
-    open-floating true
-}
-window-rule {
-    match app-id="^dot.floating.thunar$"
-    default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.500000; }
-    open-floating true
-}
-window-rule {
-    match app-id="^thunar-bulk-rename$"
-    open-floating true
-}
-window-rule {
-    match app-id="^thunar-volman$"
-    open-floating true
-}
-window-rule {
-    match app-id="^steam"
-    default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.500000; }
-    open-floating true
-    open-focused false
-}
-window-rule {
-    match app-id="^lutris"
-    open-floating true
-}
-window-rule {
-    match app-id="^protonup-qt$"
-    open-floating true
-}
-window-rule {
-    match app-id="^fcitx5$"
-    open-floating true
-}
-window-rule {
-    match app-id="^xivlauncher$"
-    open-floating true
-}
-window-rule {
-    match app-id="^LACT$"
-    open-floating true
-}
-window-rule {
-    match app-id="^ghostty$"
+    match app-id=r#"^ghostty$"#
     default-column-width { proportion 0.333330; }
     default-window-height { proportion 0.500000; }
     open-focused true
 }
+
 window-rule {
     match app-id="^bottom.desktop"
     default-column-width { proportion 0.333330; }
     default-window-height { proportion 0.333330; }
     open-focused false
 }
+
 window-rule {
     match title="^VSCodium"
     default-column-width { proportion 0.333330; }
     open-focused true
 }
+
 window-rule {
-    match title="^Affinity"
+    match title=r#"^Affinity$"#
     default-column-width { proportion 0.500000; }
     open-focused true
     block-out-from "screencast"
 }
+
 window-rule {
     match title="^Blender"
     default-column-width { proportion 0.500000; }
     open-focused true
 }
+
 window-rule {
     match title="^Davinci"
+    match title="^Firestorm"
+    match title=r#"^gimp$"#
+
     open-maximized true
     open-focused true
     block-out-from "screencast"
 }
-window-rule {
-    match title="^gimp"
-    open-maximized true
-    open-focused true
-    block-out-from "screencast"
-}
+
 window-rule {
     match title="^vencord"
     default-column-width { proportion 0.333330; }
     open-focused true
     block-out-from "screencast"
 }
+
 window-rule {
-    match title="^Proton$"
+    match title=r#"^Proton$"#
+    match app-id=r#"^fcha"#
+
     default-column-width { proportion 0.666670; }
     open-focused true
     block-out-from "screencast"
 }
-window-rule {
-    match app-id="^fcha"
-    default-column-width { proportion 0.666670; }
-    open-focused false
-    block-out-from "screencast"
-}
-window-rule {
-    match title="^Firestorm"
-    open-maximized true
-    open-focused true
-    block-out-from "screencast"
-}
-window-rule {
-    match title="^JHe"
-    default-column-width { proportion 0.666670; }
-    open-floating true
-    open-focused false
-    block-out-from "screencast"
-}
+
 layer-rule {
     match namespace="^noctalia-overview*"
     place-within-backdrop true
@@ -301,6 +285,12 @@ layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
 }
+
+
+
+// -----------------------------------------------------------------------------
+// animations
+// -----------------------------------------------------------------------------
 animations {
     slowdown 1.000000
     horizontal-view-movement {
