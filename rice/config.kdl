@@ -179,11 +179,7 @@ window-rule {
 }
 window-rule {
     match app-id=r#"^xarchiver$"#
-<<<<<<< HEAD
-    match title="[^Rename ]*"
-=======
-    match app-id=r#"^thunar$"# title=r#"^Rename $"#
->>>>>>> parent of b5afd37 (updating thunar rename regex)
+    match app-id=r#"^thunar$"# title=r#"^Rename.*"#
     match app-id=r#"^thunar-bulk-rename$"#
     match app-id=r#"^thunar-volman$"#
     match app-id=r#"^gimp$"# title=r#"Preferences"#
