@@ -138,6 +138,14 @@ in {
     };
   };
 
+  # Sunshine Game Streaming Server
+  services = {
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      openFirewall = true;
+    };
+  };
   #workaround for bug in thunar-archive plugin's support for Xarchiver
   nixpkgs.overlays = [
     (final: prev: {
