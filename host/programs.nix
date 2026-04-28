@@ -58,7 +58,6 @@ in {
     feishin # Subsonic interface
     element-desktop #matrix client
     ani-cli #CLI anime streaming
-    youtube-tui
     gurk-rs #signal client
 
     # Creative Software
