@@ -94,6 +94,9 @@ environment { "NIXOS_OZONE_WL" "1"; }
 // -----------------------------------------------------------------------------
 // keybinds
 // -----------------------------------------------------------------------------
+
+// the screenRecorder keybind needs to be adjusted, now that the functionality from noctalia is a plugin
+
 binds {
     Mod+0 { focus-workspace 10; }
     Mod+1 { focus-workspace 1; }
@@ -130,7 +133,7 @@ binds {
     Mod+Grave { show-hotkey-overlay; }
     Mod+H { focus-column-left-or-last; }
     Mod+Home allow-when-locked=true hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
-    Mod+Insert hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"; }
+    Mod+Insert hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
     Mod+J { focus-window-or-workspace-down; }
     Mod+K { focus-window-or-workspace-up; }
     Mod+L { focus-column-right-or-first; }
@@ -158,25 +161,95 @@ binds {
 // -----------------------------------------------------------------------------
 // startup
 // -----------------------------------------------------------------------------
+
+// don't disable the noctalia line
 spawn-sh-at-startup "noctalia-shell"
 spawn-at-startup "vesktop"
 
 // -----------------------------------------------------------------------------
-// Window rules
+// Blur
 // -----------------------------------------------------------------------------
 
+blur {
+    // off
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+// -----------------------------------------------------------------------------
+// Window & Layer rules
+// -----------------------------------------------------------------------------
+
+// make unfocused windows slightly transluscent
 window-rule {
     match is-focused=false
     opacity 0.920000
 }
+
 window-rule {
     match is-urgent=true
     opacity 1.000000
 }
+
+// give all windows rounded corners
 window-rule {
     geometry-corner-radius 12.000000 12.000000 12.000000 12.000000
     clip-to-geometry true
 }
+
+// global blur settings
+window-rule {
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+// layer rules to make noctalia look better
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+// Make floating windows use the regular blur (if enabled),
+// while tiled windows keep using the efficient xray blur.
+window-rule {
+    match is-floating=true
+
+    background-effect {
+        xray false
+    }
+}
+
+// Blur the background behind pop-up menus in Thunar
+window-rule {
+    match app-id="thunar"
+
+    popups {
+        geometry-corner-radius 12
+
+        background-effect {
+            blur true
+        }
+    }
+}
+
+// make certain sub-windows open floating, to prevent them from being full-height columns
+// these may need tweaking; regex is difficult
 window-rule {
     match app-id=r#"^xarchiver$"#
     match app-id=r#"^thunar$"# title=r#"^Rename.*"#
@@ -193,6 +266,7 @@ window-rule {
     open-floating true
 }
 
+// set the default proportions of certain floating windows
 window-rule {
     match app-id=r#"^dot\.floating\.thunar$"#
     match app-id=r#"^dot\.floating\.ghostty$"#
@@ -200,6 +274,9 @@ window-rule {
     default-window-height { proportion 0.500000; }
     open-floating true
 }
+
+// the following are all per-app window rules for easy use. some things open focused, some not, some are hidden from screencasting, etc.
+// these can be changed pretty freely!
 
 window-rule {
     match app-id="firefox$" title="^(Picture-in-Picture|Library|About Mozilla Firefox)$"
@@ -278,20 +355,11 @@ window-rule {
     block-out-from "screencast"
 }
 
-layer-rule {
-    match namespace="^noctalia-overview*"
-    place-within-backdrop true
-}
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
-}
-
-
 
 // -----------------------------------------------------------------------------
 // animations
 // -----------------------------------------------------------------------------
+
 animations {
     slowdown 1.000000
     horizontal-view-movement {
@@ -323,4 +391,6 @@ animations {
         curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
     }
 }
-include "./../../.config/niri/animations/pixelate.kdl"
+
+// this line generated from noctalia plugin - 'optional=true" added just in case something gets desynced
+include optional=true "./../../.config/niri/animations/pixelate.kdl"
