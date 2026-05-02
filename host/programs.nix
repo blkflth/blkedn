@@ -83,7 +83,7 @@ in {
     protonup-qt #GUI for managing Proton GE
     winetricks #etxra wine DLLs
     mangohud #process overlay
-    lutris
+    #lutris
     xivlauncher
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.mo2installer #Mod Organizer 2 Client
 
