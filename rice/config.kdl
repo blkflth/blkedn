@@ -227,6 +227,17 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Make top and overlay layers use the regular blur (if enabled),
+// while bottom and background layers keep using the efficient xray blur.
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+
+    background-effect {
+        xray false
+    }
+}
+
 // Make floating windows use the regular blur (if enabled),
 // while tiled windows keep using the efficient xray blur.
 window-rule {
