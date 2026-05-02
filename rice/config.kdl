@@ -19,8 +19,9 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 overview {
     workspace-shadow {
-        softness 80
-        spread 60
+        off
+        //softness 80
+        //spread 60
     }
 }
 
