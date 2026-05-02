@@ -44,7 +44,7 @@ layout {
         active-color "#72e25096"
         inactive-gradient angle=225 from="#1c68e2e6" relative-to="workspace-view" to="#bb38dff6"
     }
-    background-color "00000000"
+    background-color "transparent"
     shadow {
         on
         offset x=0.000000 y=5.000000
@@ -215,8 +215,9 @@ layer-rule {
   }
 }
 
+// blurs overview wallpaper
 layer-rule {
-    match namespace="^noctalia-overview*"
+    match namespace="^noctalia-wallpaper*"
     place-within-backdrop true
 }
 
