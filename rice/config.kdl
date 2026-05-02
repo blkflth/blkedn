@@ -185,7 +185,7 @@ blur {
 // make unfocused windows slightly transluscent
 window-rule {
     match is-focused=false
-    opacity 0.920000
+    opacity 0.80
 }
 
 window-rule {
