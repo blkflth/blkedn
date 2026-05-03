@@ -48,6 +48,12 @@
         },
         {
           "defaultSettings": {
+            "iconColor": "none"
+          },
+          "id": "plugin:plugin-manager"
+        },
+        {
+          "defaultSettings": {
             "animationsFolder": "~/.config/niri/animations",
             "iconColor": "none",
             "targetFile": "~/.config/niri/config.kdl"
@@ -704,15 +710,15 @@
   },
   "idle": {
     "enabled": true,
-    "screenOffTimeout": 600,
+    "screenOffTimeout": 1500,
     "lockTimeout": 0,
     "suspendTimeout": 0,
     "fadeDuration": 5,
-    "screenOffCommand": "",
-    "lockCommand": "",
+    "screenOffCommand": "notify-send \"Dimming Display. いってらっしゃい。\"",
+    "lockCommand": "notify-send \"Locking System. いってらっしゃい。\"",
     "suspendCommand": "",
-    "resumeScreenOffCommand": "",
-    "resumeLockCommand": "",
+    "resumeScreenOffCommand": "notify-send \"Waking Display. おかえりなさい！\"",
+    "resumeLockCommand": "notify-send \"Unlocking System. Display. おかえりなさい！\"",
     "resumeSuspendCommand": "",
     "customCommands": "[]"
   },
