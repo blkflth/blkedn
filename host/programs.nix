@@ -58,7 +58,7 @@ in {
     feishin # Subsonic interface
     element-desktop #matrix client
     #ani-cli #CLI anime streaming
-    stremio-linux-shell
+    #stremio-linux-shell
     gurk-rs #signal client
 
     # Creative Software
