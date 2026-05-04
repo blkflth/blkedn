@@ -93,9 +93,12 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 > _From this point onward, the nixos-rebuild commands are run throuh `nh` and aliased by default. Check aliases in `~/Nix/apps/fish.nix` - Look up Home-Manager options for `fish` to see what other things can be configured._
 
+- run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris from Flathub.
+
 - Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
 - Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings" - Open up `~/Nix/rice/settings.json` and replace the file contents with what you just copied.
+
 
 - Open up a terminal and run `build` to lock in all changes.
 
