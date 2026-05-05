@@ -111,33 +111,26 @@ binds {
     Mod+9 { focus-workspace 9; }
     Mod+Alt+C hotkey-overlay-title="Center Visible Columns" { center-visible-columns; }
     Mod+Alt+Comma hotkey-overlay-title="Settings 🗒️" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
-    Mod+Alt+E hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://extensions/vicinae/vicinae/search-emojis"; }
+    Mod+Alt+E hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch:search-emojis?toggle=true"; }
     Mod+Alt+End { quit; }
     Mod+Alt+Escape hotkey-overlay-title="Lock Screen ⛓️" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
     Mod+Alt+F { maximize-column; }
-    Mod+Alt+H { move-column-left; }
-    Mod+Alt+J { move-column-to-workspace-down; }
-    Mod+Alt+K { move-column-to-workspace-up; }
-    Mod+Alt+L { move-column-right; }
+    
     Mod+Alt+Next hotkey-overlay-title="Select Wallpaper 🖼️" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
     Mod+Alt+Print { screenshot-window write-to-disk=true; }
     Mod+Alt+R { switch-preset-window-height-back; }
     Mod+Alt+S hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+Alt+Tab { toggle-window-floating; }
-    Mod+Alt+V hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+Alt+V hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
     Mod+BracketLeft { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
     Mod+Ctrl+S hotkey-overlay-title="Open System Monitoring 📊" { spawn "ghostty" "-e" "btm"; }
     Mod+Delete allow-when-locked=true hotkey-overlay-title="Clear Notifications 🔔" { spawn "noctalia-shell" "ipc" "call" "notifications" "clear"; }
     Mod+E hotkey-overlay-title="Open File Explorer 📂" { spawn "thunar"; }
     Mod+End allow-when-locked=true hotkey-overlay-title="Dismiss Notifications 🔔" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismissAll"; }
-    Mod+Grave { show-hotkey-overlay; }
-    Mod+H { focus-column-left-or-last; }
+    Mod+Grave { show-hotkey-overlay; } 
     Mod+Home allow-when-locked=true hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
     Mod+Insert hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
-    Mod+J { focus-window-or-workspace-down; }
-    Mod+K { focus-window-or-workspace-up; }
-    Mod+L { focus-column-right-or-first; }
     Mod+Next allow-when-locked=true hotkey-overlay-title="Random Wallpaper " { spawn "noctalia-shell" "ipc" "call" "wallpaper" "random"; }
     Mod+Print { screenshot show-pointer=false; }
     Mod+Prior hotkey-overlay-title="Toggle Bar 🎩" { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
@@ -147,14 +140,34 @@ binds {
     Mod+Shift+C hotkey-overlay-title="Center Column" { center-column; }
     Mod+Shift+Comma hotkey-overlay-title="Show Session Menu ⛓️" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+H { focus-column-left-or-last; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-right-or-first; }
+    Mod+Alt+H { move-column-left; }
+    Mod+Alt+J { move-column-to-workspace-down; }
+    Mod+Alt+K { move-column-to-workspace-up; }
+    Mod+Alt+L { move-column-right; }
     Mod+Shift+H { move-column-to-last; }
     Mod+Shift+J { move-window-down-or-to-workspace-down; }
     Mod+Shift+K { move-window-up-or-to-workspace-up; }
     Mod+Shift+L { move-column-to-first; }
+    Mod+A { focus-column-left-or-last; }
+    Mod+S { focus-window-or-workspace-down; }
+    Mod+W { focus-window-or-workspace-up; }
+    Mod+D { focus-column-right-or-first; }
+    Mod+Alt+A { move-column-left; }
+    Mod+Alt+S { move-column-to-workspace-down; }
+    Mod+Alt+W { move-column-to-workspace-up; }
+    Mod+Alt+D { move-column-right; }
+    Mod+Shift+A { move-column-to-last; }
+    Mod+Shift+S { move-window-down-or-to-workspace-down; }
+    Mod+Shift+W { move-window-up-or-to-workspace-up; }
+    Mod+Shift+D { move-column-to-first; }
     Mod+Shift+Next hotkey-overlay-title="Toggle Wallpaper Cycling" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggleAutomation"; }
     Mod+Shift+Q { close-window; }
     Mod+Shift+Tab { switch-focus-between-floating-and-tiling; }
-    Mod+Space hotkey-overlay-title="App Launcher 🚀" { spawn "vicinae" "toggle"; }
+    Mod+Space hotkey-overlay-title="App Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
     Mod+T hotkey-overlay-title="Toggle Tabbed Display" { toggle-column-tabbed-display; }
     Mod+Tab { toggle-overview; }
 }
