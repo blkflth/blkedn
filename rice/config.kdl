@@ -119,7 +119,7 @@ binds {
     Mod+Alt+Next hotkey-overlay-title="Select Wallpaper 🖼️" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
     Mod+Alt+Print { screenshot-window write-to-disk=true; }
     Mod+Alt+R { switch-preset-window-height-back; }
-    Mod+Alt+S hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+Alt+Enter hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+Alt+Tab { toggle-window-floating; }
     Mod+Alt+V hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
     Mod+BracketLeft { consume-or-expel-window-left; }
