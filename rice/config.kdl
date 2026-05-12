@@ -277,7 +277,7 @@ window-rule {
 // these may need tweaking; regex is difficult
 window-rule {
     match app-id=r#"^xarchiver$"#
-    match app-id=r#"^thunar$"# title=r#"^Rename"#
+    match app-id=r#"^thunar$"# title=r#"^Rename.*"#
     match app-id=r#"^thunar$"# title=r#"^File Operation Progress*"#
     match app-id=r#"^thunar-bulk-rename$"#
     match app-id=r#"^thunar-volman$"#
