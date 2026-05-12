@@ -278,7 +278,7 @@ window-rule {
 window-rule {
     match app-id=r#"^xarchiver$"#
     match app-id=r#"^thunar$"# title=r#"^Rename.*"#
-    match app-id=r#"^thunar$"# title=r#"^File Operation Progress*"#
+    match app-id=r#"^thunar$"# title=r#"^File Operation Progress.*"#
     match app-id=r#"^thunar-bulk-rename$"#
     match app-id=r#"^thunar-volman$"#
     match app-id=r#"^gimp$"# title=r#"Preferences"#
