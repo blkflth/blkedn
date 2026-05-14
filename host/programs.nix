@@ -52,6 +52,7 @@ in {
     # general use and media
     vlc
     ungoogled-chromium
+    unrar
     bazaar #flathub installer
     nicotine-plus # soulseek client
     picard # music metadata editor
