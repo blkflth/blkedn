@@ -81,7 +81,7 @@ layout {
         proportion 1.000000
     }
     center-focused-column "on-overflow"
-    default-column-display "tabbed"
+    default-column-display "normal"
 }
 cursor {
     xcursor-theme "catppuccin-frappe-dark-cursors"
@@ -328,7 +328,6 @@ window-rule {
 window-rule {
     match app-id=r#"^com.mitchellh.ghostty$"#
     default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.500000; }
     open-focused true
 }
 
