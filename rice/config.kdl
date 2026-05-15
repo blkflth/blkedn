@@ -31,13 +31,13 @@ overview {
 layout {
     gaps 4
     struts {
-        left 4
-        right 4
-        top 4
-        bottom 4
+        left 2
+        right 2
+        top 2
+        bottom 2
     }
     focus-ring {
-        width 1
+        width 1.25
         active-color "#72e25096"
         
     }
@@ -65,8 +65,8 @@ layout {
         gaps-between-tabs 2.000000
         corner-radius 0.3
         urgent-color "#e44949ff"
-        active-color "#15e62ae3"
-        inactive-gradient angle=180 from="#1c68e2ff" relative-to="window" to="#b51de0ff"
+        active-color "#ffffff"
+        inactive-gradient angle=180 from="rgb(93, 44, 81)" relative-to="window" to="rgb(132, 142, 77)"
     }
     default-column-width {}
     preset-column-widths {
