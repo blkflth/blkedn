@@ -191,7 +191,7 @@ binds {
     Mod+WheelScrollDown       hotkey-overlay-title="Focus column right" { focus-column-right; }
     Mod+WheelScrollUp         hotkey-overlay-title="Focus column left" { focus-column-left; }
     Mod+Alt+WheelScrollDown  hotkey-overlay-title="Move column right" { move-column-right; }
-    Mod+Alt+WheelScrollUp    hotkey-overlay-title="Move column left" { move-column-left;
+    Mod+Alt+WheelScrollUp    hotkey-overlay-title="Move column left" { move-column-left; }
 
     // These are bound to both WASD and HJKL for use on either hand
     Mod+H { focus-column-left-or-last; }
@@ -250,7 +250,7 @@ binds {
     Mod+Ctrl+6 { move-column-to-workspace 6; }
     Mod+Ctrl+7 { move-column-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
 
     // Applications
     Mod+B                   hotkey-overlay-title="Browser" { spawn "firefox"; }
@@ -284,14 +284,7 @@ binds {
     Mod+Insert                      hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
     Mod+Print { screenshot show-pointer=false; }
     Mod+Alt+Print { screenshot-window write-to-disk=true; }
-    
-    
-    
-    
-    
-   
-    
-    
+     
 }
 
 
