@@ -258,8 +258,7 @@ binds {
     Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "thunar"; }
     Mod+Alt+E               { spawn "thunar" "--name=dfr.floating.thunar"; }
     Mod+Ctrl+S              hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
-    Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
-    Mod+Alt+Return          { spawn "ghostty" "--class=dfr.floating.ghostty"; }
+    Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" }
     Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
     Mod+Ctrl+E              hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
     Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
@@ -405,7 +404,6 @@ window-rule {
 // set the default proportions of certain floating windows
 window-rule {
     match app-id=r#"^dfr\.floating\.thunar$"#
-    match app-id=r#"^dfr\.floating\.ghostty$"#
     default-column-width { proportion 0.33; }
     default-window-height { proportion 0.5; }
     open-floating true
