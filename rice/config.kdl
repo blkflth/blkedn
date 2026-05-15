@@ -153,9 +153,9 @@ binds {
     Mod+Tab { toggle-overview; }
 
     // Display scaling / zoom.
-    Mod+Alt+Equal hotkey-overlay-title="Increase focused monitor scale" { spawn "output-scale" "+"; }
-    Mod+Alt+Minus hotkey-overlay-title="Decrease focused monitor scale" { spawn "output-scale" "-"; }
-    Mod+Alt+0     hotkey-overlay-title="Reset focused monitor scale" { spawn "output-scale" "1.0"; }
+    // Mod+Alt+Equal hotkey-overlay-title="Increase focused monitor scale" { spawn "output-scale" "+"; }
+    // Mod+Alt+Minus hotkey-overlay-title="Decrease focused monitor scale" { spawn "output-scale" "-"; }
+    // Mod+Alt+0     hotkey-overlay-title="Reset focused monitor scale" { spawn "output-scale" "1.0"; }
 
     // Window and Column Behavior
     Mod+Q repeat=false { close-window; }
@@ -253,10 +253,10 @@ binds {
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
     // Applications
-    Mod+B                   hotkey-overlay-title="Browser" { spawn "firefox"; }
-    Mod+Alt+B               { spawn "firefox" "-private-window"; }
+    Mod+B                   hotkey-overlay-title="Browser 🌐" { spawn "firefox"; }
+    Mod+Alt+B               hotkey-overlay-title="Private Browser 🌐" { spawn "firefox" "-private-window"; }
     Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "thunar"; }
-    Mod+Alt+E               { spawn "thunar" "--name=dfr.floating.thunar"; }
+    Mod+Alt+E               hotkey-overlay-title="Floating Explorer 📂" { spawn "thunar" "--name=dfr.floating.thunar"; }
     Mod+Ctrl+S              hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
     Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty"; }
     Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
