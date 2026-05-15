@@ -31,10 +31,10 @@ overview {
 layout {
     gaps 4
     struts {
-        left 7
-        right 7
-        top 7
-        bottom 7
+        left 4
+        right 4
+        top 4
+        bottom 4
     }
     focus-ring {
         width 1
@@ -206,9 +206,9 @@ window-rule {
     opacity 1.000000
 }
 
-// give all windows rounded corners
+// set corner roundness (a value of 12 works well w/ noctalia screen corners at defaul 100%)
 window-rule {
-    geometry-corner-radius 12.000000 12.000000 12.000000 12.000000
+    // geometry-corner-radius 12.0 12.0 12.0 12.0
     clip-to-geometry true
 }
 
