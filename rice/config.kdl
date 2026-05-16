@@ -404,8 +404,8 @@ window-rule {
 // set the default proportions of certain floating windows
 window-rule {
     match app-id=r#"^dfr\.floating\.thunar$"#
-    default-column-width { proportion 0.33; }
-    default-window-height { proportion 0.5; }
+    // default-column-width { proportion 0.33; }
+    // default-window-height { proportion 0.5; }
     open-floating true
 }
 
