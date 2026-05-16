@@ -467,6 +467,7 @@ window-rule {
     open-focused true
     open-floating false
     default-column-width { proportion 0.5; }
+    default-window-height { proportion 1; }
 }
 
 window-rule {
