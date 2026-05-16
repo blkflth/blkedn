@@ -471,7 +471,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="steam_app_4329280"
+    match app-id="(steam_app_4329280|steam_app_4329260)"
     open-focused true
     open-floating false
     default-column-width { proportion 0.5; }
@@ -479,7 +479,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="steam_app_4329280" title="(Preferences|Plugin Manager|Open File|New Substance graph)"
+    match app-id="(steam_app_4329280|steam_app_4329260)" title="(Preferences|Plugin Manager|Open File|New Substance graph|plugins|Substance 3D Painter|Open project)"
     default-column-width { proportion 0.33; }
     default-window-height { proportion 0.5; }
     open-focused true
