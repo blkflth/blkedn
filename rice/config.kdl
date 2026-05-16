@@ -416,8 +416,8 @@ window-rule {
     match app-id="firefox$" title="^(Picture-in-Picture|Library|About Mozilla Firefox)$"
     match app-id="^steam"
     match title="Lutris"
-    default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.500000; }
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
     open-floating true
     open-focused false
 }
@@ -432,14 +432,14 @@ window-rule {
 
 window-rule {
     match app-id=r#"^com.mitchellh.ghostty$"#
-    default-column-width { proportion 0.333330; }
+    default-column-width { proportion 0.33; }
     open-focused true
 }
 
 window-rule {
     match app-id="^bottom.desktop"
-    default-column-width { proportion 0.333330; }
-    default-window-height { proportion 0.333330; }
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.33; }
     open-focused false
 }
 
@@ -451,15 +451,20 @@ window-rule {
 
 window-rule {
     match title=r#"^Affinity$"#
-    default-column-width { proportion 0.500000; }
+    default-column-width { proportion 0.5; }
     open-focused true
     block-out-from "screencast"
 }
 
 window-rule {
     match title="^Blender"
-    // default-column-width { proportion 0.500000; }
+    default-column-width { proportion 0.5; }
     open-focused true
+}
+
+window-rule {
+    match app-id="^blender" title="(Preferences)"
+    open-floating true
 }
 
 window-rule {
@@ -467,7 +472,7 @@ window-rule {
     open-focused true
     open-floating false
     default-column-width { proportion 0.5; }
-    default-window-height { proportion 1; }
+    default-window-height { proportion 1.0; }
 }
 
 window-rule {
@@ -488,7 +493,7 @@ window-rule {
 
 window-rule {
     match title="^vencord"
-    default-column-width { proportion 0.333330; }
+    default-column-width { proportion 0.33; }
     open-focused true
     block-out-from "screencast"
 }
@@ -497,7 +502,7 @@ window-rule {
     match title=r#"^Proton$"#
     match app-id=r#"^fcha"#
 
-    default-column-width { proportion 0.666670; }
+    default-column-width { proportion 0.66; }
     open-focused true
     block-out-from "screencast"
 }
