@@ -471,7 +471,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="(steam_app_4329280|steam_app_4329260)"
+    match app-id="(steam_app_4329280|steam_app_3366290|steam_app_4329260)"
     open-focused true
     open-floating false
     default-column-width { proportion 0.5; }
@@ -479,7 +479,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="(steam_app_4329280|steam_app_4329260)" title="(Preferences|Plugin Manager|Open File|New Substance graph|plugins|Home screen|Open project|Configuration Issues|New project)"
+    match app-id="(steam_app_4329280|steam_app_3366290|steam_app_4329260)" title="(Preferences|Plugin Manager|Open File|New Substance graph|plugins|Home screen|Open project|Configuration Issues|New project)"
     default-column-width { proportion 0.33; }
     default-window-height { proportion 0.5; }
     open-focused true
