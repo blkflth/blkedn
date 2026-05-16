@@ -258,7 +258,7 @@ binds {
     Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "thunar"; }
     Mod+Alt+E               hotkey-overlay-title="Floating Explorer 📂" { spawn "thunar" "--name=dfr.floating.thunar"; }
     Mod+Ctrl+S              hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
-    Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty"; }
+    Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
     Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
     Mod+Ctrl+E              hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
     Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
