@@ -445,7 +445,7 @@ window-rule {
 
 window-rule {
     match title="^VSCodium"
-    // default-column-width { proportion 0.333330; }
+    // default-column-width { proportion 0.5; }
     open-focused true
 }
 
@@ -460,6 +460,19 @@ window-rule {
     match title="^Blender"
     // default-column-width { proportion 0.500000; }
     open-focused true
+}
+
+window-rule {
+    match app-id="steam_app_4329280"
+    open-focused true
+    open-floating false
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="steam_app_4329280" title="(Preferences|Plugin Manager|Open File)"
+    open-focused true
+    open-floating true
 }
 
 window-rule {
