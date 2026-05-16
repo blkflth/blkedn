@@ -464,6 +464,9 @@ window-rule {
 
 window-rule {
     match app-id="^blender" title="(Preferences)"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    open-focused true
     open-floating true
 }
 
@@ -476,7 +479,9 @@ window-rule {
 }
 
 window-rule {
-    match app-id="steam_app_4329280" title="(Preferences|Plugin Manager|Open File)"
+    match app-id="steam_app_4329280" title="(Preferences|Plugin Manager|Open File|New Substance graph)"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
     open-focused true
     open-floating true
 }
