@@ -497,6 +497,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id="FLTK"
+    open-floating true
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    }
+
+window-rule {
     match title="^vencord"
     default-column-width { proportion 0.33; }
     open-focused true
