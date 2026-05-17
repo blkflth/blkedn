@@ -28,6 +28,11 @@
       url = "github:fufexan/nix-gaming";
     };
 
+    naviterm = {
+        url = "gitlab:detoxify92/naviterm";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
