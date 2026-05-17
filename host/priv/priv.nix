@@ -11,7 +11,7 @@
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    # fchat-horizon = pkgs.callPackage ./horizon.nix {};
+    fchat-horizon = pkgs.callPackage ./horizon.nix {};
     firestorm = pkgs.callPackage ./firestorm.nix {};
   };
 }
