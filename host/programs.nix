@@ -57,6 +57,7 @@ in {
     nicotine-plus # soulseek client
     picard # music metadata editor
     feishin # Subsonic interface
+    inputs.naviterm.packages.${system}.default # terminal navidrome player
     element-desktop #matrix client
     #ani-cli #CLI anime streaming
     #stremio-linux-shell
