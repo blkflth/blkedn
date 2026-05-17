@@ -73,7 +73,7 @@ in {
     blender
 
     # productivity
-    libreoffice-fresh # Office Suite
+    onlyoffice-desktopeditors # Office Suite
     tagainijisho #Japanese Dictionary
     #memento #mpv player for JP Study
     hoard #CLI Command Organizer
