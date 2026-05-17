@@ -44,7 +44,7 @@
     */
   };
 
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
     package = pkgs.vscodium-fhs;
     profiles.default.extensions = with pkgs.vscode-extensions; [
