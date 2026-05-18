@@ -264,7 +264,7 @@ binds {
     Mod+Alt+Return          hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
     Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
     Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
-    Mod+Alt+E               hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
+    Mod+Shift+E               hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
     Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
 
     // Notifications
