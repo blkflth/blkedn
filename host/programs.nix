@@ -56,11 +56,11 @@ in {
     bazaar #flathub installer
     nicotine-plus # soulseek client
     picard # music metadata editor
-    feishin # Subsonic interface
+    #feishin # Subsonic interface
     inputs.naviterm.packages.${system}.default # terminal navidrome player
     mpv #music player backend
     element-desktop #matrix client
-    #ani-cli #CLI anime streaming
+    ani-cli #CLI anime streaming
     #stremio-linux-shell
     gurk-rs #signal client
 
@@ -135,7 +135,7 @@ in {
       ];
     };
 
-    # enable Niri Window Manager - NixOS source in flake, builds using cachix
+    # enable Niri Window Manager
     niri = {
       enable = true;
       useNautilus = false;

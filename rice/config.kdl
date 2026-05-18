@@ -257,10 +257,14 @@ binds {
     Mod+Alt+B               hotkey-overlay-title="Private Browser 🌐" { spawn "firefox" "-private-window"; }
     Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "thunar"; }
     Mod+Alt+E               hotkey-overlay-title="Floating Explorer 📂" { spawn "thunar" "--name=dfr.floating.thunar"; }
-    Mod+Ctrl+S              hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
+    Mod+M                   hotkey-overlay-title="Music Player 🎧" { spawn "ghostty" "-e" "naviterm"; }
+    Mod+Alt+M               hotkey-overlay-title="TV Player 📺" { spawn "ghostty" "-e" "ani-cli"; }
+    Mod+Alt+P               hotkey-overlay-title="Messenger 💬" { spawn "ghostty" "-e" "gurk"; } 
+    Mod+Alt+I               hotkey-overlay-title="Idle Screen 🤖" { spawn "ghostty" "-e" "cmatrix"; }
+    Mod+Alt+Return          hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
     Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
     Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
-    Mod+Ctrl+E              hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
+    Mod+Alt+E               hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
     Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
 
     // Notifications
@@ -271,7 +275,7 @@ binds {
     // Session & Shell
     Mod+Prior                       hotkey-overlay-title="Toggle Bar 🎩" { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
     Mod+Shift+Comma                 hotkey-overlay-title="Show Session Menu ⛓️" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Mod+Shift+Return                  hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+Shift+Return                hotkey-overlay-title="Control Center 🏠" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+Shift+Alt+Escape            hotkey-overlay-title="Suspend System 💤" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
     Mod+Alt+Escape                  hotkey-overlay-title="Lock Screen ⛓️" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
     Mod+Alt+Comma                   hotkey-overlay-title="Settings 🗒️" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
