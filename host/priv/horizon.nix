@@ -7,7 +7,7 @@
   copyDesktopItems,
   python3,
   nodejs,
-  pnpm,
+  pnpm_10,
   electron_39,
   imagemagick,
   dart-sass,
@@ -19,16 +19,17 @@
   fetchpatch,
 }: let
   electron = electron_39;
+  pnpm = pnpm_10;
 in
   stdenvNoCC.mkDerivation (finalAttrs: {
     pname = "horizon";
-    version = "2.0.1";
+    version = "2.1.4";
 
     src = fetchFromGitHub {
       owner = "Fchat-Horizon";
       repo = "Horizon";
       rev = "v${finalAttrs.version}";
-      hash = "sha256-YP04PcZ/zz/gxCtu0SzBoazued4vZArHU0Q9r2IDxZA=";
+      hash = "sha256-BSqr7zC01Lwv9yUFsn4GzFo9irElMej3pGI7kTcpPxg=";
     };
 
     pnpmWorkspaces = ["horizon-electron"];
@@ -41,8 +42,11 @@ in
         src
         pnpmWorkspaces
         ;
+      # Do not use the version of pnpm that `fetchPnpmDeps` uses due to v11 changes:
+      # anonymous note: pnpm 11 […] no longer reads from the pnpm field of package.json
+      pnpm = pnpm;
       fetcherVersion = 3;
-      hash = "sha256-BVPwjUYxJNHPOnDp8fdEItesm398m3ByqqT+NTo95eU=";
+      hash = "sha256-Cf0QTHBAUhrG+wQzAQAVeG9VCHbHy+gPVMNaHBsQpdc=";
     };
 
     patches = [
