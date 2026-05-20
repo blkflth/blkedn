@@ -6,7 +6,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # fchat-horizon
+    fchat-horizon
     firestorm
   ];
 
