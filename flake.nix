@@ -88,6 +88,7 @@
             modules = [
               ./home.nix
               vicinae.homeManagerModules.default
+              lazyvim.homeManagerModules.default
             ];
           };
       };
