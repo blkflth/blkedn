@@ -4,10 +4,6 @@
   config,
   ...
 }: {
-  imports = [
-    lazyvim.homeManagerModules.default
-  ];
-
   home.packages = with pkgs; [
     #vscodium-fhs
   ];
