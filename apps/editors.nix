@@ -4,6 +4,10 @@
   config,
   ...
 }: {
+  imports = [
+    lazyvim.homeManagerModules.default
+  ];
+
   home.packages = with pkgs; [
     #vscodium-fhs
   ];
@@ -16,32 +20,82 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       statix
-      LazyVim
       blink-cmp
       blink-cmp-spell
       blink-cmp-git
       monokai-pro-nvim
     ];
-    /*
-    extraLuaConfig = ''
-      vim.g.mapleader = " " -- Need to set leader before lazy for correct keybindings
-      require("lazy").setup({
-        performance = {
-          reset_packpath = false,
-          rtp = {
-              reset = false,
-            }
-          },
-        dev = {
-          path = "${pkgs.vimUtils.packDir config.home-manager.users.jlc.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
-        },
-        install = {
-          -- Safeguard in case we forget to install a plugin with Nix
-          missing = false,
-        },
-      })
-    '';
-    */
+  };
+
+  programs.lazyvim = {
+    enable = true;
+
+    configFiles = ./lazyvim;
+    extras = {
+      lang = {
+        nix.enable = true;
+        git.enable = true;
+        json.enable = true;
+        markdown.enable = true;
+        php.enable = true;
+        rust.enable = true;
+        toml.enable = true;
+        typescript.enable = true;
+        yaml.enable = true;
+        python.enable = true;
+      };
+      editor = {
+        fzf.enable = true;
+        mini-files.enable = true;
+        neo-tree.enable = true;
+        snacks_explorer.enable = true;
+        snacks_picker.enable = true;
+      };
+      formatting = {
+        black.enable = true;
+        prettier.enable = true;
+      };
+      ui = {
+        dashboard-nvim.enable = true;
+      };
+      util = {
+        gh.enable = true;
+      };
+    };
+
+    # IMPORTANT: Extras don't install treesitter parsers automatically
+    # You must add them manually for syntax highlighting
+    treesitterParsers = with pkgs.tree-sitter-grammars; [
+      tree-sitter-nix
+      tree-sitter-python
+      tree-sitter-bash
+      tree-sitter-fish
+      tree-sitter-css
+      tree-sitter-html
+      tree-sitter-http
+      tree-sitter-json
+      tree-sitter-json5
+      tree-sitter-kdl
+      tree-sitter-lua
+      tree-sitter-markdown
+      tree-sitter-markdown-inline
+      tree-sitter-php
+      tree-sitter-regex
+      tree-sitter-rust
+      tree-sitter-toml
+      tree-sitter-typescript
+      tree-sitter-vim
+      tree-sitter-yaml
+    ];
+
+    extraPackages = with pkgs; [
+      # LSP servers
+      nixd
+      pyright
+
+      # Formatters
+      alejandra
+    ];
   };
 
   programs.vscodium = {

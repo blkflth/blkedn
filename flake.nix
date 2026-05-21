@@ -29,10 +29,14 @@
     };
 
     naviterm = {
-        url = "gitlab:detoxify92/naviterm";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:detoxify92/naviterm";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    lazyvim = {
+      url = "github:pfassina/lazyvim-nix";
+    };
+
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
@@ -42,6 +46,7 @@
     home-manager,
     vicinae,
     vicinae-extensions,
+    lazyvim,
     #affinity-nix,
     ...
   } @ inputs: let
