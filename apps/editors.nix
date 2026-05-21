@@ -61,27 +61,31 @@
 
     # IMPORTANT: Extras don't install treesitter parsers automatically
     # You must add them manually for syntax highlighting
-    treesitterParsers = with pkgs.tree-sitter-grammars; [
-      tree-sitter-nix
-      tree-sitter-python
-      tree-sitter-bash
-      tree-sitter-fish
-      tree-sitter-css
-      tree-sitter-html
-      tree-sitter-http
-      tree-sitter-json
-      tree-sitter-json5
-      tree-sitter-kdl
-      tree-sitter-lua
-      tree-sitter-markdown
-      tree-sitter-markdown-inline
-      tree-sitter-php
-      tree-sitter-regex
-      tree-sitter-rust
-      tree-sitter-toml
-      tree-sitter-typescript
-      tree-sitter-vim
-      tree-sitter-yaml
+    treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+      nix
+      python
+      bash
+      fish
+      css
+      gitcommit
+      html
+      http
+      ini
+      json
+      json5
+      kdl
+      lua
+      markdown
+      markdown_inline
+      nginx
+      php
+      regex
+      rust
+      ssh_config
+      toml
+      typescript
+      vim
+      yaml
     ];
 
     extraPackages = with pkgs; [
