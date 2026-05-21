@@ -44,8 +44,8 @@
         fzf.enable = true;
         mini-files.enable = true;
         neo-tree.enable = true;
-        snacks_explorer.enable = true;
-        snacks_picker.enable = true;
+        snacks-explorer.enable = true;
+        snacks-picker.enable = true;
       };
       formatting = {
         black.enable = true;
