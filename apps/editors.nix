@@ -23,11 +23,10 @@
     ];
   };
 
-  /*
   programs.lazyvim = {
     enable = true;
 
-    configFiles = ./lazyvim;
+    configFiles = ./lazyvim/;
     extras = {
       lang = {
         nix.enable = true;
@@ -94,7 +93,6 @@
       alejandra
     ];
   };
-  */
 
   programs.vscodium = {
     enable = true;
