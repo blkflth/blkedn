@@ -23,6 +23,7 @@
     ];
   };
 
+  /*
   programs.lazyvim = {
     enable = true;
 
@@ -93,6 +94,7 @@
       alejandra
     ];
   };
+  */
 
   programs.vscodium = {
     enable = true;
