@@ -10,7 +10,7 @@
 
   imports = [
     inputs.vicinae.homeManagerModules.default
-    lazyvim.homeManagerModules.default
+    inputs.lazyvim.homeManagerModules.default
     ./rice/rice.nix
     ./apps/apps.nix
     ./hw/hw.nix
