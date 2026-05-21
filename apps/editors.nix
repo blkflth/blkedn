@@ -4,9 +4,11 @@
   config,
   ...
 }: {
-  imports = [
+  /*
+    imports = [
     lazyvim.homeManagerModules.default
   ];
+  */
 
   home.packages = with pkgs; [
     #vscodium-fhs
@@ -26,7 +28,7 @@
       monokai-pro-nvim
     ];
   };
-
+  /*
   programs.lazyvim = {
     enable = true;
 
@@ -97,6 +99,7 @@
       alejandra
     ];
   };
+  */
 
   programs.vscodium = {
     enable = true;
