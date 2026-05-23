@@ -30,9 +30,10 @@
 
 ### To-Do:
 
-- [ ] Tweak niri layout & window rules further
-- [ ] Declare Vicinae Extensions
-- [ ] Go through packages and move options into ``home-manager`` wherever possible
+- [x] Tweak niri layout & window rules further
+- [x] Set up nvim as working editor option
+- [x] Declare Vicinae Extensions
+- [x] Go through packages and move options into ``home-manager`` wherever possible
 - [x] Properly configure Home-Manager backup settings to stop service restart error for gtk-4.0 css file (no more clobbering)
 - [x] Locate and link AppIcons for various programs (Unneeded)
 - [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
