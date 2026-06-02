@@ -21,7 +21,7 @@
     useTextGreeter = true;
     settings = {
       default_session = {
-        command = "dbus-run-session niri-session --config /home/jlc/Nix/host/nirigreet.kdl";
+        command = "dbus-run-session niri --config /home/jlc/Nix/host/nirigreet.kdl";
         /*
             ''
           ${pkgs.tuigreet}/bin/tuigreet \
