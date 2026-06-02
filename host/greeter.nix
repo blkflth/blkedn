@@ -1,4 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  inherit (lib.meta) getExe;
+  inherit (lib.strings) concatStringsSep;
+
+  sessionData = config.services.displayManager.sessionData.desktops;
+in {
   services.greetd = {
     enable = true;
     useTextGreeter = true;
