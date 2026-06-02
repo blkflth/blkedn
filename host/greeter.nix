@@ -1,27 +1,23 @@
 {pkgs, ...}: {
-  programs.regreet = {
-    enable = true;
-    font = {
-      name = "AtkynsonMono NFP";
-      package = pkgs.nerd-fonts.atkynson-mono;
-      size = 12;
-    };
-    iconTheme = {
-      name = "Dracula";
-      package = pkgs.dracula-icon-theme;
-    };
-    cursorTheme = {
-      name = "catppuccin-frappe-dark-cursors";
-      package = pkgs.catppuccin-cursors.frappeDark;
-    };
-  };
-
   services.greetd = {
     enable = true;
     useTextGreeter = true;
     settings = {
       default_session = {
-        command = "niri --config ~/Nix/host/nirigreet.kdl";
+        command = concatStringsSep " " [
+          (getExe pkgs.tuigreet)
+          "--time"
+          "--asterisks"
+          "--remember"
+          "--remember-user-session"
+          "--greeting WELCOME"
+          "--theme text=red;prompt=green;time=red;input=red;border=white;title=red;action=white;greet=white"
+          "--sessions '${
+            concatStringsSep ":" [
+              "${sessionData}/share/wayland-sessions"
+            ]
+          }'"
+        ];
         /*
             ''
           ${pkgs.tuigreet}/bin/tuigreet \
