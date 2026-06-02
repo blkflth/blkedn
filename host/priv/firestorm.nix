@@ -2,10 +2,10 @@
 with pkgs;
   stdenv.mkDerivation rec {
     pname = "firestorm-viewer";
-    version = "7.2.3";
+    version = "7.2.4";
     src = fetchurl {
-      url = "https://downloads.firestormviewer.org/release/linux/Phoenix-Firestorm-Releasex64_AVX2-7-2-3-80036.tar.xz";
-      hash = "sha256-PzhvN3Gw+nJpIcahZpWV7Mhqy6osdnTjGCTHjso4f2o=";
+      url = "https://downloads.firestormviewer.org/release/linux/Phoenix-Firestorm-Releasex64_AVX2-7-2-4-80712.tar.xz";
+      hash = "sha256-QF/o/FmElNcRRaSOf+rj4fAvdJL3MBfu66b6B3pfIag=";
     };
 
     meta = {
@@ -21,7 +21,7 @@ with pkgs;
       desktopName = "Firestorm Viewer";
       comment = "Firestorm Viewer for Second Life";
       exec = "firestorm";
-      icon = "${placeholder "out"}/firestorm/firestorm_icon.png";
+      icon = "${placeholder "out"}/firestorm_icon.png";
       categories = ["Game"];
     };
 
