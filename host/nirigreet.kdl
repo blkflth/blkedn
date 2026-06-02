@@ -1,0 +1,9 @@
+spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
+hotkey-overlay {
+    skip-at-startup
+}
+cursor {
+    // Change the theme and size of the cursor as well as set the
+    // `XCURSOR_THEME` and `XCURSOR_SIZE` env variables.
+    xcursor-theme "catppuccin-frappe-dark-cursors"
+}
