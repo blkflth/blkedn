@@ -90,7 +90,7 @@
     fontconfig = {
       defaultFonts = {
         monospace = [
-          "AtknsonMono NFM"
+          "AtkynsonMono NFM"
           "Noto Sans Mono CJK JP"
         ];
         sansSerif = [
