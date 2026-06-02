@@ -21,7 +21,7 @@
     useTextGreeter = true;
     settings = {
       default_session = {
-        command = "niri-session --config ~/Nix/host/nirigreet.kdl";
+        command = "niri --config ~/Nix/host/nirigreet.kdl";
         /*
             ''
           ${pkgs.tuigreet}/bin/tuigreet \
