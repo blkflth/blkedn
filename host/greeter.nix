@@ -30,18 +30,6 @@ in {
             ]
           }'"
         ];
-        /*
-            ''
-          ${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --asterisks \
-            --user-menu \
-            --remember \
-            --greeting WELCOME \
-            --theme text=red;prompt=green;time=red;input=red;border=white;title=red;action=white;greet=white \
-            --cmd niri-session
-        '';
-        */
         user = "greeter";
       };
     };
