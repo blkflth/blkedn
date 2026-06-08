@@ -59,11 +59,23 @@ in {
     #feishin # Subsonic interface
     inputs.naviterm.packages.${system}.default # terminal navidrome player
     mpv #media player backend
-    mpvScripts.mpvacious #adds keybindings for creating Anki cards
     element-desktop #matrix client
     ani-cli #CLI anime streaming
     #stremio-linux-shell
     gurk-rs #signal client
+
+    # Learning
+    anki
+    ankiAddons.anki-connect
+    ankiAddons.review-heatmap
+    mpvScripts.mpvacious #adds keybindings for creating Anki cards
+
+    /*
+    If reinstalling, set up the following Addons:
+    CSS Injector - 181103283
+    AJT Japanese - 200813220
+    Kanji Colorizer - 1964372878
+    */
 
     # Creative Software
     obs-studio
