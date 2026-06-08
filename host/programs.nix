@@ -58,7 +58,8 @@ in {
     picard # music metadata editor
     #feishin # Subsonic interface
     inputs.naviterm.packages.${system}.default # terminal navidrome player
-    mpv #music player backend
+    mpv #media player backend
+    mpvScripts.mpvacious #adds keybindings for creating Anki cards
     element-desktop #matrix client
     ani-cli #CLI anime streaming
     #stremio-linux-shell

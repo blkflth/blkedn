@@ -11,6 +11,8 @@
     ./tui.nix
   ];
 
+  xdg.configFile."mpv/script-opts/subs2srs.conf".source = ./subs2srs.conf;
+
   programs = {
     feh = {
       enable = true; #image viewer
