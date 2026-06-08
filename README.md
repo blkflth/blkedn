@@ -65,7 +65,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Enable flakes by adding `nix.settings.experimental-features = ["nix-command" "flakes"];` to the config.
 
-- Add `git` and `vim` to the system packages towards the bottom of the file. 
+- Add `git` and `vim` to the system packages towards the bottom of the file. Use the keybindings shown at the bottom of the page to Write and Exit from nano.
 
 - Run `sudo nixos-rebuid switch`.
 
@@ -73,13 +73,13 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Run `rm blkedn/hardware-configuration.nix`.
 
-- Rename `~/blkedn` directory using `mv blkedn <new-name>` (this configuration assumes the new name is `~/Nix`)
+- Rename `~/blkedn` directory using `mv blkedn <new-name>` (this configuration assumes the new name is `~/Nix` with a capital N) - `~` is the filesystem shorthand for `/home/<user>`.
 
 - Copy your `hardware-configuration.nix` from the default `/etc/nixos` location by running `cp /etc/nixos/hardware-configuration.nix ~/Nix`.
 
-- Edit `~/Nix/configuration.nix` and change the `system.stateVersion` to match the one from the file in `/etc/nixos`.
+- Run `vim ~/Nix/configuration.nix`. Navigate using the HJKL keys - Find the `system.stateVersion`, and press `I` to edit the text to match the one from the file in `/etc/nixos`. Press `Esc`, and then `:`; Type in `wq` to save and exit vim.
 
-- Edit all hostname, usename, timezone and keyboard layout variables in the files imported to `host-configuration.nix`, as well as in `flake.nix` and `home.nix`. This config assumes the username is `jlc` and the hostname is `blkedn`.
+- Using vim, edit all hostname, usename, timezone and keyboard layout variables in the files imported to `host-configuration.nix`, as well as in `flake.nix` and `home.nix`. This config assumes the username is `jlc` and the hostname is `blkedn`.
 
 - Remove or change the SSD bindings in `drives.nix`. If you wish to change them to what you have installed locally, run `sudo ls -l /dev/disk/by-uuid/` and `sudo ls -l /dev/disk/by-label/`. Match up the values and you should be good to go.
 
@@ -98,10 +98,10 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
-- Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings" - Open up `~/Nix/rice/settings.json` and replace the file contents with what you just copied.
+- Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings". Press `Super+Space` to launch `Vicinae`, and search for VSCodium. In Codium, open up `~/Nix/rice/settings.json` and hit `ggVG` to select all text, and then `Ctrl+V` to replace the file contents with what you just copied.
 
 
-- Open up a terminal and run `build` to lock in all changes.
+- Open up a terminal and run `build` to lock in all changes. If reinstalling, place all SSH keys and similar home directory files in their associated paths from the backups.
 
 
 ## Notes:
@@ -115,7 +115,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 - `Super+PrtSc` is a normal screenshot, and requires you to paste the image elsewhere afterwards.
 - `Super+Alt+PrtSc` will screenshot the entire active window and save to the `~/Pictures/Screenshots` folder.
 
-- It is possibile to configure niri to [block out certain windows](https://github.com/sodiboo/niri-flake/blob/main/docs.md#programsnirisettingswindow-rulesblock-out-from) when screencasting.
+- It is possibile to configure niri to [block out certain windows](https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html#dynamic-properties) when screencasting.
 
 - By default at time of writing, hitting `Enter` on an already-open program in `Vicinae` after you bring it up with `Super+Space` will focus on that program's window.
 
@@ -124,6 +124,8 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 - If you're going to change keybinds, it's very useful to open up `wev` in a terminal to get the valid names of your keys.
 
 - If reinstalling on a system, delete the directories `~/.steam` and `~/.local/Steam` before launching Steam so that it can rebuild those correctly.
+
+- When setting up `anki` from flathub, check `programs.nix` for a list of addons and theit codes needed to get up and running for 日本語 study.
 
 - To configure a the _"Open Terminal Here"_ custom action in `thunar`: Open a terminal and run `whereis ghostty`. Open the custom actions configuration, and clear out the default command. Open the file picker for the executable, and use the search to find the ghostty executable in home-manager's paths. Select ghostty, and then add `-e fish` after the filled-in command.
 
