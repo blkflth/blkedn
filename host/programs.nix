@@ -64,6 +64,7 @@ in {
     ani-cli #CLI anime streaming
     #stremio-linux-shell
     gurk-rs #signal client
+    localsend
 
     /*
     If reinstalling, set up the following Anki Addons:
