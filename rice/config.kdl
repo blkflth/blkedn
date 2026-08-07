@@ -500,6 +500,11 @@ window-rule {
 }
 
 window-rule {
+    match title="FINAL FANTASY XIV"
+    open-fullscreen true
+    }
+    
+window-rule {
     match app-id="FLTK"
     open-floating true
     default-column-width { proportion 0.33; }
