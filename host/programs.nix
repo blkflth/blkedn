@@ -31,6 +31,8 @@ in {
     curl
     apt
     cargo
+    pnpm
+    nodejs_26
 
     #languages
     python3
