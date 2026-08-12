@@ -34,6 +34,7 @@ in {
 
     #languages
     python3
+    go
 
     # hardware control
     lm_sensors #tool for scanning system fans
