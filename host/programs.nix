@@ -82,6 +82,7 @@ in {
     ffmpeg #video format converter
     gimp-with-plugins
     blender
+    hugo
 
     # productivity
     onlyoffice-desktopeditors # Office Suite
