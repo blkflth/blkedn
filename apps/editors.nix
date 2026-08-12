@@ -127,6 +127,7 @@
       njpwerner.autodocstring
       rust-lang.rust-analyzer
       tamasfe.even-better-toml
+      budparr.language-hugo-vscode
     ];
   };
 }
