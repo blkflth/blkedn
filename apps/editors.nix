@@ -68,6 +68,7 @@
       fish
       css
       gitcommit
+      go
       html
       http
       ini
@@ -128,6 +129,7 @@
       rust-lang.rust-analyzer
       tamasfe.even-better-toml
       budparr.language-hugo-vscode
+      golang.go
     ];
   };
 }
