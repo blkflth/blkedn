@@ -97,6 +97,7 @@ in {
     tlrc #simiplified man pages written in rust
     tukai #terminal touch-typing practice
     obsidian # Notes organization
+    vdirsyncer # Calendar Syncing
 
     # game/3d tools
     protonup-ng #installed proton GE
