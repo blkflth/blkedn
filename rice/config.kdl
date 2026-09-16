@@ -148,7 +148,7 @@ layout {
 binds {
     
     // General
-    Mod+Grave { show-hotkey-overlay; } 
+    Mod+Grave { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; } 
     Mod+Alt+End { quit; }
     Mod+Tab { toggle-overview; }
 
