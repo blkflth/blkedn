@@ -98,7 +98,6 @@ in {
     tukai #terminal touch-typing practice
     obsidian # Notes organization
     vdirsyncer # Calendar Syncing
-    baikal #CalDAV Server
 
     # game/3d tools
     protonup-ng #installed proton GE
