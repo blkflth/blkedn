@@ -82,7 +82,7 @@ in {
     # Creative Software
     obs-studio
     #olive-editor #video editor
-    davinci-resolve #video editor
+    #davinci-resolve #video editor
     ffmpeg #video format converter
     gimp-with-plugins
     blender
