@@ -137,14 +137,6 @@
 
   # General services
   services = {
-    # limit systemd journal size
-    # https://wiki.archlinux.org/title/Systemd/Journal#Persistent_Journals
-    journald.extraConfig = ''
-      SystemMaxUse=100M
-      RuntimeMaxUse=50M
-      SystemMaxFileSize=50M
-    '';
-
     # Video driver
     xserver.videoDrivers = ["amdgpu"];
 
