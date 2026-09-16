@@ -10,8 +10,9 @@
 
   # configure options
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
+    systemd.enable = true;
   };
 
   xdg.configFile."noctalia/settings.json".source = ./settings.json;
