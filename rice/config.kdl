@@ -267,24 +267,24 @@ binds {
     Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
 
     // Notifications
-    Mod+Delete allow-when-locked=true   hotkey-overlay-title="Clear Notifications 🔔" { spawn "noctalia msg notification-clear-history"; }
-    Mod+End allow-when-locked=true      hotkey-overlay-title="Dismiss Notifications 🔔" { spawn "noctalia msg notification-clear-active"; }
-    Mod+Home allow-when-locked=true     hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn "noctalia msg notification-dnd-toggle"; }
+    Mod+Delete allow-when-locked=true   hotkey-overlay-title="Clear Notifications 🔔" { spawn-sh "noctalia msg notification-clear-history"; }
+    Mod+End allow-when-locked=true      hotkey-overlay-title="Dismiss Notifications 🔔" { spawn-sh "noctalia msg notification-clear-active"; }
+    Mod+Home allow-when-locked=true     hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn-sh "noctalia msg notification-dnd-toggle"; }
 
     // Session & Shell
-    Mod+Prior                       hotkey-overlay-title="Toggle Bar 🎩" { spawn "noctalia msg bar-toggle"; }
-    Mod+Shift+Comma                 hotkey-overlay-title="Show Session Menu ⛓️" { spawn "noctalia msg panel-toggle session"; }
-    Mod+Shift+Return                hotkey-overlay-title="Control Center 🏠" { spawn "noctalia msg panel-toggle control-center"; }
-    Mod+Shift+Alt+Escape            hotkey-overlay-title="Suspend System 💤" { spawn "noctalia msg session suspend"; }
-    Mod+Alt+Escape                  hotkey-overlay-title="Lock Screen ⛓️" { spawn "noctalia msg session lock"; }
-    Mod+Alt+Comma                   hotkey-overlay-title="Settings 🗒️" { spawn "noctalia msg settings-toggle"; }
-    Mod+Alt+Next                    hotkey-overlay-title="Select Wallpaper 🖼️" { spawn "noctalia msg panel-toggle wallpaper"; }
-    Mod+Next allow-when-locked=true hotkey-overlay-title="Random Wallpaper " { spawn "noctalia msg wallpaper-random"; }
+    Mod+Prior                       hotkey-overlay-title="Toggle Bar 🎩" { spawn-sh "noctalia msg bar-toggle"; }
+    Mod+Shift+Comma                 hotkey-overlay-title="Show Session Menu ⛓️" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+Return                hotkey-overlay-title="Control Center 🏠" { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+Alt+Escape            hotkey-overlay-title="Suspend System 💤" { spawn-sh "noctalia msg session suspend"; }
+    Mod+Alt+Escape                  hotkey-overlay-title="Lock Screen ⛓️" { spawn-sh "noctalia msg session lock"; }
+    Mod+Alt+Comma                   hotkey-overlay-title="Settings 🗒️" { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Alt+Next                    hotkey-overlay-title="Select Wallpaper 🖼️" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+Next allow-when-locked=true hotkey-overlay-title="Random Wallpaper " { spawn-sh "noctalia msg wallpaper-random"; }
     Mod+Shift+Next                  hotkey-overlay-title="Toggle Wallpaper Cycling" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggleAutomation"; }
     
     // Screen Capture
-    Mod+Insert                      hotkey-overlay-title="Screen Recording 🎬" { spawn "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
-    Mod+Print { spawn "noctalia msg screenshot-region"; }
+    Mod+Insert                      hotkey-overlay-title="Screen Recording 🎬" { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
+    Mod+Print { spawn-sh "noctalia msg screenshot-region"; }
      
 }
 
