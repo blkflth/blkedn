@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 
 // don't disable the noctalia line unless you're building a bespoke configuration
-spawn-sh-at-startup "noctalia-shell"
+spawn-sh-at-startup "noctalia"
 spawn-at-startup "vesktop"
 
 // ----------------------------------------------------------------------------
