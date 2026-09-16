@@ -1,0 +1,356 @@
+[bar.default]
+border = "primary"
+capsule = true
+capsule_border = "tertiary"
+capsule_foreground = "primary"
+capsule_radius = 4
+center = [ "group:g3", "notifications" ]
+end = [ "group:g2", "bluetooth", "group:g1", "nix-monitor" ]
+margin_ends = 0
+start = [ "session", "group:g4", "tray", "group:g5" ]
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g1"
+    members = [ "cpu", "temp", "sysmon", "ram" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g2"
+    members = [ "audio_visualizer", "media", "volume" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g3"
+    members = [ "clock", "date", "weather" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g4"
+    members = [ "wallpaper", "wallhaven", "mpvpaper" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g5"
+    members = [ "workspaces", "ribbon" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+[calendar]
+enabled = true
+
+[control_center]
+hidden_tabs = [ "monitor", "power", "network" ]
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+address = "Philadelphia"
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-3" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1720.0
+    cy = 1258.0
+    output = "DP-3"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+
+[notification]
+position = "top_center"
+
+[osd.kinds]
+keyboard_backlight = false
+lock_keys = false
+nightlight = false
+power_profile = false
+
+[plugin_settings."imjustdoingmypart/niri-animations"]
+docked_open_near_click = true
+picker_layer = "overlay"
+picker_open_near_click = true
+picker_placement = "attached"
+picker_position = "auto"
+
+[plugin_settings."noctalia/mpvpaper"]
+picker_open_near_click = true
+video_directory = "/home/jlc/Videos/wallpapers"
+
+[plugin_settings."noctalia/screen_recorder"]
+directory = "/home/jlc/Videos/screen-record"
+hide_inactive = true
+
+[plugin_settings."noctalia/translator"]
+target_lang = "jp"
+
+[plugin_settings."noctalia/wallhaven"]
+browser_open_near_click = true
+
+[plugin_settings."noctalia/world_clock"]
+panel_open_near_click = false
+
+[plugins]
+enabled = [
+    "noctalia/screen_recorder",
+    "noctalia/mpvpaper",
+    "noctalia/timer",
+    "noctalia/wallhaven",
+    "avivbintangaringga/nix-monitor",
+    "imjustdoingmypart/niri-animations",
+    "luochen1990/niri-ribbon"
+]
+
+[shell]
+avatar_path = "/home/jlc/Pictures/Icons/jlc.png"
+font_family = "AtkynsonMono Nerd Font Propo"
+polkit_agent = true
+screen_time_enabled = true
+show_location = false
+telemetry_enabled = true
+
+    [shell.panel]
+    control_center_placement = "floating"
+    control_center_position = "center"
+
+    [shell.screen_corners]
+    enabled = true
+
+    [shell.screenshot]
+    annotate = true
+    confirm_region = true
+    directory = "/home/jlc/Pictures/Screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "faithful"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
+    community_ids = [ "discord", "blender", "gimp", "neovim", "obsidian", "vscode", "steam", "vicinae", "fzf" ]
+
+[wallpaper]
+directory = "/home/jlc/Pictures/wallpapers"
+fill_mode = "fit"
+transition = [ "honeycomb" ]
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+
+    [wallpaper.default]
+    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+
+    [wallpaper.last]
+    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+
+[weather]
+unit = "imperial"
+
+[widget.active_window]
+display = "icon_only"
+min_length = 14
+
+[widget.audio_visualizer]
+bands = 32
+color_1 = "tertiary"
+color_2 = "secondary"
+width = 100
+
+[widget.clock]
+color = "secondary"
+font_family = "AtkynsonMono Nerd Font Propo"
+
+[widget.date]
+color = "primary"
+
+[widget.media]
+art_size = 22
+artist_first = true
+color = "secondary"
+hide_album_art = true
+hide_when_no_media = true
+max_length = 175
+min_length = 100
+show_progress = true
+title_scroll = "on_hover"
+
+[widget.mpvpaper]
+type = "noctalia/mpvpaper:mpvpaper"
+
+[widget.nix-monitor]
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
+[widget.ram]
+stat = "ram_pct"
+
+[widget.ribbon]
+show_active_window = true
+type = "luochen1990/niri-ribbon:ribbon"
+
+[widget.session]
+custom_image = "/home/jlc/Pictures/NixOS.png"
+
+[widget.sysmon]
+stat = "gpu_usage"
+
+[widget.tray]
+drawer = true
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.weather]
+icon_color = "secondary"
+max_length = 124
+
+[widget.workspaces]
+empty_color = "tertiary"
+focused_color = "secondary"
+labels_only_when_occupied = true
+occupied_color = "primary"

@@ -16,4 +16,5 @@
   };
 
   xdg.configFile."noctalia/settings.json".source = ./settings.json;
+  #xdg.configFile."noctalia/noctalia-config.toml".source = ./noctalia-config.toml;
 }
