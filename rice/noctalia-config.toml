@@ -1,13 +1,20 @@
 [bar.default]
-border = "primary"
+background_opacity = 0.15999999642372131
+border = "secondary"
+border_width = 1.0
 capsule = true
 capsule_border = "tertiary"
 capsule_foreground = "primary"
-capsule_radius = 4
-center = [ "group:g3", "notifications" ]
-end = [ "group:g2", "bluetooth", "group:g1", "nix-monitor" ]
-margin_ends = 0
-start = [ "session", "group:g4", "tray", "group:g5" ]
+capsule_radius = 8
+capsule_thickness = 0.69999998807907104
+center = [ "group:g3", "group:g6" ]
+end = [ "group:g2", "group:g1", "group:g7" ]
+font_weight = 400
+margin_edge = 4
+margin_ends = 450
+padding = 12
+radius = 15
+start = [ "session", "group:g4", "tray", "group:g8", "group:g5" ]
 
     [[bar.default.capsule_group]]
     accordion = true
@@ -69,31 +76,79 @@ start = [ "session", "group:g4", "tray", "group:g5" ]
     fill = "surface_variant"
     foreground = "primary"
     id = "g5"
-    members = [ "workspaces", "ribbon" ]
+    members = [ "taskbar", "ribbon", "workspaces" ]
     opacity = 1.0
     padding = 6.0
     radius = 4.0
 
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g6"
+    members = [ "bluetooth", "notifications", "caffeine" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 4.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g7"
+    members = [ "nix-monitor", "status" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 8.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border = "tertiary"
+    enabled = true
+    fill = "surface_variant"
+    foreground = "primary"
+    id = "g8"
+    members = [ "status_2", "tracker" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 8.0
+
 [calendar]
 enabled = true
+
+    [calendar.account.local_calendar]
+    path = "~/Documents/Calendars"
+    type = "vdir"
 
 [control_center]
 hidden_tabs = [ "monitor", "power", "network" ]
 
     [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
     type = "bluetooth"
 
     [[control_center.shortcuts]]
-    type = "notification"
-
-    [[control_center.shortcuts]]
-    type = "power_profile"
-
-    [[control_center.shortcuts]]
-    type = "caffeine"
+    type = "imjustdoingmypart/niri-animations:toggle"
 
 [desktop_widgets]
-enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
@@ -116,6 +171,7 @@ pre_action_fade_seconds = 0
 
 [location]
 address = "Philadelphia"
+auto_locate = true
 
 [lockscreen]
 fingerprint = false
@@ -163,11 +219,24 @@ enabled = true
 [notification]
 position = "top_center"
 
-[osd.kinds]
-keyboard_backlight = false
-lock_keys = false
-nightlight = false
-power_profile = false
+[osd]
+offset_y = 20
+
+    [osd.kinds]
+    brightness = false
+    keyboard_backlight = false
+    lock_keys = false
+    nightlight = false
+    power_profile = false
+
+[plugin_settings."cleboost/anilist"]
+client_id = "51280"
+client_secret = "bynfcFihaOcQ2DNS0KtcgripSHNScUVsU5dUaFQd"
+
+[plugin_settings."davemhammer/obsidian"]
+daily_folder = "Daily Notes"
+manager_placement = "attached"
+vault_path = "/home/jlc/Documents/Nkozi"
 
 [plugin_settings."imjustdoingmypart/niri-animations"]
 docked_open_near_click = true
@@ -175,6 +244,14 @@ picker_layer = "overlay"
 picker_open_near_click = true
 picker_placement = "attached"
 picker_position = "auto"
+
+[plugin_settings."kenn/keybind-cheatsheet"]
+compositor = "niri"
+show_actions = true
+
+[plugin_settings."mindnbytes/nix-status"]
+flake_dir = "/home/jlc/Nix/apps"
+use_themed_logos = true
 
 [plugin_settings."noctalia/mpvpaper"]
 picker_open_near_click = true
@@ -201,12 +278,19 @@ enabled = [
     "noctalia/wallhaven",
     "avivbintangaringga/nix-monitor",
     "imjustdoingmypart/niri-animations",
-    "luochen1990/niri-ribbon"
+    "luochen1990/niri-ribbon",
+    "kenn/keybind-cheatsheet",
+    "mindnbytes/nix-status",
+    "davemhammer/obsidian",
+    "thepunkoff/pomodoro",
+    "cleboost/anilist"
 ]
 
 [shell]
 avatar_path = "/home/jlc/Pictures/Icons/jlc.png"
+corner_radius_scale = 0.30000000447034836
 font_family = "AtkynsonMono Nerd Font Propo"
+launch_apps_as_systemd_services = true
 polkit_agent = true
 screen_time_enabled = true
 show_location = false
@@ -218,11 +302,13 @@ telemetry_enabled = true
 
     [shell.screen_corners]
     enabled = true
+    size = 24
 
     [shell.screenshot]
     annotate = true
     confirm_region = true
     directory = "/home/jlc/Pictures/Screenshots"
+    skip_annotate_on_copy_save = true
 
     [[shell.session.actions]]
     action = "lock"
@@ -259,6 +345,11 @@ telemetry_enabled = true
     shortcut = "5"
     variant = "destructive"
 
+[system.monitor]
+cpu_temp_activity_threshold = 75
+gpu_temp_activity_threshold = 80
+gpu_temp_critical_threshold = 90
+
 [theme]
 builtin = "Noctalia"
 community_palette = "Oxocarbon"
@@ -268,25 +359,29 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
-    community_ids = [ "discord", "blender", "gimp", "neovim", "obsidian", "vscode", "steam", "vicinae", "fzf" ]
+    community_ids = [ "discord", "blender", "gimp", "inkscape", "neovim", "obsidian", "vscode", "steam", "vicinae", "fzf" ]
+
+        [theme.templates.user.obsidian_extra]
+        input_path = "/home/jlc/.config/noctalia/Obsidian/obsidian.css"
+        output_path = "/home/jlc/Documents/Nkozi/.obsidian/snippets/noctalia.css"
 
 [wallpaper]
 directory = "/home/jlc/Pictures/wallpapers"
-fill_mode = "fit"
 transition = [ "honeycomb" ]
 transition_on_startup = true
 
     [wallpaper.automation]
     enabled = true
+    interval_seconds = 3600
 
     [wallpaper.default]
-    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
 
     [wallpaper.last]
-    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/jlc/Pictures/wallpapers/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
 
 [weather]
 unit = "imperial"
@@ -299,6 +394,7 @@ min_length = 14
 bands = 32
 color_1 = "tertiary"
 color_2 = "secondary"
+mirrored = false
 width = 100
 
 [widget.clock]
@@ -336,11 +432,32 @@ type = "luochen1990/niri-ribbon:ribbon"
 [widget.session]
 custom_image = "/home/jlc/Pictures/NixOS.png"
 
+[widget.status]
+type = "mindnbytes/nix-status:status"
+
+[widget.status_2]
+show_dirty = false
+type = "davemhammer/obsidian:status"
+
 [widget.sysmon]
 stat = "gpu_usage"
 
+[widget.taskbar]
+icon_scale = 1.2000000000000002
+item_spacing = 3
+only_active_workspace = true
+
+[widget.tracker]
+count_mode = "in_progress"
+enable_scroll = false
+type = "cleboost/anilist:tracker"
+
 [widget.tray]
+anchor = true
 drawer = true
+
+[widget.volume]
+anchor = true
 
 [widget.wallhaven]
 type = "noctalia/wallhaven:wallhaven"
