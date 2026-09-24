@@ -7,14 +7,14 @@ capsule_border = "tertiary"
 capsule_foreground = "primary"
 capsule_radius = 8
 capsule_thickness = 0.69999998807907104
-center = [ "group:g3", "group:g6" ]
+center = [ "tray", "group:g5", "group:g8" ]
 end = [ "group:g2", "group:g1", "group:g7" ]
 font_weight = 400
 margin_edge = 4
-margin_ends = 450
+margin_ends = 577
 padding = 12
-radius = 15
-start = [ "session", "group:g4", "tray", "group:g8", "group:g5" ]
+radius = 6
+start = [ "group:g3", "group:g6", "group:g4" ]
 
     [[bar.default.capsule_group]]
     accordion = true
@@ -50,7 +50,7 @@ start = [ "session", "group:g4", "tray", "group:g8", "group:g5" ]
     fill = "surface_variant"
     foreground = "primary"
     id = "g3"
-    members = [ "clock", "date", "weather" ]
+    members = [ "clock", "weather" ]
     opacity = 1.0
     padding = 6.0
     radius = 4.0
@@ -69,14 +69,14 @@ start = [ "session", "group:g4", "tray", "group:g8", "group:g5" ]
     radius = 4.0
 
     [[bar.default.capsule_group]]
-    accordion = true
+    accordion = false
     accordion_direction = "end"
     border = "tertiary"
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
     id = "g5"
-    members = [ "taskbar", "ribbon", "workspaces" ]
+    members = [ "workspaces", "ribbon", "taskbar" ]
     opacity = 1.0
     padding = 6.0
     radius = 4.0
@@ -102,20 +102,20 @@ start = [ "session", "group:g4", "tray", "group:g8", "group:g5" ]
     fill = "surface_variant"
     foreground = "primary"
     id = "g7"
-    members = [ "nix-monitor", "status" ]
+    members = [ "nix-monitor", "status", "session" ]
     opacity = 1.0
     padding = 6.0
     radius = 8.0
 
     [[bar.default.capsule_group]]
-    accordion = false
+    accordion = true
     accordion_direction = "end"
     border = "tertiary"
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
     id = "g8"
-    members = [ "status_2", "tracker" ]
+    members = [ "notes", "status_2", "tracker" ]
     opacity = 1.0
     padding = 6.0
     radius = 8.0
@@ -128,7 +128,7 @@ enabled = true
     type = "vdir"
 
 [control_center]
-hidden_tabs = [ "monitor", "power", "network" ]
+hidden_tabs = [ "monitor", "power" ]
 
     [[control_center.shortcuts]]
     type = "caffeine"
@@ -149,6 +149,14 @@ widget_order = []
     visible = true
 
     [desktop_widgets.widget]
+
+[dock]
+active_monitor_only = true
+auto_hide = true
+layer = "overlay"
+
+[hooks]
+session_locked = "noctalia msg plugin noctalia/mpvpaper:service all clear-all"
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
@@ -254,8 +262,17 @@ flake_dir = "/home/jlc/Nix/apps"
 use_themed_logos = true
 
 [plugin_settings."noctalia/mpvpaper"]
+allowed_cpus = "1"
+memory_max = "250M"
 picker_open_near_click = true
+picker_placement = "floating"
+picker_position = "center"
+run_as_systemd = true
 video_directory = "/home/jlc/Videos/wallpapers"
+
+[plugin_settings."noctalia/notes"]
+notes_dir = "/home/jlc/Documents/Nkozi/Daily Notes"
+panel_position = "center_left"
 
 [plugin_settings."noctalia/screen_recorder"]
 directory = "/home/jlc/Videos/screen-record"
@@ -265,7 +282,11 @@ hide_inactive = true
 target_lang = "jp"
 
 [plugin_settings."noctalia/wallhaven"]
+api_key = "3wL3N8dZlHpASX5E1byfamEDAXVn02Wp"
 browser_open_near_click = true
+browser_placement = "floating"
+browser_position = "center"
+download_dir = "/home/jlc/Pictures/wallpapers/Wallhaven"
 
 [plugin_settings."noctalia/world_clock"]
 panel_open_near_click = false
@@ -283,7 +304,8 @@ enabled = [
     "mindnbytes/nix-status",
     "davemhammer/obsidian",
     "thepunkoff/pomodoro",
-    "cleboost/anilist"
+    "cleboost/anilist",
+    "noctalia/notes"
 ]
 
 [shell]
@@ -299,6 +321,9 @@ telemetry_enabled = true
     [shell.panel]
     control_center_placement = "floating"
     control_center_position = "center"
+    transparency_mode = "soft"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
 
     [shell.screen_corners]
     enabled = true
@@ -351,11 +376,11 @@ gpu_temp_activity_threshold = 80
 gpu_temp_critical_threshold = 90
 
 [theme]
-builtin = "Noctalia"
+builtin = "Ayu"
 community_palette = "Oxocarbon"
-mode = "dark"
+mode = "auto"
 source = "wallpaper"
-wallpaper_scheme = "faithful"
+wallpaper_scheme = "vibrant"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
@@ -367,21 +392,214 @@ wallpaper_scheme = "faithful"
 
 [wallpaper]
 directory = "/home/jlc/Pictures/wallpapers"
+directory_dark = "/home/jlc/Pictures/wallpapers/Dark"
+directory_light = "/home/jlc/Pictures/wallpapers/Light"
 transition = [ "honeycomb" ]
 transition_on_startup = true
 
     [wallpaper.automation]
     enabled = true
     interval_seconds = 3600
+    recursive = true
 
     [wallpaper.default]
-    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
 
     [wallpaper.last]
-    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/jlc/Pictures/wallpapers/78145235_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/66364166_p2.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/69864024_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/71295163_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/78145165_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/64337772_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/66103386_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/66364166_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/wallhaven-o512rm.png"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/wallhaven-gpq2el.png"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/72599030_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/72109603_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/86156219_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/85850753_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/85626613_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/84719437_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/83647245_p0.png"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/83319109_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/83170753_p0.png"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/79826595_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/79826536_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/78417838_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/77816288_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/73496746_p0.png"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/73114426_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Light/72839713_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/78145235_p0.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/78145222_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/75188095_p0.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    path = "/home/jlc/Pictures/wallpapers/Dark/70123969_p0.jpg"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/70022444_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/jlc/Pictures/wallpapers/Dark/69717321_p0.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
 
 [weather]
 unit = "imperial"
@@ -399,15 +617,15 @@ width = 100
 
 [widget.clock]
 color = "secondary"
-font_family = "AtkynsonMono Nerd Font Propo"
-
-[widget.date]
-color = "primary"
+font_family = "AtkynsonMono NFM Medium"
+format = "{:%-I:%M %p}"
+tooltip_format = "{:%A}\\n{:%b %d %Y}"
 
 [widget.media]
 art_size = 22
 artist_first = true
 color = "secondary"
+font_family = "AtkynsonMono NFP Medium"
 hide_album_art = true
 hide_when_no_media = true
 max_length = 175
@@ -422,12 +640,22 @@ type = "noctalia/mpvpaper:mpvpaper"
 show_text = false
 type = "avivbintangaringga/nix-monitor:nix-monitor"
 
+[widget.notes]
+type = "noctalia/notes:notes"
+
 [widget.ram]
 stat = "ram_pct"
 
 [widget.ribbon]
+active_window_color = "tertiary"
+anchor = true
+bar_color = "surface"
+gaps = 4.0
+radius = 6.0
 show_active_window = true
+thickness = 6.0
 type = "luochen1990/niri-ribbon:ribbon"
+viewport_color = "secondary"
 
 [widget.session]
 custom_image = "/home/jlc/Pictures/NixOS.png"
@@ -453,8 +681,10 @@ enable_scroll = false
 type = "cleboost/anilist:tracker"
 
 [widget.tray]
-anchor = true
 drawer = true
+drawer_item_size = 20.0
+hide_passive = false
+pinned = [ "Fcitx" ]
 
 [widget.volume]
 anchor = true
@@ -463,11 +693,13 @@ anchor = true
 type = "noctalia/wallhaven:wallhaven"
 
 [widget.weather]
-icon_color = "secondary"
+color = "secondary"
+font_family = "AtkynsonMono NFP Medium"
+icon_color = "tertiary"
 max_length = 124
 
 [widget.workspaces]
-empty_color = "tertiary"
 focused_color = "secondary"
 labels_only_when_occupied = true
-occupied_color = "primary"
+max_label_chars = 2
+occupied_color = "tertiary"
