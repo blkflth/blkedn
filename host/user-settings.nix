@@ -19,8 +19,8 @@
   environment = {
     variables = {
       SHELL = "fish";
-      EDITOR = "codium";
-      VISUAL = "codium";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
     };
   };
 
