@@ -70,15 +70,6 @@ in {
     gurk-rs #signal client
     localsend
 
-    /*
-    If reinstalling, set up the following Anki Addons:
-    Anki-Connect - 2055492159
-    Review Heatmap - 1771074083
-    CSS Injector - 181103283
-    AJT Japanese - 200813220
-    Kanji Colorizer - 1964372878
-    */
-
     # Creative Software
     obs-studio
     #olive-editor #video editor
