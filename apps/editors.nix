@@ -20,9 +20,15 @@
       blink-cmp-spell
       blink-cmp-git
       monokai-pro-nvim
+      lazygit-nvim
     ];
   };
 
+  programs.lazygit = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+  
   programs.lazyvim = {
     enable = true;
 
