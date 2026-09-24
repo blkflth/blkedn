@@ -96,6 +96,13 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris, Anki, Fluxer, qBittorrent, and Flatseal from Flathub.
 
+- Install the following Anki Addons:
+    > Anki-Connect - 2055492159
+    > Review Heatmap - 1771074083
+    > CSS Injector - 181103283
+    > AJT Japanese - 200813220
+    > Kanji Colorizer - 1964372878
+
 - Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
 - Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings". Press `Super+Space` to launch `Vicinae`, and search for VSCodium. In Codium, open up `~/Nix/rice/settings.json` and hit `ggVG` to select all text, and then `Ctrl+V` to replace the file contents with what you just copied.
@@ -115,7 +122,7 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 - `Super+PrtSc` is a normal screenshot, and requires you to paste the image elsewhere afterwards.
 - `Super+Alt+PrtSc` will screenshot the entire active window and save to the `~/Pictures/Screenshots` folder.
 
-- It is possibile to configure niri to [block out certain windows](https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html#dynamic-properties) when screencasting.
+- It is possible to configure niri to [block out certain windows](https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html#dynamic-properties) when screencasting.
 
 - By default at time of writing, hitting `Enter` on an already-open program in `Vicinae` after you bring it up with `Super+Space` will focus on that program's window.
 
