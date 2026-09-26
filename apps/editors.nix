@@ -15,7 +15,6 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      statix
       blink-cmp
       blink-cmp-spell
       blink-cmp-git
@@ -93,6 +92,7 @@
       typescript
       vim
       yaml
+      toml
     ];
 
     extraPackages = with pkgs; [
