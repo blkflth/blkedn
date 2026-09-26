@@ -86,7 +86,6 @@ in {
 
     # productivity
     onlyoffice-desktopeditors # Office Suite
-    xpdf #pdf utilities
     tagainijisho #Japanese Dictionary
     #memento #mpv player for JP Study
     hoard #CLI Command Organizer
