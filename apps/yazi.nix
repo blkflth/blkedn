@@ -16,7 +16,6 @@
       git.package = git;
       ouch.package = ouch;
       mount.package = mount;
-      office.package = office;
       piper.package = piper;
       lazygit.package = lazygit;
       chmod.package = chmod;
