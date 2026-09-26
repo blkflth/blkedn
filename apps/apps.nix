@@ -9,6 +9,7 @@
     ./editors.nix
     ./ghostty.nix
     ./tui.nix
+    ./yazi.nix
   ];
 
   xdg.configFile."mpv/script-opts/subs2srs.conf".source = ./subs2srs.conf;
