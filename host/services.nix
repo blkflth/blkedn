@@ -51,12 +51,12 @@
         default = [
           "gnome"
         ];
-        "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
+        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
         "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
       };
       niri = {
         default = [
-          "termfilechooser;gnome;gtk"
+          "gnome;gtk"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
         "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
@@ -68,7 +68,7 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
-    xdg-desktop-portal-termfilechooser
+      xdg-desktop-portal-termfilechooser
     ];
   };
 
