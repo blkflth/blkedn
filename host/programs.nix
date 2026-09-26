@@ -17,6 +17,7 @@ in {
     glibc #c language library
     dosfstools #create and check V/FAT file systems
     gnumake # 'make' commands
+    sshfs
     wev #find keystrokes for wayland compsitor; helpful when altering keybinds
     nix-output-monitor
     nvd
@@ -85,6 +86,7 @@ in {
 
     # productivity
     onlyoffice-desktopeditors # Office Suite
+    xpdf #pdf utilities
     tagainijisho #Japanese Dictionary
     #memento #mpv player for JP Study
     hoard #CLI Command Organizer
