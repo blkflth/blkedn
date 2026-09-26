@@ -10,6 +10,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    shellWrapperName = "y";
 
     plugins = with pkgs.yaziPlugins; {
       git.package = git;
@@ -19,7 +20,7 @@
       office.package = office;
       piper.package = piper;
       lazygit.package = lazygit;
-      chomd.package = chomd;
+      chmod.package = chmod;
       restore.package = restore;
       yatline.package = yatline;
       dupes.package = dupes;
