@@ -56,6 +56,7 @@ in {
     vlc
     ungoogled-chromium
     unrar
+    ouch #command line archive manager
     bazaar #flathub installer
     nicotine-plus # soulseek client
     picard # music metadata editor
