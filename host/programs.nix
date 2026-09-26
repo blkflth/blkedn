@@ -58,6 +58,8 @@ in {
     unrar
     ouch #command line archive manager
     jdupes #duplicate file finder
+    rich-cli #file previewing
+    wl-clipboard #clipboard utilities
     bazaar #flathub installer
     nicotine-plus # soulseek client
     picard # music metadata editor
