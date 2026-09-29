@@ -88,6 +88,7 @@ in {
     onlyoffice-desktopeditors # Office Suite
     tagainijisho #Japanese Dictionary
     #memento #mpv player for JP Study
+    tuxedo #TUI todo.txt managing
     hoard #CLI Command Organizer
     gtt #google translate tui
     tlrc #simiplified man pages written in rust
