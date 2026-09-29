@@ -255,8 +255,9 @@ binds {
     // Applications
     Mod+B                   hotkey-overlay-title="Browser 🌐" { spawn "firefox"; }
     Mod+Alt+B               hotkey-overlay-title="Private Browser 🌐" { spawn "firefox" "-private-window"; }
-    Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "thunar"; }
+    Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "ghostty" "-e" "y"; }
     Mod+Alt+E               hotkey-overlay-title="Floating Explorer 📂" { spawn "thunar" "--name=dfr.floating.thunar"; }
+    Mod+Shift+Home          hotkey-overlay-title="Task Manager 📋" { spawn "ghostty" "-e" "tuxedo"; }
     Mod+M                   hotkey-overlay-title="Music Player 🎧" { spawn "ghostty" "-e" "naviterm"; }
     Mod+Alt+M               hotkey-overlay-title="TV Player 📺" { spawn "ghostty" "-e" "ani-cli"; }
     Mod+Alt+P               hotkey-overlay-title="Messenger 💬" { spawn "ghostty" "-e" "gurk"; } 
