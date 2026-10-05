@@ -1,0 +1,151 @@
+
+// -----------------------------------------------------------------------------
+// keybinds
+// -----------------------------------------------------------------------------
+
+
+binds {
+    
+    // General
+    Mod+Grave { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; } 
+    Mod+Alt+End { quit; }
+    Mod+Tab { toggle-overview; }
+
+    // Display scaling / zoom.
+    // Mod+Alt+Equal hotkey-overlay-title="Increase focused monitor scale" { spawn "output-scale" "+"; }
+    // Mod+Alt+Minus hotkey-overlay-title="Decrease focused monitor scale" { spawn "output-scale" "-"; }
+    // Mod+Alt+0     hotkey-overlay-title="Reset focused monitor scale" { spawn "output-scale" "1.0"; }
+
+    // Window and Column Behavior
+    Mod+Q repeat=false { close-window; }
+
+    Mod+C hotkey-overlay-title="Center Column" { center-column; }
+    Mod+Alt+C hotkey-overlay-title="Center Visible Columns" { center-visible-columns; }
+
+    Mod+T hotkey-overlay-title="Toggle Tabbed Display" { toggle-column-tabbed-display; }
+
+    Mod+X { toggle-window-floating; }
+    Mod+Alt+X { switch-focus-between-floating-and-tiling; }
+
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    
+    // Window and Column Sizes
+    Mod+F       hotkey-overlay-title="Maximize column" { maximize-column; }
+    Mod+Shift+F hotkey-overlay-title="Full screen window" { fullscreen-window; }
+    Mod+Alt+F  hotkey-overlay-title="Fill empty column space" { expand-column-to-available-width; }
+    
+    Mod+R { switch-preset-column-width-back; }
+    Mod+Alt+R { switch-preset-window-height-back; }
+    Mod+Ctrl+R  hotkey-overlay-title="Reset window height" { reset-window-height; }
+    
+    Mod+Equal       hotkey-overlay-title="Increase column width" { set-column-width "+10%"; }
+    Mod+Minus       hotkey-overlay-title="Decrease column width" { set-column-width "-10%"; }
+    Mod+Shift+Equal hotkey-overlay-title="Increase window height" { set-window-height "+10%"; }
+    Mod+Shift+Minus hotkey-overlay-title="Decrease window height" { set-window-height "-10%"; }
+    
+    // Window and Column Movement
+    Mod+I hotkey-overlay-title="Focus previously focused window" { focus-window-previous; }
+
+    Mod+WheelScrollDown       hotkey-overlay-title="Focus column right" { focus-column-right; }
+    Mod+WheelScrollUp         hotkey-overlay-title="Focus column left" { focus-column-left; }
+    Mod+Alt+WheelScrollDown  hotkey-overlay-title="Move column right" { move-column-right; }
+    Mod+Alt+WheelScrollUp    hotkey-overlay-title="Move column left" { move-column-left; }
+
+    // These are bound to both WASD and HJKL for use on either hand
+    Mod+H { focus-column-left-or-last; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-right-or-first; }
+    Mod+A { focus-column-left-or-last; }
+    Mod+S { focus-window-or-workspace-down; }
+    Mod+W { focus-window-or-workspace-up; }
+    Mod+D { focus-column-right-or-first; }
+
+    Mod+Alt+H { move-column-left; }
+    Mod+Alt+J { move-column-to-workspace-down; }
+    Mod+Alt+K { move-column-to-workspace-up; }
+    Mod+Alt+L { move-column-right; }
+    Mod+Alt+A { move-column-left; }
+    Mod+Alt+S { move-column-to-workspace-down; }
+    Mod+Alt+W { move-column-to-workspace-up; }
+    Mod+Alt+D { move-column-right; }
+
+    Mod+Shift+H { move-column-to-last; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L { move-column-to-first; }
+    Mod+Shift+A { move-column-to-last; }
+    Mod+Shift+S { move-window-down-or-to-workspace-down; }
+    Mod+Shift+W { move-window-up-or-to-workspace-up; }
+    Mod+Shift+D { move-column-to-first; }
+
+    // Workspaces
+    Mod+1 hotkey-overlay-title="Focus workspace (1-9)" { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 hotkey-overlay-title="Move window to workspace (1-9)" { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+
+    Mod+Ctrl+1 hotkey-overlay-title="Move column to workspace (1-9)" { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    // Applications
+    Mod+B                   hotkey-overlay-title="Browser 🌐" { spawn "firefox"; }
+    Mod+Alt+B               hotkey-overlay-title="Private Browser 🌐" { spawn "firefox" "-private-window"; }
+    Mod+E                   hotkey-overlay-title="File Explorer 📂" { spawn "ghostty" "-e" "yazi"; }
+    Mod+Alt+E               hotkey-overlay-title="Floating Explorer 📂" { spawn "thunar" "--name=dfr.floating.thunar"; }
+    Mod+Shift+Home          hotkey-overlay-title="Task Manager 📋" { spawn "ghostty" "-e" "fish" "-c" "cd /home/jlc/Documents/vault && tuxedo"; }
+    Mod+M                   hotkey-overlay-title="Music Player 🎧" { spawn "ghostty" "-e" "naviterm"; }
+    Mod+Alt+M               hotkey-overlay-title="TV Player 📺" { spawn "ghostty" "-e" "ani-cli"; }
+    Mod+Alt+P               hotkey-overlay-title="Messenger 💬" { spawn "ghostty" "-e" "gurk"; } 
+    Mod+Alt+Return          hotkey-overlay-title="Processes 📊" { spawn "ghostty" "-e" "btm"; }
+    Mod+Return              hotkey-overlay-title="Terminal ⌨️" { spawn "ghostty" "-e" "fish"; }
+    Mod+Alt+V               hotkey-overlay-title="Clipboard 📝" { spawn "vicinae" "vicinae://launch/clipboard/history?toggle=true"; }
+    Mod+Shift+E             hotkey-overlay-title="Emojis 🤠" { spawn "vicinae" "vicinae://launch/core/search-emojis?toggle=true"; }
+    Mod+Space               hotkey-overlay-title="Launcher 🚀" { spawn "vicinae" "vicinae://toggle"; }
+
+    // Notifications
+    Mod+Delete allow-when-locked=true   hotkey-overlay-title="Clear Notifications 🔔" { spawn-sh "noctalia msg notification-clear-history"; }
+    Mod+End allow-when-locked=true      hotkey-overlay-title="Dismiss Notifications 🔔" { spawn-sh "noctalia msg notification-clear-active"; }
+    Mod+Home allow-when-locked=true     hotkey-overlay-title="Toggle Do-Not-Disturb 🔕" { spawn-sh "noctalia msg notification-dnd-toggle"; }
+
+    // Session & Shell
+    Mod+Prior                       hotkey-overlay-title="Toggle Bar 🎩" { spawn-sh "noctalia msg bar-toggle"; }
+    Mod+Shift+Comma                 hotkey-overlay-title="Show Session Menu ⛓️" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+Return                hotkey-overlay-title="Control Center 🏠" { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+Alt+Escape            hotkey-overlay-title="Suspend System 💤" { spawn-sh "noctalia msg session suspend"; }
+    Mod+Alt+Escape                  hotkey-overlay-title="Lock Screen ⛓️" { spawn-sh "noctalia msg session lock"; }
+    Mod+Alt+Comma                   hotkey-overlay-title="Settings 🗒️" { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Alt+Next                    hotkey-overlay-title="Select Wallpaper 🖼️" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+Next allow-when-locked=true hotkey-overlay-title="Random Wallpaper " { spawn-sh "noctalia msg wallpaper-random"; }
+    Mod+Shift+Next                  hotkey-overlay-title="Toggle Wallpaper Cycling" { spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggleAutomation"; }
+    Mod+Alt+Prior                   hotkey-overlay-title="Select Niri Animation" { spawn-sh "noctalia msg panel-toggle imjustdoingmypart/niri-animations:picker"; }
+    
+    // Screen Capture
+    Mod+Insert                      hotkey-overlay-title="Screen Recording 🎬" { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
+    Mod+Print { spawn-sh "noctalia msg screenshot-region"; }
+     
+}
+

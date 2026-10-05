@@ -1,0 +1,107 @@
+
+
+// make unfocused windows slightly transluscent
+window-rule {
+    match is-focused=false
+    opacity 0.75
+}
+
+window-rule {
+    match is-urgent=true
+    opacity 1.000000
+}
+
+// set corner roundness (a value of 12 works well w/ noctalia screen corners at defaul 100%)
+// corners can be set individually! check the docs
+window-rule {
+    geometry-corner-radius 3.6
+    clip-to-geometry true
+}
+
+// global blur settings
+window-rule {
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+// layer rules to make noctalia look better
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+  background-effect {
+    xray false
+  }
+}
+
+// blurs overview wallpaper
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+// Make top and overlay layers use the regular blur (if enabled),
+// while bottom and background layers keep using the efficient xray blur.
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+
+    background-effect {
+        xray false
+    }
+}
+
+// Make floating windows use the regular blur (if enabled),
+// while tiled windows keep using the efficient xray blur.
+window-rule {
+    match is-floating=true
+
+    background-effect {
+        xray false
+    }
+}
+
+// Blur the background behind pop-up menus in Thunar
+window-rule {
+    match app-id="thunar"
+
+    popups {
+        geometry-corner-radius 12
+
+        background-effect {
+            blur true
+        }
+    }
+}
+
+// make certain sub-windows open floating, to prevent them from being full-height columns
+// these may need tweaking; regex is difficult
+window-rule {
+    match app-id=r#"^xarchiver$"#
+    match app-id=r#"^wev$"#
+    match app-id=r#"^thunar$"# title=r#"^Rename .*$"#
+    match app-id=r#"^thunar$"# title=r#"^File Operation .*$"#
+    match app-id=r#"^thunar-bulk-rename$"#
+    match app-id=r#"^thunar-volman$"#
+    match app-id=r#"^gimp$"# title=r#"Preferences"#
+    match app-id=r#"^net\.lutris\.Lutris$"#
+    match app-id=r#"^net\.davidotek\.pupgui2$"#
+    match app-id=r#"^org\.fcitx$"#
+    match app-id=r#"^io\.github\.ilya_zlobintsev\.LACT$"#
+    match app-id=r#"^XIVLauncher\.Core$"#
+
+    open-floating true
+}
+
+// set the default proportions of certain floating windows
+window-rule {
+    match app-id=r#"^dfr\.floating\.thunar$"#
+    // default-column-width { proportion 0.33; }
+    // default-window-height { proportion 0.5; }
+    open-floating true
+}

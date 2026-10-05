@@ -1,0 +1,150 @@
+// Check the wiki for a full description of the configuration:
+//   https://yalter.github.io/niri/Configuration:-Introduction
+
+
+// -----------------------------------------------------------------------------
+// Launch these at startup
+// -----------------------------------------------------------------------------
+
+// don't disable the noctalia line unless you're building a bespoke configuration
+spawn-sh-at-startup "noctalia"
+spawn-at-startup "vesktop"
+
+// ----------------------------------------------------------------------------
+// Input devices (mouse, trackpad, keyboard, etc.)
+// ----------------------------------------------------------------------------
+
+input {
+    keyboard {
+        xkb {
+            layout ""
+            model ""
+            rules ""
+            variant ""
+        }
+        // Fast repeat rate and short delay
+        repeat-delay 200
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        // tapping anywhere left-clicks
+        tap
+        
+        // inverted scrolling
+        natural-scroll
+        
+        // no mouse accel
+        accel-profile "flat"
+    }
+    mouse {
+        accel-profile "flat" 
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Behaviors and aesthetics
+// ----------------------------------------------------------------------------
+
+// screenshots are placed into home folder with date-stamp
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// remove client-side decorations (like close and minimize buttons) where possible
+prefer-no-csd
+
+overview {
+    workspace-shadow {
+        off
+        //softness 80
+        //spread 60
+    }
+}
+
+gestures {
+    // disable showing overview by moving mouse to top-left screen corner
+    hot-corners {
+        off
+    }
+}
+
+cursor {
+    xcursor-theme "catppuccin-frappe-dark-cursors"
+    xcursor-size 22
+    hide-when-typing
+    hide-after-inactive-ms 60000
+}
+
+// disable showing keybinds at startup
+hotkey-overlay { skip-at-startup; }
+
+// necessary line for NixOS
+environment { "NIXOS_OZONE_WL" "1"; }
+
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+include "layout.kdl"
+
+// -----------------------------------------------------------------------------
+// keybinds
+// -----------------------------------------------------------------------------
+include "keybinds.kdl"
+
+// -----------------------------------------------------------------------------
+// Blur
+// -----------------------------------------------------------------------------
+
+blur {
+    // off
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+// -----------------------------------------------------------------------------
+// Window & Layer rules
+// -----------------------------------------------------------------------------
+include "layerrules.kdl"
+include "windowrules.kdl"
+
+// -----------------------------------------------------------------------------
+// animations
+// -----------------------------------------------------------------------------
+
+animations {
+    slowdown 1.000000
+    horizontal-view-movement {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    overview-open-close {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-close {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-movement {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-open {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    window-resize {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+    workspace-switch {
+        duration-ms 270
+        curve "cubic-bezier" 0.260000 0.380000 0.300000 1.280000
+    }
+}
+
+// this line generated from noctalia plugin - 'optional=true" added just in case something gets desynced
+include optional=true "animations.kdl"
+
+include optional=true "noctalia.kdl"

@@ -1,0 +1,127 @@
+// the following are all per-app window rules for easy use. some things open focused, some not, some are hidden from screencasting, etc.
+// these can be changed pretty freely!
+
+window-rule {
+    match app-id="firefox$" title="^(Picture-in-Picture|Library|About Mozilla Firefox)$"
+    match app-id="^steam"
+    match title="Lutris"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    open-floating true
+    open-focused false
+}
+
+window-rule {
+    match app-id="^feh$"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.33; }
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id=r#"^com.mitchellh.ghostty$"#
+    default-column-width { proportion 0.33; }
+    open-focused true
+}
+
+window-rule {
+    match app-id="^bottom.desktop"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.33; }
+    open-focused false
+}
+
+window-rule {
+    match title="^VSCodium"
+    // default-column-width { proportion 0.5; }
+    open-focused true
+}
+
+window-rule {
+    match title=r#"^Affinity$"#
+    default-column-width { proportion 0.5; }
+    open-focused true
+    block-out-from "screencast"
+}
+
+window-rule {
+    match title="^Blender"
+    default-column-width { proportion 0.5; }
+    open-focused true
+}
+
+window-rule {
+    match app-id="^blender" title="(Preferences)"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    open-focused true
+    open-floating true
+}
+
+window-rule {
+    match app-id="(steam_app_4329280|steam_app_3366290|steam_app_4329260)"
+    open-focused true
+    open-floating false
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="(steam_app_4329280|steam_app_3366290|steam_app_4329260)" title="(Preferences|Plugin Manager|Open File|New Substance graph|plugins|Home screen|Open project|Configuration Issues|New project|Export textures|Select Folder)"
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    open-focused true
+    open-floating true
+}
+
+window-rule {
+    match title="^Davinci"
+    match title="^Firestorm"
+    match title=r#"^gimp$"#
+
+    open-maximized true
+    open-focused true
+    block-out-from "screencast"
+}
+
+window-rule {
+    match title="FINAL FANTASY XIV"
+    open-fullscreen true
+    }
+    
+window-rule {
+    match app-id="FLTK"
+    open-floating true
+    default-column-width { proportion 0.33; }
+    default-window-height { proportion 0.5; }
+    }
+
+window-rule {
+    match title="^vencord"
+    default-column-width { proportion 0.33; }
+    open-focused true
+    block-out-from "screencast"
+}
+
+window-rule {
+    match title=r#"^Proton$"#
+    match app-id=r#"^fcha"#
+
+    default-column-width { proportion 0.66; }
+    open-focused true
+    block-out-from "screencast"
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+

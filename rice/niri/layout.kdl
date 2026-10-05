@@ -1,0 +1,61 @@
+
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+
+layout {
+    gaps 4
+    struts {
+        left 2
+        right 2
+        top 2
+        bottom 2
+    }
+    focus-ring {
+        width 1.25
+        active-color "#72e25096"
+
+    }
+    border {
+        width 1
+        urgent-color "#e44949ed"
+        inactive-gradient angle=225 from="#1c68e2e6" relative-to="workspace-view" to="#bb38dff6"
+    }
+    background-color "transparent"
+    shadow {
+        on
+        offset x=0.000000 y=5.000000
+        softness 28
+        spread 8
+        draw-behind-window true
+        color "#00000070"
+    }
+    tab-indicator {
+        hide-when-single-tab
+        place-within-column
+        gap 4.000000
+        width 4.000000
+        length total-proportion=0.666670
+        position "left"
+        gaps-between-tabs 2.000000
+        corner-radius 0.3
+        urgent-color "#e44949ff"
+        active-color "#ffffff"
+        inactive-gradient angle=180 from="rgb(93, 44, 81)" relative-to="window" to="rgb(132, 142, 77)"
+    }
+    default-column-width {}
+    preset-column-widths {
+        proportion 0.333330
+        proportion 0.500000
+        proportion 0.666670
+    }
+    preset-window-heights {
+        proportion 0.333330
+        proportion 0.500000
+        proportion 0.666670
+        proportion 1.000000
+    }
+    center-focused-column "on-overflow"
+    default-column-display "normal"
+}
+include "noctalia.kdl"
