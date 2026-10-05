@@ -11,7 +11,7 @@
     # ./niri.nix
   ];
 
-  xdg.configFile."niri/config.kdl".source = ./config.kdl;
+  #xdg.configFile."niri/config.kdl".source = ./config.kdl;
   xdg.configFile."niri/animations".source = ./animations;
   xdg.configFile."naviterm/config.ini".source = ./config.ini;
 
