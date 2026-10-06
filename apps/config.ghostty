@@ -6,3 +6,4 @@ link-url = true
 link-previews = true
 working-directory = inherit
 window-inherit-working-directory = true
+confirm-close-surface = false
