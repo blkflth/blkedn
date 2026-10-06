@@ -36,7 +36,7 @@
 - [x] Go through packages and move options into ``home-manager`` wherever possible
 - [x] Properly configure Home-Manager backup settings to stop service restart error for gtk-4.0 css file (no more clobbering)
 - [x] Locate and link AppIcons for various programs (Unneeded)
-- [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``thunar``)
+- [x] Swap GNOME File Manager for Dolphin or a TUI Solution like Superfile (Using ``yazi``)
 - [x] Set up Japanese IME 
 - [x] Configure font-swtiching for Japanese
 - [x] Declare MIME Types to prefer Affinity Suite and bespoke programs (opted to have MIME Types handled imperatively)
@@ -88,13 +88,15 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Comment out or delete programs as you see fit in `programs.nix`.
 
+- While in the home folder (`~`) run `mkdir -p ~/.config/niri`, and then `cp -a ~/Nix/rice/niri/. ~/.config/niri/` to move the backed-up Niri config files to the correct folder. These can be edited to change the compositor settings, and will auto-reload on any component changing. See [niri documentation](<https://niri-wm.github.io/niri/>) for information on how to format any wanted changes.
+
 - Run `sudo nixos-rebuil switch --flake ~/Nix#blkedn` (the hostname you configured follows the pound sign), and reboot after activating configuration with password.
 
-- After logging in to Niri/Noctalia: Press `Super+Enter` to launch a terminal - If `fish` launches in `ghostty`, then everything has gone correctly. Run `tide configure` to be walked through setting up a prompt for the shell.
+- After logging in to Niri/Noctalia: Press `Super+Enter` to launch a terminal - If `fish` launches in `ghostty`, then everything has gone correctly. Run `tide configure` in the terminal to be walked through setting up a prompt for the shell.
 
 > _From this point onward, the nixos-rebuild commands are run throuh `nh` and aliased by default. Check aliases in `~/Nix/apps/fish.nix` - Look up Home-Manager options for `fish` to see what other things can be configured._
 
-- run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris, Anki, Fluxer, qBittorrent, and Flatseal from Flathub.
+- run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris, Anki, Fluxer, qBittorrent, Stremio, and Flatseal from Flathub.
 
 - Install the following Anki Addons:
     > Anki-Connect - 2055492159
