@@ -1,11 +1,9 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
-  home.packages = with pkgs; [
-    xdg-desktop-portal-termfilechooser
-  ];
 
   programs.yazi = {
     enable = true;
