@@ -7,7 +7,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     fchat-horizon
-    firestorm
+    # firestorm
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
