@@ -36,6 +36,11 @@
       url = "github:pfassina/lazyvim-nix";
     };
 
+
+    nirimod = {
+      url = "github:srinivasr/NiriMod";
+    };
+
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
@@ -46,6 +51,7 @@
     vicinae,
     vicinae-extensions,
     lazyvim,
+    nirimod,
     #affinity-nix,
     ...
   } @ inputs: let

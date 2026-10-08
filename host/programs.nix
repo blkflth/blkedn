@@ -52,6 +52,7 @@ in {
     xwayland-satellite
     cmatrix
     gpu-screen-recorder #used for Noctalia's inbuilt function
+    nirimod
 
     # general use and media
     vlc
