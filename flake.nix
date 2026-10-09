@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,11 +16,12 @@
 
     vicinae = {
       url = "github:vicinaehq/vicinae";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     vicinae-extensions = {
       url = "github:vicinaehq/extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     nix-gaming = {
@@ -47,6 +48,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     vicinae,
     vicinae-extensions,
