@@ -9,7 +9,7 @@
   users.users.jlc = {
     isNormalUser = true;
     description = "JLC";
-    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd" "samba"];
+    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd" "samba" "input"];
     packages = with pkgs; [
       #  kdePackages.kate #useful to have on hand tbh!
       #  thunderbird
