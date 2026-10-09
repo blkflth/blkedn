@@ -54,6 +54,10 @@
       niri
       nix
       process-manager
+      clean-keyboard
+      protondb-search
+      wikipedia
+      wiktionary
     ];
   };
 }
