@@ -107,8 +107,11 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - Use `Super+Grave` (Also known as "_Backtick_" or "_The Character Under Tilde_") to get an overview of basic keybindings.
 
-- Configure Noctalia using the GUI interface (If the bar isn't visible, use `Super+PageDown` to open it. Right-Click the bar to open the settings). After configuring things to your liking, go to the General tab at the top, hit "Copy Settings". Press `Super+Space` to launch `Vicinae`, and search for VSCodium. In Codium, open up `~/Nix/rice/settings.json` and hit `ggVG` to select all text, and then `Ctrl+V` to replace the file contents with what you just copied.
-
+- Press `Super+Space` to open `Vicinae`. Type "Settings", and hit enter. Enable the Raycast Compat option, and alter any options you wish to change. Press `Super+Space` again, and then type "ray", and hit enter. Search for the following Addons, and install them:
+  > Obsidian
+  > Google Translate
+  > Yomicast
+    Go back into the Vicinae settings to set these up as makes sense.
 
 - Open up a terminal and run `build` to lock in all changes. If reinstalling, place all SSH keys and similar home directory files in their associated paths from the backups.
 
