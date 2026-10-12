@@ -134,6 +134,7 @@ in {
     coolercontrol.enable = true;
 
     steam.enable = true;
+    steam.protontricks.enable = true;
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
