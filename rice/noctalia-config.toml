@@ -7,19 +7,20 @@ capsule_border = "tertiary"
 capsule_foreground = "primary"
 capsule_radius = 8
 capsule_thickness = 0.69999998807907104
-center = [ "tray", "group:g5", "group:g8" ]
-end = [ "group:g2", "group:g1", "group:g7" ]
+center = [ "group:g6", "group:g3", "group:g4" ]
+end = [ "group:g2", "tray", "group:g1", "group:g7" ]
 font_weight = 400
 margin_edge = 4
 margin_ends = 577
 padding = 12
 radius = 6
-start = [ "group:g3", "group:g6", "group:g4" ]
+start = [ "group:g5", "group:g8" ]
 
     [[bar.default.capsule_group]]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -33,6 +34,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -46,6 +48,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = false
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -59,11 +62,12 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
     id = "g4"
-    members = [ "wallpaper", "wallhaven", "mpvpaper" ]
+    members = [ "wallpaper", "wallhaven", "mpvpaper", "rules" ]
     opacity = 1.0
     padding = 6.0
     radius = 4.0
@@ -72,6 +76,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = false
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -85,6 +90,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -98,6 +104,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -111,6 +118,7 @@ start = [ "group:g3", "group:g6", "group:g4" ]
     accordion = true
     accordion_direction = "end"
     border = "tertiary"
+    border_width = 1.0
     enabled = true
     fill = "surface_variant"
     foreground = "primary"
@@ -122,10 +130,6 @@ start = [ "group:g3", "group:g6", "group:g4" ]
 
 [calendar]
 enabled = true
-
-    [calendar.account.local_calendar]
-    path = "~/Documents/Calendars"
-    type = "vdir"
 
 [control_center]
 hidden_tabs = [ "monitor", "power" ]
@@ -160,7 +164,7 @@ session_locked = "noctalia msg plugin noctalia/mpvpaper:service all clear-all"
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
-pre_action_fade_seconds = 0
+pre_action_fade_seconds = 30
 
     [idle.behavior.lock]
     action = "lock"
@@ -175,7 +179,7 @@ pre_action_fade_seconds = 0
     [idle.behavior.screen-off]
     action = "screen_off"
     enabled = true
-    timeout = 660.0
+    timeout = 900.0
 
 [location]
 address = "Philadelphia"
@@ -244,14 +248,12 @@ client_secret = "bynfcFihaOcQ2DNS0KtcgripSHNScUVsU5dUaFQd"
 [plugin_settings."davemhammer/obsidian"]
 daily_folder = "Daily Notes"
 manager_placement = "attached"
-vault_path = "/home/jlc/Documents/Nkozi"
+vault_path = "/home/jlc/Documents/vault"
 
 [plugin_settings."imjustdoingmypart/niri-animations"]
 docked_open_near_click = true
 picker_layer = "overlay"
 picker_open_near_click = true
-picker_placement = "attached"
-picker_position = "auto"
 
 [plugin_settings."kenn/keybind-cheatsheet"]
 compositor = "niri"
@@ -291,6 +293,9 @@ download_dir = "/home/jlc/Pictures/wallpapers/Wallhaven"
 [plugin_settings."noctalia/world_clock"]
 panel_open_near_click = false
 
+[plugin_settings."setyvii/niri-rules-studio"]
+niri_config = "/home/jlc/.config/niri/config.kdl"
+
 [plugins]
 enabled = [
     "noctalia/screen_recorder",
@@ -305,7 +310,8 @@ enabled = [
     "davemhammer/obsidian",
     "thepunkoff/pomodoro",
     "cleboost/anilist",
-    "noctalia/notes"
+    "noctalia/notes",
+    "setyvii/niri-rules-studio"
 ]
 
 [shell]
@@ -321,6 +327,8 @@ telemetry_enabled = true
     [shell.panel]
     control_center_placement = "floating"
     control_center_position = "center"
+    session_placement = "floating"
+    session_position = "center"
     transparency_mode = "soft"
     wallpaper_placement = "floating"
     wallpaper_position = "center"
@@ -378,13 +386,27 @@ gpu_temp_critical_threshold = 90
 [theme]
 builtin = "Ayu"
 community_palette = "Oxocarbon"
-mode = "auto"
+mode = "light"
 source = "wallpaper"
 wallpaper_scheme = "vibrant"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
-    community_ids = [ "discord", "blender", "gimp", "inkscape", "neovim", "obsidian", "vscode", "steam", "vicinae", "fzf" ]
+    community_ids = [
+        "discord",
+        "blender",
+        "gimp",
+        "inkscape",
+        "neovim",
+        "obsidian",
+        "vscode",
+        "steam",
+        "vicinae",
+        "bat",
+        "fzf",
+        "lazygit",
+        "yazi"
+    ]
 
         [theme.templates.user.obsidian_extra]
         input_path = "/home/jlc/.config/noctalia/Obsidian/obsidian.css"
@@ -403,13 +425,13 @@ transition_on_startup = true
     recursive = true
 
     [wallpaper.default]
-    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Light/wallhaven-gpq2el.png"
 
     [wallpaper.last]
-    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Light/wallhaven-gpq2el.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/jlc/Pictures/wallpapers/Dark/65605301_p0.jpg"
+    path = "/home/jlc/Pictures/wallpapers/Light/wallhaven-gpq2el.png"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
@@ -650,12 +672,16 @@ stat = "ram_pct"
 active_window_color = "tertiary"
 anchor = true
 bar_color = "surface"
+enabled = false
 gaps = 4.0
 radius = 6.0
 show_active_window = true
 thickness = 6.0
 type = "luochen1990/niri-ribbon:ribbon"
 viewport_color = "secondary"
+
+[widget.rules]
+type = "setyvii/niri-rules-studio:rules"
 
 [widget.session]
 custom_image = "/home/jlc/Pictures/NixOS.png"
