@@ -90,13 +90,15 @@ Makes generous use of imports to break up config file lengths. Home-Manager for 
 
 - While in the home folder (`~`) run `mkdir -p ~/.config/niri`, and then `cp -a ~/Nix/rice/niri/. ~/.config/niri/` to move the backed-up Niri config files to the correct folder. These can be edited to change the compositor settings, and will auto-reload on any component changing. See [niri documentation](<https://niri-wm.github.io/niri/>) for information on how to format any wanted changes.
 
+- In the home folder, run `mkdir -p ~/.config/noctalia`, then `cp ~/Nix/rice/noctalia-config.toml ~/.config/noctalia/` to move the backed up Noctalia settings to the working directory. Recommended to use the file in `~/Nix/rice/` as a backup location to export the config to, and configure the shell via its GUI (which can be opened with `Super+Alt+Comma`)
+
 - Run `sudo nixos-rebuil switch --flake ~/Nix#blkedn` (the hostname you configured follows the pound sign), and reboot after activating configuration with password.
 
 - After logging in to Niri/Noctalia: Press `Super+Enter` to launch a terminal - If `fish` launches in `ghostty`, then everything has gone correctly. Run `tide configure` in the terminal to be walked through setting up a prompt for the shell.
 
 > _From this point onward, the nixos-rebuild commands are run throuh `nh` and aliased by default. Check aliases in `~/Nix/apps/fish.nix` - Look up Home-Manager options for `fish` to see what other things can be configured._
 
-- run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris, Anki, Fluxer, qBittorrent, Stremio, and Flatseal from Flathub.
+- run `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo` to enable flathub for Bazaar. Install Lutris, Anki, Fluxer, qBittorrent, Stremio, Memento, and Flatseal from Flathub.
 
 - Install the following Anki Addons:
     > Anki-Connect - 2055492159
