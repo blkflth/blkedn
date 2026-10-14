@@ -6,8 +6,6 @@
   home.packages = with pkgs; [
     # clipboard-jh
     # superfile
-    numbat
-    bottom
     microfetch
     lazygit
     # lazydocker
@@ -18,9 +16,6 @@
       enable = true;
     };
 
-    numbat = {
-      enable = true;
-    };
 
     fzf = {
       enable = true;
