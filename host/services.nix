@@ -5,8 +5,6 @@
   lib,
   ...
 }: {
-
-
   # Enable networking
   networking.networkmanager.enable = true;
   # Enables wireless support via wpa_supplicant.
@@ -48,7 +46,7 @@
   };
 
   # enable portals for spawning extra windows
-  
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -100,7 +98,7 @@
           "Noto Sans Mono CJK JP"
         ];
         sansSerif = [
-          "Noto Sans"
+          "AtkynsonMono NFP"
           "Noto Sans CJK JP"
         ];
         serif = [
