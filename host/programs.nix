@@ -21,6 +21,7 @@ in {
     wev #find keystrokes for wayland compsitor; helpful when altering keybinds
     nix-output-monitor
     nvd
+    devenv
 
     # git
     git
