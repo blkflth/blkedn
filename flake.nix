@@ -41,6 +41,11 @@
     nirimod = {
       url = "github:srinivasr/NiriMod";
     };
+    
+   artcraft = {
+      url = "github:devitek/artcraft-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
 
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
@@ -54,6 +59,7 @@
     vicinae-extensions,
     lazyvim,
     nirimod,
+    artcraft,
     #affinity-nix,
     ...
   } @ inputs: let
@@ -96,6 +102,7 @@
               ./home.nix
               vicinae.homeManagerModules.default
               lazyvim.homeManagerModules.default
+              artcraft.homeManagerModules.default
             ];
           };
       };
