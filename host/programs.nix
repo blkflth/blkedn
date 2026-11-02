@@ -157,9 +157,8 @@ in {
       enable = true;
       useNautilus = false;
     };
-  };
 
-
+    
   artcraft = {
     enable = true;
     apps = [
@@ -170,6 +169,9 @@ in {
       "effectcraft"
     ];
   };
+  };
+
+
 
   # Sunshine Game Streaming Server
   services = {
