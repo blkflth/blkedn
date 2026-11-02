@@ -7,7 +7,7 @@
 }:let
   blender = pkgs.blender.override {rocmSupport = true;};
 in {
-    imports = [ artcraft.nixosModules.default ];
+    imports = [ inputs.artcraft.nixosModules.default ];
 
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
