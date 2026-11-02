@@ -45,7 +45,7 @@
    artcraft = {
       url = "github:devitek/artcraft-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
 
     #affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
