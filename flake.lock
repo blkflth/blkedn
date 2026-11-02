@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "artcraft": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793563508,
+        "narHash": "sha256-hp1waIrRVgOy0tIqEIvPTeY2orSbtewpTJZy+uHmYO4=",
+        "owner": "devitek",
+        "repo": "artcraft-nixos",
+        "rev": "73142d0e0af80c76408edda350d8a1f35de8569b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "devitek",
+        "repo": "artcraft-nixos",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -376,6 +396,7 @@
     },
     "root": {
       "inputs": {
+        "artcraft": "artcraft",
         "home-manager": "home-manager",
         "lazyvim": "lazyvim",
         "naviterm": "naviterm",
