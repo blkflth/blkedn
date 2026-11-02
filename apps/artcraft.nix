@@ -4,6 +4,7 @@
   inputs,
   ...
 }: {
+  imports = [artcraft.homeManagerModules.default];
 
   programs.artcraft = {
     enable = true;
