@@ -4,9 +4,11 @@
   inputs,
   lib,
   ...
-}: let
+}:let
   blender = pkgs.blender.override {rocmSupport = true;};
 in {
+    imports = [ artcraft.nixosModules.default ];
+
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
     # system tools
@@ -155,6 +157,18 @@ in {
       enable = true;
       useNautilus = false;
     };
+  };
+
+
+  artcraft = {
+    enable = true;
+    apps = [
+      "photocraft"
+      "vectorcraft"
+      "filmcraft"
+      "lightcraft"
+      "effectcraft"
+    ];
   };
 
   # Sunshine Game Streaming Server

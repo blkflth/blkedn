@@ -102,7 +102,6 @@
               ./home.nix
               vicinae.homeManagerModules.default
               lazyvim.homeManagerModules.default
-              artcraft.homeManagerModules.default
             ];
           };
       };
