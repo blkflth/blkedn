@@ -41,6 +41,11 @@
     nirimod = {
       url = "github:srinivasr/NiriMod";
     };
+
+    horizon = {
+      url = "github:Fchat-Horizon/Horizon?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
    artcraft = {
       url = "github:devitek/artcraft-nixos";
@@ -60,6 +65,7 @@
     lazyvim,
     nirimod,
     artcraft,
+    horizon,
     #affinity-nix,
     ...
   } @ inputs: let
