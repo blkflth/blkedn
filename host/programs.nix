@@ -90,7 +90,7 @@ in {
 
     # productivity
     onlyoffice-desktopeditors # Office Suite
-    tagainijisho #Japanese Dictionary
+    #  tagainijisho #Japanese Dictionary
     tuxedo #TUI todo.txt managing
     hoard #CLI Command Organizer
     tlrc #simiplified man pages written in rust
