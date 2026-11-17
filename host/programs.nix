@@ -69,6 +69,7 @@ in {
     nicotine-plus # soulseek client
     picard # music metadata editor
     #feishin # Subsonic interface
+    inputs.horizon.packages.${system}.horizon-electron #horizon viewer
     inputs.naviterm.packages.${system}.default # terminal navidrome player
     mpv #media player backend
     mpvScripts.mpvacious #adds keybindings for creating Anki cards
