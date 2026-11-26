@@ -149,7 +149,7 @@ in {
     dconf.enable = true;
     xfconf.enable = true; #allow Thunar configs
     luciole = {
-      enable = true
+      enable = true;
     };
     thunar = {
       enable = true;
