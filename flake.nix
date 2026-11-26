@@ -14,6 +14,11 @@
       url = "github:noctalia-dev/noctalia";
     };
 
+    
+    luciole = {
+      url = "github:noctalia-dev/luciole";
+    };
+
     vicinae = {
       url = "github:vicinaehq/vicinae";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -66,6 +71,7 @@
     nirimod,
     artcraft,
     horizon,
+    luciole,
     #affinity-nix,
     ...
   } @ inputs: let
