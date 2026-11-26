@@ -62,16 +62,17 @@
         default = [
           "gnome;gtk"
         ];
-        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+        "org.freedesktop.impl.portal.FileChooser" = ["luciole" "gtk"];
         "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
         "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
         "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
         "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
       };
     };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-      xdg-desktop-portal-gtk
+    extraPortals = [
+      inputs.luciole.packages.${pkgs.stdenv.hostPlatform.system}.default
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
     ];
   };
 
