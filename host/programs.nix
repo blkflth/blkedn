@@ -7,7 +7,10 @@
 }:let
   blender = pkgs.blender.override {rocmSupport = true;};
 in {
-    imports = [ inputs.artcraft.nixosModules.default ];
+    imports = [ 
+      inputs.artcraft.nixosModules.default 
+      inputs.luciole.nixosModules.default
+  ];
 
   # See what of these can be put in home-manager
   environment.systemPackages = with pkgs; [
@@ -145,6 +148,9 @@ in {
 
     dconf.enable = true;
     xfconf.enable = true; #allow Thunar configs
+    luciole = {
+      enable = true
+    };
     thunar = {
       enable = true;
       plugins = with pkgs; [
